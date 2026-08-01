@@ -40,7 +40,7 @@
   html{-webkit-text-size-adjust:100%}
   @media (prefers-reduced-motion: no-preference){ html{scroll-behavior:smooth} }
   #intro,#book{scroll-margin-top:88px}
-  a:focus-visible,.btn:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:4px}
+  a:focus-visible,.btn:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:var(--r-chip)}
   body{
     margin:0;
     background:var(--white);
@@ -70,7 +70,7 @@
   .muted{color:var(--muted)}
 
   /* nav */
-  header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94)}
+  header{position:sticky;top:0;z-index:20;background:var(--white)}
   .nav{display:flex;align-items:center;gap:28px;height:76px}
   .mark{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}
   .mark:hover{text-decoration:none}
@@ -85,7 +85,7 @@
     font-family:inherit;font-size:16px;font-weight:600;letter-spacing:-.01em;
     cursor:pointer;transition:background 150ms ease,color 150ms ease;
   }
-  .btn-primary{background:var(--signal);color:var(--white)}
+  .btn-primary{background:var(--signal);color:var(--ink)}
   .btn-primary:hover{background:var(--signal-dark);text-decoration:none}
   .btn-quiet{background:var(--tint);color:var(--ink)}
   .btn-quiet:hover{background:#F6E7DF;text-decoration:none}
@@ -99,7 +99,7 @@
      their own; the script then measures and lands it exactly. */
   .stage-title{
     position:relative;z-index:2;display:inline-block;margin:0;white-space:nowrap;
-    font-size:19.5vw;line-height:.82;letter-spacing:-.055em;font-weight:800;
+    font-size:19.5vw;line-height:.82;letter-spacing:-.05em;font-weight:800;
   }
   .stage-title span{display:inline-block;will-change:transform}
   .stage-cue{
