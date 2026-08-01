@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fravalu — AI automation for SMEs</title>
+<meta name="description" content="Two weeks learning how your business runs, then a ranked, costed plan for the work worth automating. The plan is yours to keep.">
+<link rel="canonical" href="https://fra-valu.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fra-valu.com/">
+<meta property="og:title" content="Fravalu — AI automation for SMEs">
+<meta property="og:description" content="Two weeks learning how your business runs, then a ranked, costed plan for the work worth automating. The plan is yours to keep.">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg transform='rotate(-18 50 50)'%3E%3Cpolygon points='97,50 6,10 6,42 64,50 6,58 6,90' fill='%23F0562D'/%3E%3Cpolygon points='97,50 6,58 6,90' fill='%23C13E1D'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#14110D;
+    --ink-2:#3A342C;
+    --muted:#6B6357;
+    --signal:#F0562D;
+    --signal-dark:#C13E1D;
+    --signal-deep:#8A4630;
+    --plum:#6B2B54;
+    --white:#FFFFFF;
+    --tint:#FBEAE1;
+    --paper:#F4F1EA;
+    --sand:#E0D9CB;
+    --r-chip:8px;
+    --r-card:16px;
+    --r-panel:22px;
+    --shadow-raised:0 10px 24px -14px rgba(20,17,13,0.28);
+    --shadow-overlay:0 18px 40px -22px rgba(20,17,13,0.45);
+    --max:1120px;
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  @media (prefers-reduced-motion: no-preference){ html{scroll-behavior:smooth} }
+  #intro,#book{scroll-margin-top:88px}
+  a:focus-visible,.btn:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:4px}
+  body{
+    margin:0;
+    background:var(--white);
+    color:var(--ink);
+    font-family:'Bricolage Grotesque',system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--plum);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+  section{padding:88px 0}
+  .label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 18px;
+  }
+  h1,h2,h3{margin:0;font-weight:800}
+  h1{font-size:clamp(40px,6.4vw,72px);line-height:.9;letter-spacing:-.045em}
+  h2{font-size:clamp(30px,3.6vw,48px);line-height:1.05;letter-spacing:-.03em;font-weight:700}
+  h3{font-size:clamp(20px,2.2vw,30px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
+  .lead{font-size:21px;line-height:1.5;color:var(--ink-2)}
+  p{margin:0 0 18px}
+  .muted{color:var(--muted)}
+
+  /* nav */
+  header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94)}
+  .nav{display:flex;align-items:center;gap:28px;height:76px}
+  .mark{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}
+  .mark:hover{text-decoration:none}
+  .mark span{font-weight:800;font-size:24px;letter-spacing:-.045em}
+  .nav-links{margin-left:auto;display:flex;align-items:center;gap:26px}
+  .nav-links a:not(.btn){color:var(--ink-2);font-weight:500;font-size:15px;transition:color 150ms ease}
+  .nav-links a:not(.btn):hover{color:var(--signal-deep);text-decoration:none}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:14px 26px;border-radius:999px;border:0;
+    font-family:inherit;font-size:16px;font-weight:600;letter-spacing:-.01em;
+    cursor:pointer;transition:background 150ms ease,color 150ms ease;
+  }
+  .btn-primary{background:var(--signal);color:var(--white)}
+  .btn-primary:hover{background:var(--signal-dark);text-decoration:none}
+  .btn-quiet{background:var(--tint);color:var(--ink)}
+  .btn-quiet:hover{background:#F6E7DF;text-decoration:none}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;align-items:center}
+
+  /* stage — the name and the plane. Nothing to read, nothing to click. */
+  .stage{position:relative;overflow:hidden;padding:0;min-height:70vh;display:grid}
+  .stage-inner{position:relative;display:grid;place-items:center;min-height:70vh;width:100%}
+  /* The name takes three quarters of the width: full bleed left the plane
+     looking like a speck against it. 19.5vw gets the seven letters close on
+     their own; the script then measures and lands it exactly. */
+  .stage-title{
+    position:relative;z-index:2;display:inline-block;margin:0;white-space:nowrap;
+    font-size:19.5vw;line-height:.82;letter-spacing:-.055em;font-weight:800;
+  }
+  .stage-title span{display:inline-block;will-change:transform}
+  .stage-cue{
+    position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:2;
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--muted);
+  }
+  .stage-cue:hover{text-decoration:none;color:var(--signal-deep)}
+
+  /* The plane follows the cursor across the whole page. Fixed and click-through,
+     so the real cursor keeps doing the work of clicking, typing and selecting. */
+  .plane{
+    position:fixed;top:0;left:0;z-index:999;width:44px;height:44px;
+    pointer-events:none;opacity:0;
+  }
+  .plane.parked{position:absolute;z-index:3;opacity:1}
+  /* The plane is the cursor. Class comes from script, so no-JS keeps the arrow.
+     The booking block hands the system cursor back: it is a cross-origin iframe,
+     and the visitor needs a real pointer and I-beam to fill the form in. */
+  .fv-cursor,.fv-cursor *{cursor:none}
+  .fv-cursor .booking,.fv-cursor .booking *{cursor:auto}
+  @keyframes fvGlide{
+    from{transform:translate(-50%,-50%) translateY(0) rotate(0deg)}
+    to{transform:translate(-50%,-50%) translateY(-10px) rotate(3deg)}
+  }
+  .plane.drift{animation:fvGlide 3s ease-in-out infinite alternate}
+
+  /* intro — the copy, below the stage */
+  .hero{position:relative}
+  .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:start}
+  .hero-side{display:grid;gap:24px;align-content:start}
+  .hero-h{font-size:clamp(40px,6.4vw,72px);line-height:.9;letter-spacing:-.045em;font-weight:800;margin:0 0 24px}
+  .hero .lead{max-width:46ch}
+  /* the stack. Icon data from Simple Icons (CC0), unmodified and set in each
+     project's own brand colour. The names and marks are trademarks of their
+     owners, shown to say what the work is built with, not as endorsements.
+     AWS Bedrock is named in text with a neutral glyph: AWS permits fair-use
+     naming in plain text but not third-party use of its logos. */
+  .stack{margin:0;padding:24px 24px 16px;background:var(--paper);border-radius:var(--r-panel)}
+  .stack figcaption{margin-bottom:8px}
+  .stack-list{list-style:none;margin:0;padding:0}
+  .stack-list li{display:grid;grid-template-columns:28px 1fr auto;align-items:center;
+    gap:12px;padding:8px 0}
+  .stack-list li + li{box-shadow:inset 0 1px 0 var(--sand)}
+  /* Ink chips, not white ones: the pale marks are unreadable on white, and six
+     lifted tiles is the template pattern the guide disowns. On ink every brand
+     colour clears the 3:1 floor for graphics. */
+  .stack-mark{width:28px;height:28px;display:grid;place-items:center;
+    background:var(--ink);border-radius:var(--r-chip)}
+  .stack-mark svg{width:16px;height:16px;fill:currentColor}
+  /* Simple Icons normalise to a box, not to optical weight: the n8n strip is
+     wide and thin, the Supabase bolt nearly fills its box. Render size only. */
+  .stack-mark.m-n8n svg{width:19px;height:19px}
+  .stack-mark.m-supabase svg{width:15px;height:15px}
+  .stack-mark.m-n8n{color:#EA4B71}
+  .stack-mark.m-langgraph{color:#7FC8FF}
+  .stack-mark.m-openrouter{color:#94A3B8}
+  .stack-mark.m-pydantic{color:#E92063}
+  .stack-mark.m-supabase{color:#3FCF8E}
+  .stack-mark.m-bedrock{color:var(--sand)}
+  .stack-list b{font-size:15px;font-weight:700;letter-spacing:-.01em}
+  .stack-list span{
+    font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--muted);text-align:right;
+  }
+  .stack-note{margin:14px 0 0;font-size:11px;color:var(--muted);line-height:1.5}
+
+  /* proof strip, inside the one content section */
+  .proof-strip{margin-top:60px;padding-top:34px;box-shadow:inset 0 1px 0 var(--sand)}
+  .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  .stat .n{font-size:36px;font-weight:800;letter-spacing:-.03em;line-height:1}
+  .stat .k{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--muted);margin-top:10px;display:block;line-height:1.5;
+  }
+
+  .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+
+  /* steps */
+  .step{display:grid;grid-template-columns:96px 1fr;gap:24px;padding:24px 0}
+  .step + .step{box-shadow:inset 0 1px 0 var(--sand)}
+  .step .num{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;
+    color:var(--muted);padding-top:6px;
+  }
+  .step h3{margin-bottom:6px;font-size:21px}
+  .step p{margin:0;color:var(--muted);font-size:16px;max-width:62ch}
+  .terms{margin-top:28px;background:var(--tint);border-radius:var(--r-card);padding:20px 24px}
+  .terms p{margin:0;font-size:16px;color:var(--ink-2)}
+
+  .bio{background:var(--white);border-radius:var(--r-panel);padding:32px;box-shadow:var(--shadow-raised)}
+  .bio p{font-size:16px;color:var(--ink-2)}
+  .bio-head{display:flex;align-items:center;gap:18px;margin-top:14px}
+  /* The photo is mirrored and cropped square in the file itself, so the circle
+     is the only thing the page has to do. */
+  .bio-photo{width:96px;height:96px;flex:none;border-radius:50%;object-fit:cover;
+    background:var(--sand);box-shadow:0 0 0 1px var(--sand)}
+  .bio-head h3{margin:0}
+  .bio-link{display:inline-flex;align-items:center;gap:7px;margin-top:6px;
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--muted);text-decoration:none;
+    transition:color .15s ease}
+  .bio-link svg{width:14px;height:14px;fill:currentColor}
+  .bio-link:hover{color:var(--signal-dark)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{
+    background:var(--paper);border-radius:var(--r-chip);padding:8px 12px;
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--ink-2);
+  }
+
+  /* booking */
+  .booking{
+    margin-top:44px;background:var(--white);border-radius:var(--r-panel);
+    padding:32px 32px 20px;box-shadow:var(--shadow-raised);
+  }
+  .booking .calendly-inline-widget{border-radius:var(--r-card);overflow:hidden}
+  .booking .calendly-inline-widget iframe{border-radius:var(--r-card)}
+
+  footer{background:var(--ink);color:#B9B1A3;padding:48px 0 40px;font-size:15px}
+  .foot{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start}
+  .foot a{color:#E0D9CB}
+  .foot .mark span{color:var(--white)}
+  .foot-meta{margin-left:auto;text-align:right;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;line-height:2}
+
+  @media (max-width:900px){
+    section{padding:64px 0}
+    .hero-grid,.split{grid-template-columns:1fr;gap:36px}
+    .proof-grid{grid-template-columns:1fr 1fr;gap:26px}
+    .nav-links a:not(.btn){display:none}
+    .foot-meta{margin-left:0;text-align:left}
+  }
+  @media (hover:none){
+    .stage,.stage-inner{min-height:50vh}
+  }
+  @media (max-width:600px){
+    .calendly-inline-widget{height:950px !important}
+    .proof-grid{grid-template-columns:1fr}
+    .step{grid-template-columns:1fr;gap:6px}
+    .booking{padding:22px 14px 12px;border-radius:var(--r-card)}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="mark" href="#top">
+      <svg viewBox="0 0 100 100" width="26" height="26" aria-hidden="true" style="flex:none">
+        <g transform="rotate(-18 50 50)">
+          <polygon points="97,50 6,10 6,42 64,50 6,58 6,90" fill="#F0562D"></polygon>
+          <polygon points="97,50 6,58 6,90" fill="#C13E1D"></polygon>
+        </g>
+      </svg>
+      <span>fravalu</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#intro">What I do</a>
+      <a class="btn btn-primary" href="#book">Schedule a call</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 1 — STAGE. The name at full width, and the plane. -->
+  <section class="stage">
+    <div class="stage-inner">
+      <h1 class="stage-title" aria-label="fravalu">fravalu</h1>
+      <a class="stage-cue" href="#intro">What I do &#8595;</a>
+    </div>
+  </section>
+
+  <!-- 2 — WHAT I DO. One section: the offer, the steps, the proof. -->
+  <section class="hero" id="intro">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="label">AI and workflow automation for SMEs</p>
+        <h2 class="hero-h">Find the hours your&nbsp;team keeps losing.</h2>
+        <p class="lead">I spend two weeks inside your business and sit with the people doing the work. You get a ranked, costed plan for the tasks worth automating, and I build the top of the list.</p>
+
+        <div class="step">
+          <div class="num">Week 01</div>
+          <div>
+            <h3>Map the work</h3>
+            <p>I work alongside your team and put hours against every repeated task: where documents come from, who retypes what, which spreadsheet gets reconciled every Friday.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">Week 02</div>
+          <div>
+            <h3>Rank it together</h3>
+            <p>We go through the map side by side and agree what to build first, what pays back later, and what already works well as it is. Every line comes costed.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">After</div>
+          <div>
+            <h3>Build what pays back</h3>
+            <p>I build the two or three that pay back fastest, then hand them over with documentation your team can run. You own the code, the workflows, and the accounts they live in.</p>
+          </div>
+        </div>
+
+        <div class="terms">
+          <p>Two weeks, one fixed fee agreed before I start, and the plan is yours to keep.</p>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#book">Schedule a call</a>
+          <span class="muted" style="font-size:16px;max-width:30ch">Thirty minutes. Bring the process that eats your week.</span>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <figure class="stack">
+          <figcaption class="label">What I build with</figcaption>
+          <ul class="stack-list">
+          <li>
+            <span class="stack-mark m-n8n"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.4737 5.6842c-1.1772 0-2.1663.8051-2.4468 1.8947h-2.8955c-1.235 0-2.289.893-2.492 2.111l-.1038.623a1.263 1.263 0 0 1-1.246 1.0555H11.289c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947s-2.1663.8051-2.4467 1.8947H4.973c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947C1.1311 9.4737 0 10.6047 0 12s1.131 2.5263 2.5263 2.5263c1.1772 0 2.1663-.8051 2.4468-1.8947h1.4223c.2804 1.0896 1.2696 1.8947 2.4467 1.8947 1.1772 0 2.1663-.8051 2.4468-1.8947h1.0008a1.263 1.263 0 0 1 1.2459 1.0555l.1038.623c.203 1.218 1.257 2.111 2.492 2.111h.3692c.2804 1.0895 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263c-1.1772 0-2.1664.805-2.4468 1.8947h-.3692a1.263 1.263 0 0 1-1.246-1.0555l-.1037-.623A2.52 2.52 0 0 0 13.9607 12a2.52 2.52 0 0 0 .821-1.4794l.1038-.623a1.263 1.263 0 0 1 1.2459-1.0555h2.8955c.2805 1.0896 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263m0 1.2632a1.263 1.263 0 0 1 1.2631 1.2631 1.263 1.263 0 0 1-1.2631 1.2632 1.263 1.263 0 0 1-1.2632-1.2632 1.263 1.263 0 0 1 1.2632-1.2631M2.5263 10.7368A1.263 1.263 0 0 1 3.7895 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 1.2632 12a1.263 1.263 0 0 1 1.2631-1.2632m6.3158 0A1.263 1.263 0 0 1 10.1053 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 7.579 12a1.263 1.263 0 0 1 1.2632-1.2632m10.1053 3.7895a1.263 1.263 0 0 1 1.2631 1.2632 1.263 1.263 0 0 1-1.2631 1.2631 1.263 1.263 0 0 1-1.2632-1.2631 1.263 1.263 0 0 1 1.2632-1.2632"></path></svg></span>
+            <b>n8n</b><span>Workflow glue</span>
+          </li>
+          <li>
+            <span class="stack-mark m-langgraph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19H10A5 5 0 115 14ZM19 14A5 5 0 1114 19H19ZM10 5A5 5 0 105 10V5ZM19 5V10A5 5 0 1014 5Z"></path></svg></span>
+            <b>LangGraph</b><span>Agent graphs</span>
+          </li>
+          <li>
+            <span class="stack-mark m-openrouter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.778 1.844v1.919q-.569-.026-1.138-.032-.708-.008-1.415.037c-1.93.126-4.023.728-6.149 2.237-2.911 2.066-2.731 1.95-4.14 2.75-.396.223-1.342.574-2.185.798-.841.225-1.753.333-1.751.333v4.229s.768.108 1.61.333c.842.224 1.789.575 2.185.799 1.41.798 1.228.683 4.14 2.75 2.126 1.509 4.22 2.11 6.148 2.236.88.058 1.716.041 2.555.005v1.918l7.222-4.168-7.222-4.17v2.176c-.86.038-1.611.065-2.278.021-1.364-.09-2.417-.357-3.979-1.465-2.244-1.593-2.866-2.027-3.68-2.508.889-.518 1.449-.906 3.822-2.59 1.56-1.109 2.614-1.377 3.978-1.466.667-.044 1.418-.017 2.278.02v2.176L24 6.014Z"></path></svg></span>
+            <b>OpenRouter</b><span>Model routing</span>
+          </li>
+          <li>
+            <span class="stack-mark m-pydantic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m23.826 17.316-4.23-5.866-6.847-9.496c-.348-.48-1.151-.48-1.497 0l-6.845 9.494-4.233 5.868a.925.925 0 0 0 .46 1.417l11.078 3.626h.002a.92.92 0 0 0 .572 0h.002l11.077-3.626c.28-.092.5-.31.59-.592a.916.916 0 0 0-.13-.825h.002ZM12.001 4.07l4.44 6.158-4.152-1.36c-.032-.01-.066-.008-.098-.016a.8.8 0 0 0-.096-.016c-.032-.004-.062-.016-.094-.016s-.062.012-.094.016a.74.74 0 0 0-.096.016c-.032.006-.066.006-.096.016L7.59 10.221l-.026.008 4.44-6.158h-.002Zm-6.273 8.7 4.834-1.583.516-.168v9.19L2.41 17.372l3.317-4.6Zm7.197 7.437V11.02l5.35 1.752 3.316 4.598-8.666 2.838Z"></path></svg></span>
+            <b>Pydantic AI</b><span>Typed outputs</span>
+          </li>
+          <li>
+            <span class="stack-mark m-bedrock"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 22 7l-10 5L2 7zm0 8.2 7.7-3.85L22 12l-10 5L2 12l2.3-1.65zm0 5.5 7.7-3.85L22 17l-10 5L2 17l2.3-1.65z"></path></svg></span>
+            <b>AWS Bedrock</b><span>Managed models</span>
+          </li>
+          <li>
+            <span class="stack-mark m-supabase"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z"></path></svg></span>
+            <b>Supabase</b><span>Postgres and auth</span>
+          </li>
+          </ul>
+          <p class="stack-note">Product names and marks are trademarks of their owners;
+            no endorsement implied.</p>
+        </figure>
+
+        <div class="bio">
+          <p class="label">Who you work with</p>
+          <div class="bio-head">
+            <img class="bio-photo" src="ahmed-alvee.jpg"
+                 srcset="ahmed-alvee.jpg 1x, ahmed-alvee@2x.jpg 2x"
+                 width="96" height="96" alt="Ahmed Alvee" loading="lazy" decoding="async">
+            <div>
+              <h3>Ahmed Alvee</h3>
+              <a class="bio-link" href="https://www.linkedin.com/in/alveeahmed/" rel="me noopener" target="_blank">
+                LinkedIn
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"></path></svg>
+              </a>
+            </div>
+          </div>
+          <p style="margin-top:16px">Four years as a solutions architect at Mesh Bio, leading engineers on healthcare data systems across five South East Asian markets. Now finishing an MBA at Rotterdam School of Management. You work with me from the first call to the handover.</p>
+          <div class="chips">
+            <span class="chip">AWS Solutions Architect</span>
+            <span class="chip">MBA, RSM Erasmus</span>
+            <span class="chip">Python · AWS · n8n</span>
+            <span class="chip">Rotterdam, NL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap proof-strip">
+      <div class="proof-grid">
+        <div class="stat"><div class="n">10.5 hrs</div><span class="k">Back per investee, per reporting cycle</span></div>
+        <div class="stat"><div class="n">3</div><span class="k">Working demos built on an impact investor&#8217;s own documents</span></div>
+        <div class="stat"><div class="n">5</div><span class="k">Markets served by the AWS pipelines I ran at Mesh Bio</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 — BOOK -->
+  <section id="book">
+    <div class="wrap split">
+      <div>
+        <p class="label">Start here</p>
+        <h2>Tell me where your Friday afternoon goes.</h2>
+      </div>
+      <div>
+        <p class="lead" style="max-width:44ch">Thirty minutes. You leave with my read on where your hours are going and what the two weeks would look like on your floor.</p>
+        <div class="cta-row">
+          <a class="btn btn-quiet" href="mailto:contact@fra-valu.com">contact@fra-valu.com</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="booking">
+        <p class="label">Pick a time</p>
+        <!-- Calendly inline widget begin -->
+        <div class="calendly-inline-widget"
+             data-url="https://calendly.com/alvee-fra-valu/30min?hide_gdpr_banner=1&hide_landing_page_details=1&background_color=ffffff&text_color=14110d&primary_color=f0562d"
+             style="min-width:320px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <!-- Calendly inline widget end -->
+        <noscript>
+          <p style="margin:0">Booking needs JavaScript. Write to
+            <a href="mailto:contact@fra-valu.com">contact@fra-valu.com</a> and I will send you times.</p>
+        </noscript>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a class="mark" href="#top" style="margin-bottom:12px">
+        <svg viewBox="0 0 100 100" width="22" height="22" aria-hidden="true" style="flex:none">
+          <g transform="rotate(-18 50 50)">
+            <polygon points="97,50 6,10 6,42 64,50 6,58 6,90" fill="#F0562D"></polygon>
+            <polygon points="97,50 6,58 6,90" fill="#C13E1D"></polygon>
+          </g>
+        </svg>
+        <span>fravalu</span>
+      </a>
+      <p style="margin:0;max-width:36ch">AI and workflow automation for SMEs. Rotterdam, Netherlands.</p>
+    </div>
+    <div class="foot-meta">
+      <div><a href="mailto:contact@fra-valu.com">contact@fra-valu.com</a></div>
+      <div><a href="https://www.linkedin.com/in/alveeahmed/" rel="me noopener" target="_blank">linkedin.com/in/alveeahmed</a></div>
+      <div>KVK 42095902</div>
+    </div>
+  </div>
+</footer>
+
+<svg class="plane" viewBox="0 0 100 100" aria-hidden="true">
+  <polygon points="97,50 6,10 6,42 64,50 6,58 6,90" fill="#F0562D"></polygon>
+  <polygon points="97,50 6,58 6,90" fill="#C13E1D"></polygon>
+</svg>
+
+<!-- GSAP 3.13.0, served from this origin. A CDN copy gets blocked by content
+     blockers often enough to leave visitors with no cursor at all, and this is
+     the only script the page loads. Standard licence, header kept intact. -->
+<script src="gsap.min.js"></script>
+<script>
+  // Motion budget: the plane trails the cursor across the page, and the wordmark
+  // gives way as it passes. Nothing else moves, bar the 150ms hovers in CSS.
+  (function () {
+    var plane = document.querySelector('.plane');
+    var stage = document.querySelector('.stage');
+    var title = stage && stage.querySelector('.stage-title');
+
+    // The name runs the full width of the stage. Measure it at a known size and
+    // scale from there, so it lands on both edges whatever the viewport is and
+    // whatever the webfont does to the metrics once it arrives.
+    var FILL = 0.75;   // of the stage width: full bleed dwarfed the plane
+    function fit() {
+      if (!title || !stage) return;
+      title.style.fontSize = '200px';
+      var w = title.getBoundingClientRect().width;
+      if (w) title.style.fontSize = (200 * stage.clientWidth * FILL / w) + 'px';
+    }
+    // A new width means a new fitted size, and the resting centres move with it.
+    function refit() { fit(); if (rest && rest.length) measure(); }
+
+    fit();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(refit);
+
+    if (!plane) { window.addEventListener('resize', refit); return; }
+
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var fine = window.matchMedia('(hover:hover)').matches;
+
+    // Park the plane over the map: a slow glide when motion is welcome, still
+    // when it is not. This is where the plane ends up whenever it cannot follow
+    // a cursor, so it is never left hidden.
+    function park(still) {
+      if (!stage) return;
+      stage.querySelector('.stage-inner').appendChild(plane);
+      plane.classList.add('parked');
+      plane.style.left = '50%';
+      plane.style.top = '26%';
+      if (window.gsap) gsap.set(plane, { clearProps: 'transform' });
+      if (still) plane.style.transform = 'translate(-50%,-50%)';
+      else plane.classList.add('drift');
+    }
+
+    // No GSAP means no follower, so show the parked plane rather than nothing.
+    if (!window.gsap) { park(reduced); window.addEventListener('resize', refit); return; }
+
+    gsap.set(plane, { xPercent: -50, yPercent: -50, transformOrigin: '50% 50%' });
+
+    // No cursor to follow, or the visitor asked for stillness.
+    if (!fine || reduced) { park(reduced); window.addEventListener('resize', refit); return; }
+
+    // Split the name into letters so the plane can push them apart. The h1 keeps
+    // its aria-label, so what is read out stays one word.
+    var letters = [], nudge = [], rest = [];
+    if (title) {
+      title.innerHTML = title.textContent.replace(/\S/g, function (ch) {
+        return '<span aria-hidden="true">' + ch + '</span>';
+      });
+      letters = Array.prototype.slice.call(title.children);
+      nudge = letters.map(function (el) {
+        return gsap.quickTo(el, 'x', { duration: 0.45, ease: 'power3.out' });
+      });
+    }
+
+    var REACH = 300;   // px of influence around the plane
+    var SHOVE = 46;    // px a letter gives way at most
+    var stageBox = null;
+
+    // Resting centres, in stage coordinates, measured with the letters home.
+    function measure() {
+      if (!stage) return;
+      stageBox = stage.getBoundingClientRect();
+      letters.forEach(function (el) { gsap.killTweensOf(el); gsap.set(el, { x: 0 }); });
+      rest = letters.map(function (el) {
+        var b = el.getBoundingClientRect();
+        return { x: b.left - stageBox.left + b.width / 2, y: b.top - stageBox.top + b.height / 2,
+                 h: b.width / 2 };
+      });
+    }
+    function reframe() { if (stage) stageBox = stage.getBoundingClientRect(); }
+    measure();
+    window.addEventListener('resize', refit);
+    window.addEventListener('scroll', reframe, { passive: true });
+
+    // Letters give way as the plane crosses the word: fra valu, fraval u.
+    function part(x, y) {
+      rest.forEach(function (c, i) {
+        var dx = x - c.x, dy = (y - c.y) * 0.8;   // the word is tall: ease off y
+        var d = Math.sqrt(dx * dx + dy * dy);
+        if (d > REACH) { nudge[i](0); return; }
+        var t = 1 - d / REACH;
+        var off = -Math.sign(dx) * t * t * (3 - 2 * t) * SHOVE;   // smooth falloff
+        // The word now touches both edges, so hold the outer letters inside the
+        // stage instead of letting them slide out of the frame.
+        nudge[i](Math.max(c.h - c.x, Math.min(stageBox.width - c.h - c.x, off)));
+      });
+    }
+    function home() { nudge.forEach(function (fn) { fn(0); }); }
+
+    // The plane stands in for the pointer, so the system cursor goes away.
+    document.documentElement.classList.add('fv-cursor');
+
+    // Short catch-up: enough to bank into a turn, tight enough to aim with.
+    var toX = gsap.quickTo(plane, 'x', { duration: 0.16, ease: 'power2.out' });
+    var toY = gsap.quickTo(plane, 'y', { duration: 0.16, ease: 'power2.out' });
+    var toR = gsap.quickTo(plane, 'rotation', { duration: 0.4, ease: 'power2.out' });
+
+    // quickTo drives one property; scale is a transform shorthand, so it gets a
+    // plain tween. Hover is rare enough that this costs nothing.
+    function grow(v) {
+      gsap.to(plane, { scale: v, duration: 0.15, ease: 'power2.out', overwrite: 'auto' });
+    }
+
+    var last = null, angle = 0, seen = false, shown = true, over = 0;
+
+    function fade(to, dur) {
+      gsap.to(plane, { opacity: to, duration: dur || 0.25, ease: 'power2.out', overwrite: 'auto' });
+    }
+
+    function hide() { if (!shown) return; shown = false; fade(0); home(); }
+    function show() { if (shown) return; shown = true; if (seen && !over) fade(1); }
+
+    window.addEventListener('pointermove', function (e) {
+      var x = e.clientX, y = e.clientY;
+
+      // A move over the page is proof the pointer is here. Scrolling and the
+      // hand-off to the Calendly iframe can both leave the counters stale, so
+      // this is what brings the plane back rather than an enter event.
+      if (!e.target || !e.target.closest || !e.target.closest(QUIET)) { over = 0; show(); }
+
+      if (!seen) {
+        seen = true;
+        gsap.set(plane, { x: x, y: y });
+        if (shown) fade(over ? 0 : 1, 0.3);
+      }
+
+      if (last) {
+        var dx = x - last.x, dy = y - last.y;
+        if (dx * dx + dy * dy > 9) {                 // ignore jitter
+          var want = Math.atan2(dy, dx) * 180 / Math.PI;
+          // Shortest way round, so the plane never spins the long way.
+          var delta = ((want - angle + 540) % 360) - 180;
+          angle += delta;
+          toR(angle);
+        }
+      }
+      last = { x: x, y: y };
+      toX(x);
+      toY(y);
+    }, { passive: true });
+
+    // The plane pushes the letters, not the pointer, so the gap opens where the
+    // nose is. Only while the plane is over the stage, and it lets go on the way
+    // out, so the wordmark is never left broken.
+    var wasInside = false;
+    gsap.ticker.add(function () {
+      if (!seen || !rest.length || !stageBox) return;
+      var x = gsap.getProperty(plane, 'x') - stageBox.left;
+      var y = gsap.getProperty(plane, 'y') - stageBox.top;
+      var inside = y > -REACH && y < stageBox.height + REACH;
+      if (inside) part(x, y);
+      else if (wasInside) home();
+      wasInside = inside;
+    });
+
+    // Over anything clickable the plane grows a little, the way a pointer turns
+    // into a hand. Over the booking block it leaves and the system cursor is back.
+    var GRAB = 'a,button,input,select,textarea';
+    var QUIET = '.booking,iframe';
+    document.addEventListener('pointerover', function (e) {
+      if (!e.target.closest) return;
+      if (e.target.closest(QUIET)) { over++; if (seen) fade(0); return; }
+      if (e.target.closest(GRAB)) { grow(1.25); }
+    });
+    document.addEventListener('pointerout', function (e) {
+      if (e.target.closest && e.target.closest(QUIET)) {
+        over = Math.max(0, over - 1);
+        if (!over && seen && shown) fade(1);
+      } else if (e.target.closest && e.target.closest(GRAB)) {
+        grow(1);
+      }
+    });
+
+    // Leaving the page takes the plane with it. A null relatedTarget on
+    // pointerout is not a reliable test for that — scrolling and iframes both
+    // produce one — so the departure is read off the document itself.
+    document.documentElement.addEventListener('pointerleave', hide);
+    window.addEventListener('blur', hide);
+  })();
+</script>
+
+</body>
+</html>
