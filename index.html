@@ -115,27 +115,11 @@
     to{opacity:1;transform:translateY(0)}
   }
 
-  /* capabilities — card grid, mirrors a projects grid: mostly even cards,
-     one wide feature card for the bio, like a portfolio's project list */
-  .cap-grid{
-    display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:minmax(0,auto);gap:20px;
-  }
-  .cap-grid .wide{grid-column:1 / -1}
-  .card{
-    background:var(--white);border:1px solid var(--paper-2);border-radius:var(--r-card);
-    padding:26px 28px;
-  }
-  .card h3{color:var(--ink)}
-  .card p{color:var(--ink-2);font-size:15.5px}
-  .card .label{margin-bottom:10px}
-  .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-  .tag{
-    background:var(--paper);border-radius:var(--r-chip);padding:6px 11px;
-    font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.05em;
-    text-transform:uppercase;color:var(--ink-2);
-  }
+  /* what I do — plain prose, no cards, no numbered steps */
+  .prose{max-width:66ch}
+  .prose p{font-size:18px;color:var(--ink-2)}
 
-  .bio-card{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap}
+  .bio{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap;margin-top:56px}
   .bio-photo{width:88px;height:88px;flex:none;border-radius:50%;object-fit:cover;
     background:var(--sand);box-shadow:0 0 0 1px var(--sand)}
   .bio-link{display:inline-flex;align-items:center;gap:7px;margin-top:6px;
@@ -145,23 +129,11 @@
   .bio-link svg{width:14px;height:14px;fill:currentColor}
   .bio-link:hover{color:var(--navy-3)}
 
-  /* track record — dark navy, accordion rows like an experience list */
+  /* proof — dark navy, one plain statement, no list */
   .track{background:var(--navy);color:var(--white)}
-  .track h2{color:var(--white)}
-  .acc{margin-top:36px;display:grid;gap:10px}
-  .acc-item{background:var(--navy-2);border-radius:var(--r-card);overflow:hidden}
-  .acc-item[open]{background:var(--navy-3)}
-  .acc-item summary{
-    list-style:none;cursor:pointer;padding:22px 26px;display:flex;align-items:center;gap:16px;
-    font-weight:700;font-size:17px;color:var(--white);
-  }
-  .acc-item summary::-webkit-details-marker{display:none}
-  .acc-item summary .chevron{margin-left:auto;flex:none;width:14px;height:14px;color:var(--yellow);
-    transition:transform 150ms ease}
-  .acc-item[open] summary .chevron{transform:rotate(90deg)}
-  .acc-item summary .sub{font-weight:500;color:#8891A8;font-size:14px}
-  .acc-body{padding:0 26px 24px;color:#C6CCDC;font-size:15.5px}
-  .acc-body .tag{background:rgba(255,255,255,.06);color:#C6CCDC}
+  .track .stat{font-size:clamp(32px,4.4vw,52px);font-weight:800;letter-spacing:-.03em;line-height:1.1}
+  .track .stat em{color:var(--yellow);font-style:normal}
+  .track p{color:#AEB6C9;font-size:18px;max-width:56ch;margin-top:20px}
 
   /* connect — light section, form-style CTA on the left, booking card on the right */
   .split{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}
@@ -184,14 +156,13 @@
     section{padding:64px 0}
     .hero .wrap{padding-bottom:96px}
     .split{grid-template-columns:1fr;gap:36px}
-    .cap-grid{grid-template-columns:1fr}
     .nav-links a:not(.btn){display:none}
     .foot-meta{margin-left:0;text-align:left}
   }
   @media (max-width:600px){
     .calendly-inline-widget{height:950px !important}
     .booking{padding:22px 14px 12px;border-radius:var(--r-card)}
-    .bio-card{flex-direction:column}
+    .bio{flex-direction:column}
   }
 </style>
 </head>
@@ -231,82 +202,37 @@
     </div>
   </section>
 
-  <!-- CAPABILITIES -->
+  <!-- WHAT I DO -->
   <section id="capabilities" style="background:var(--paper)">
     <div class="wrap">
-      <h2 style="margin-bottom:36px">Capabilities.</h2>
-      <div class="cap-grid">
-        <div class="card">
-          <p class="label">01 &middot; Discovery</p>
-          <h3>Two weeks on your floor.</h3>
-          <p>I map every repeated task: where documents come from, who retypes what.</p>
-        </div>
-        <div class="card">
-          <p class="label">02 &middot; Build</p>
-          <h3>What pays back fastest.</h3>
-          <p>A ranked, costed plan first. I build the two or three items that earn out quickest.</p>
-        </div>
-        <div class="card">
-          <p class="label">03 &middot; Handover</p>
-          <h3>Yours to run.</h3>
-          <p>Documentation your team can follow. You own the code and the accounts from day one.</p>
-        </div>
-        <div class="card">
-          <p class="label">04 &middot; Stack</p>
-          <h3>What I build with.</h3>
-          <p>n8n, LangGraph, OpenRouter, Pydantic AI, AWS Bedrock, Supabase.</p>
-        </div>
-        <div class="card wide bio-card">
-          <img class="bio-photo" src="ahmed-alvee.jpg"
-               srcset="ahmed-alvee.jpg 1x, ahmed-alvee@2x.jpg 2x"
-               width="88" height="88" alt="Ahmed Alvee" loading="lazy" decoding="async">
-          <div style="flex:1;min-width:240px">
-            <p class="label" style="margin-bottom:6px">Who you work with</p>
-            <h3 style="margin-bottom:6px">Ahmed Alvee</h3>
-            <a class="bio-link" href="https://www.linkedin.com/in/alveeahmed/" rel="me noopener" target="_blank">
-              LinkedIn
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"></path></svg>
-            </a>
-            <p style="margin-top:14px">Solutions architect, four years, healthcare data across five SE Asian markets. Now finishing an MBA at Rotterdam School of Management.</p>
-          </div>
+      <h2 style="margin-bottom:28px">What I do.</h2>
+      <div class="prose">
+        <p>Two weeks inside your business, sitting with the people who do the work, mapping where the hours actually go. You get a ranked, costed plan out of it. I build the parts that pay back fastest, then hand everything over &mdash; documentation included, code and accounts in your name.</p>
+        <p>I build with n8n, LangGraph, OpenRouter, Pydantic AI, AWS Bedrock and Supabase, chosen per job rather than sold as a package.</p>
+      </div>
+
+      <div class="bio">
+        <img class="bio-photo" src="ahmed-alvee.jpg"
+             srcset="ahmed-alvee.jpg 1x, ahmed-alvee@2x.jpg 2x"
+             width="88" height="88" alt="Ahmed Alvee" loading="lazy" decoding="async">
+        <div style="flex:1;min-width:240px">
+          <p class="label" style="margin-bottom:6px">Who you work with</p>
+          <h3 style="margin-bottom:6px">Ahmed Alvee</h3>
+          <a class="bio-link" href="https://www.linkedin.com/in/alveeahmed/" rel="me noopener" target="_blank">
+            LinkedIn
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"></path></svg>
+          </a>
+          <p style="margin-top:14px;max-width:56ch">Solutions architect, four years, healthcare data across five SE Asian markets. Now finishing an MBA at Rotterdam School of Management.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TRACK RECORD -->
+  <!-- PROOF -->
   <section class="track">
     <div class="wrap">
-      <h2>Track record.</h2>
-      <div class="acc">
-        <details class="acc-item" open>
-          <summary>
-            10.5 hrs back, per investee, per reporting cycle
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
-          </summary>
-          <div class="acc-body">
-            <p>Three working demos built on an impact investor&#8217;s own documents.</p>
-          </div>
-        </details>
-        <details class="acc-item">
-          <summary>
-            Two weeks, one fixed fee
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
-          </summary>
-          <div class="acc-body">
-            <p>Agreed before I start. No hourly clock, no surprise scope.</p>
-          </div>
-        </details>
-        <details class="acc-item">
-          <summary>
-            The plan is yours to keep
-            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
-          </summary>
-          <div class="acc-body">
-            <p>Even if we never build together. If we do, you own the code.</p>
-          </div>
-        </details>
-      </div>
+      <p class="stat"><em>10.5 hours</em> back per investee, per reporting cycle.</p>
+      <p>Three working demos, built on an impact investor&#8217;s own documents. Two weeks, one fixed fee, agreed before I start &mdash; and the plan is yours to keep either way.</p>
     </div>
   </section>
 
