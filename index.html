@@ -35,6 +35,8 @@
     --white:#FFFFFF;
     --tint:#FBEAE1;
     --paper:#F4F1EA;
+    --paper-2:#D8D2C6;
+    --paper-3:#9C9384;
     --sand:#E0D9CB;
     --r-chip:var(--radius-2);
     --r-card:var(--radius-3);
@@ -49,15 +51,15 @@
   a:focus-visible,.btn:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:var(--r-chip)}
   body{
     margin:0;
-    background:var(--paper);
-    color:var(--ink);
+    background:var(--ink);
+    color:var(--paper);
     font-family:'Bricolage Grotesque',system-ui,sans-serif;
     font-size:17px;
     line-height:1.6;
     font-weight:400;
     -webkit-font-smoothing:antialiased;
   }
-  a{color:var(--plum);text-decoration:none}
+  a{color:var(--signal);text-decoration:none}
   a:hover{text-decoration:underline}
 
   .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
@@ -71,19 +73,19 @@
   h1{font-size:clamp(40px,6.4vw,72px);line-height:.9;letter-spacing:-.045em}
   h2{font-size:clamp(30px,3.6vw,48px);line-height:1.05;letter-spacing:-.03em;font-weight:700}
   h3{font-size:clamp(20px,2.2vw,30px);line-height:1.15;letter-spacing:-.02em;font-weight:700}
-  .lead{font-size:21px;line-height:1.5;color:var(--ink-2)}
+  .lead{font-size:21px;line-height:1.5;color:var(--paper-2)}
   p{margin:0 0 18px}
-  .muted{color:var(--muted)}
+  .muted{color:var(--paper-2)}
 
-  /* nav */
-  header{position:sticky;top:0;z-index:20;background:var(--paper)}
+  /* nav — matches the page: ink, not a light bar over a dark hero */
+  header{position:sticky;top:0;z-index:20;background:var(--ink)}
   .nav{display:flex;align-items:center;gap:28px;height:76px}
-  .mark{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none}
+  .mark{display:flex;align-items:center;gap:10px;color:var(--paper);text-decoration:none}
   .mark:hover{text-decoration:none}
   .mark span{font-weight:800;font-size:24px;letter-spacing:-.045em}
   .nav-links{margin-left:auto;display:flex;align-items:center;gap:26px}
-  .nav-links a:not(.btn){color:var(--ink-2);font-weight:500;font-size:15px;transition:color 150ms ease}
-  .nav-links a:not(.btn):hover{color:var(--signal-deep);text-decoration:none}
+  .nav-links a:not(.btn){color:var(--paper-2);font-weight:500;font-size:15px;transition:color 150ms ease}
+  .nav-links a:not(.btn):hover{color:var(--signal);text-decoration:none}
 
   .btn{
     display:inline-flex;align-items:center;gap:10px;
@@ -101,9 +103,10 @@
   .hero{position:relative}
   .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:start}
   .hero-side{display:grid;gap:24px;align-content:start}
-  .hero-word{margin:0 0 8px}
-  .hero-h{font-size:clamp(40px,6.4vw,72px);line-height:.9;letter-spacing:-.045em;font-weight:800;margin:0 0 24px}
+  .hero-word{margin:0 0 8px;color:var(--white)}
+  .hero-h{font-size:clamp(40px,6.4vw,72px);line-height:.9;letter-spacing:-.045em;font-weight:800;margin:0 0 24px;color:var(--white)}
   .hero .lead{max-width:46ch}
+  .hero-copy>.label{color:var(--paper-3)}
   /* One entrance, once, on first paint. Static for anyone who asked for
      stillness — no script needed either way. */
   @media (prefers-reduced-motion: no-preference){
@@ -114,49 +117,18 @@
     to{opacity:1;transform:translateY(0)}
   }
 
-  /* capabilities — a card grid, not a bulleted list. Icon data from Simple
-     Icons (CC0), unmodified and set in each project's own brand colour. The
-     names and marks are trademarks of their owners, shown to say what the
-     work is built with, not as endorsements. AWS Bedrock is named in text
-     with a neutral glyph: AWS permits fair-use naming in plain text but not
-     third-party use of its logos. */
+  /* capabilities — named in text, no logos: a light card on the dark hero,
+     same pattern as .bio and .booking below it. */
   .stack{margin:0;padding:24px 24px;background:var(--white);border-radius:var(--r-card)}
   .stack figcaption{margin-bottom:8px}
-  .cap-grid{list-style:none;margin:0;padding:0;
-    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--size-3)}
-  .cap-card{
-    background:var(--paper);border:1px solid var(--sand);border-radius:var(--r-card);
-    padding:var(--size-4);display:grid;gap:var(--size-2);align-content:start;
-  }
-  /* Ink chips, not white ones: the pale marks are unreadable on white, and six
-     lifted tiles is the template pattern the guide disowns. On ink every brand
-     colour clears the 3:1 floor for graphics. */
-  .stack-mark{width:28px;height:28px;display:grid;place-items:center;
-    background:var(--ink);border-radius:var(--r-chip)}
-  .stack-mark svg{width:16px;height:16px;fill:currentColor}
-  /* Simple Icons normalise to a box, not to optical weight: the n8n strip is
-     wide and thin, the Supabase bolt nearly fills its box. Render size only. */
-  .stack-mark.m-n8n svg{width:19px;height:19px}
-  .stack-mark.m-supabase svg{width:15px;height:15px}
-  .stack-mark.m-n8n{color:#EA4B71}
-  .stack-mark.m-langgraph{color:#7FC8FF}
-  .stack-mark.m-openrouter{color:#94A3B8}
-  .stack-mark.m-pydantic{color:#E92063}
-  .stack-mark.m-supabase{color:#3FCF8E}
-  .stack-mark.m-bedrock{color:var(--sand)}
-  .cap-card b{font-size:15px;font-weight:700;letter-spacing:-.01em}
-  .cap-card span{
-    font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;
-    text-transform:uppercase;color:var(--muted);
-  }
-  .stack-note{margin:14px 0 0;font-size:11px;color:var(--muted);line-height:1.5}
+  .stack p{margin:0;font-size:16px;color:var(--ink-2)}
 
   /* proof strip, inside the one content section — one stat, not three matching tiles */
-  .proof-strip{margin-top:60px;padding-top:34px;box-shadow:inset 0 1px 0 var(--sand)}
+  .proof-strip{margin-top:60px;padding-top:34px;box-shadow:inset 0 1px 0 var(--ink-2)}
   .proof-grid{display:flex;align-items:baseline;gap:24px;flex-wrap:wrap}
-  .stat .n{font-size:56px;font-weight:800;letter-spacing:-.03em;line-height:1}
+  .stat .n{font-size:56px;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--white)}
   .stat .k{
-    font-size:17px;color:var(--ink-2);max-width:52ch;line-height:1.5;
+    font-size:17px;color:var(--paper-2);max-width:52ch;line-height:1.5;
   }
 
   .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
@@ -171,7 +143,7 @@
      is the only thing the page has to do. */
   .bio-photo{width:96px;height:96px;flex:none;border-radius:50%;object-fit:cover;
     background:var(--sand);box-shadow:0 0 0 1px var(--sand)}
-  .bio-head h3{margin:0}
+  .bio-head h3{margin:0;color:var(--ink)}
   .bio-link{display:inline-flex;align-items:center;gap:7px;margin-top:6px;
     font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.06em;
     text-transform:uppercase;color:var(--muted);text-decoration:none;
@@ -193,14 +165,10 @@
   .booking .calendly-inline-widget{border-radius:var(--r-card);overflow:hidden}
   .booking .calendly-inline-widget iframe{border-radius:var(--r-card)}
 
-  /* book — the one dark plate on the page */
-  #book{background:var(--ink);color:#D8D2C6}
-  #book .label{color:#9C9384}
   #book h2{color:var(--white)}
-  #book .lead{color:#D8D2C6}
   #book .btn-quiet{background:var(--tint);color:var(--ink)}
 
-  footer{background:var(--ink);color:#B9B1A3;padding:48px 0 40px;font-size:15px}
+  footer{background:var(--ink);color:#B9B1A3;padding:48px 0 40px;font-size:15px;box-shadow:inset 0 1px 0 var(--ink-2)}
   .foot{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start}
   .foot a{color:#E0D9CB}
   .foot .mark span{color:var(--white)}
@@ -249,10 +217,8 @@
         <h1 class="hero-word" aria-label="fravalu">fravalu</h1>
         <p class="label">AI and workflow automation for SMEs</p>
         <h2 class="hero-h">Find the hours your&nbsp;team keeps losing.</h2>
-        <p class="lead">I spend two weeks inside your business and sit with the people doing the work. You get a ranked, costed plan for the tasks worth automating, and I build the top of the list.</p>
-
-        <p>I work alongside your team and put hours against every repeated task: where documents come from, who retypes what, which spreadsheet gets reconciled every Friday.</p>
-        <p>We go through the map side by side and agree what to build first and what already works well as it is. Every line comes costed. I build the two or three that pay back fastest, then hand them over with documentation your team can run. You own the code and the accounts it runs in.</p>
+        <p class="lead">I spend two weeks inside your business, sitting with the people who do the work.</p>
+        <p>Together we map every repeated task and put hours against it: where documents come from, who retypes what, which spreadsheet gets reconciled every Friday. You get a ranked, costed plan. I build the two or three items that pay back fastest, then hand them over with documentation your team can run. You own the code and the accounts it runs in.</p>
 
         <div class="terms">
           <p>Two weeks. One fixed fee, agreed before I start. The plan is yours to keep.</p>
@@ -267,34 +233,7 @@
       <div class="hero-side">
         <figure class="stack">
           <figcaption class="label">What I build with</figcaption>
-          <ul class="cap-grid">
-          <li class="cap-card">
-            <span class="stack-mark m-n8n"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.4737 5.6842c-1.1772 0-2.1663.8051-2.4468 1.8947h-2.8955c-1.235 0-2.289.893-2.492 2.111l-.1038.623a1.263 1.263 0 0 1-1.246 1.0555H11.289c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947s-2.1663.8051-2.4467 1.8947H4.973c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947C1.1311 9.4737 0 10.6047 0 12s1.131 2.5263 2.5263 2.5263c1.1772 0 2.1663-.8051 2.4468-1.8947h1.4223c.2804 1.0896 1.2696 1.8947 2.4467 1.8947 1.1772 0 2.1663-.8051 2.4468-1.8947h1.0008a1.263 1.263 0 0 1 1.2459 1.0555l.1038.623c.203 1.218 1.257 2.111 2.492 2.111h.3692c.2804 1.0895 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263c-1.1772 0-2.1664.805-2.4468 1.8947h-.3692a1.263 1.263 0 0 1-1.246-1.0555l-.1037-.623A2.52 2.52 0 0 0 13.9607 12a2.52 2.52 0 0 0 .821-1.4794l.1038-.623a1.263 1.263 0 0 1 1.2459-1.0555h2.8955c.2805 1.0896 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263m0 1.2632a1.263 1.263 0 0 1 1.2631 1.2631 1.263 1.263 0 0 1-1.2631 1.2632 1.263 1.263 0 0 1-1.2632-1.2632 1.263 1.263 0 0 1 1.2632-1.2631M2.5263 10.7368A1.263 1.263 0 0 1 3.7895 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 1.2632 12a1.263 1.263 0 0 1 1.2631-1.2632m6.3158 0A1.263 1.263 0 0 1 10.1053 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 7.579 12a1.263 1.263 0 0 1 1.2632-1.2632m10.1053 3.7895a1.263 1.263 0 0 1 1.2631 1.2632 1.263 1.263 0 0 1-1.2631 1.2631 1.263 1.263 0 0 1-1.2632-1.2631 1.263 1.263 0 0 1 1.2632-1.2632"></path></svg></span>
-            <b>n8n</b><span>Workflow glue</span>
-          </li>
-          <li class="cap-card">
-            <span class="stack-mark m-langgraph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19H10A5 5 0 115 14ZM19 14A5 5 0 1114 19H19ZM10 5A5 5 0 105 10V5ZM19 5V10A5 5 0 1014 5Z"></path></svg></span>
-            <b>LangGraph</b><span>Agent graphs</span>
-          </li>
-          <li class="cap-card">
-            <span class="stack-mark m-openrouter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.778 1.844v1.919q-.569-.026-1.138-.032-.708-.008-1.415.037c-1.93.126-4.023.728-6.149 2.237-2.911 2.066-2.731 1.95-4.14 2.75-.396.223-1.342.574-2.185.798-.841.225-1.753.333-1.751.333v4.229s.768.108 1.61.333c.842.224 1.789.575 2.185.799 1.41.798 1.228.683 4.14 2.75 2.126 1.509 4.22 2.11 6.148 2.236.88.058 1.716.041 2.555.005v1.918l7.222-4.168-7.222-4.17v2.176c-.86.038-1.611.065-2.278.021-1.364-.09-2.417-.357-3.979-1.465-2.244-1.593-2.866-2.027-3.68-2.508.889-.518 1.449-.906 3.822-2.59 1.56-1.109 2.614-1.377 3.978-1.466.667-.044 1.418-.017 2.278.02v2.176L24 6.014Z"></path></svg></span>
-            <b>OpenRouter</b><span>Model routing</span>
-          </li>
-          <li class="cap-card">
-            <span class="stack-mark m-pydantic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m23.826 17.316-4.23-5.866-6.847-9.496c-.348-.48-1.151-.48-1.497 0l-6.845 9.494-4.233 5.868a.925.925 0 0 0 .46 1.417l11.078 3.626h.002a.92.92 0 0 0 .572 0h.002l11.077-3.626c.28-.092.5-.31.59-.592a.916.916 0 0 0-.13-.825h.002ZM12.001 4.07l4.44 6.158-4.152-1.36c-.032-.01-.066-.008-.098-.016a.8.8 0 0 0-.096-.016c-.032-.004-.062-.016-.094-.016s-.062.012-.094.016a.74.74 0 0 0-.096.016c-.032.006-.066.006-.096.016L7.59 10.221l-.026.008 4.44-6.158h-.002Zm-6.273 8.7 4.834-1.583.516-.168v9.19L2.41 17.372l3.317-4.6Zm7.197 7.437V11.02l5.35 1.752 3.316 4.598-8.666 2.838Z"></path></svg></span>
-            <b>Pydantic AI</b><span>Typed outputs</span>
-          </li>
-          <li class="cap-card">
-            <span class="stack-mark m-bedrock"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 22 7l-10 5L2 7zm0 8.2 7.7-3.85L22 12l-10 5L2 12l2.3-1.65zm0 5.5 7.7-3.85L22 17l-10 5L2 17l2.3-1.65z"></path></svg></span>
-            <b>AWS Bedrock</b><span>Managed models</span>
-          </li>
-          <li class="cap-card">
-            <span class="stack-mark m-supabase"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z"></path></svg></span>
-            <b>Supabase</b><span>Postgres and auth</span>
-          </li>
-          </ul>
-          <p class="stack-note">Product names and marks are trademarks of their owners,
-            shown here for identification only.</p>
+          <p>n8n, LangGraph, OpenRouter, Pydantic AI, AWS Bedrock, Supabase.</p>
         </figure>
 
         <div class="bio">
@@ -337,7 +276,7 @@
         <h2>Tell me where your Friday afternoon goes.</h2>
       </div>
       <div>
-        <p class="lead" style="max-width:44ch">You leave with my read on where your hours are going and what the two weeks would look like on your floor.</p>
+        <p class="lead" style="max-width:44ch">You leave with my read on where your hours go, and what the two weeks would look like on your floor.</p>
         <div class="cta-row">
           <a class="btn btn-quiet" href="mailto:contact@fra-valu.com">contact@fra-valu.com</a>
         </div>
