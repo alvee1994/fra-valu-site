@@ -15,8 +15,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg transform='rotate(-18 50 50)'%3E%3Cpolygon points='97,50 6,10 6,42 64,50 6,58 6,90' fill='%23F0562D'/%3E%3Cpolygon points='97,50 6,58 6,90' fill='%23C13E1D'/%3E%3C/g%3E%3C/svg%3E">
+<!-- Open Props: vendored locally (no build step here), same reasoning as the
+     old gsap.min.js used to get — a CDN copy is one more thing a content
+     blocker can drop. Normalize first, then the token set. -->
+<link rel="stylesheet" href="open-props.normalize.min.css">
+<link rel="stylesheet" href="open-props.min.css">
 <style>
   :root{
+    /* Brand palette — Open Props supplies the scale (size, radius, shadow,
+       ease); it has no idea what Fravalu's colours are, so those stay here
+       as the one override layer, per the brand guide. */
     --ink:#14110D;
     --ink-2:#3A342C;
     --muted:#6B6357;
@@ -28,9 +36,9 @@
     --tint:#FBEAE1;
     --paper:#F4F1EA;
     --sand:#E0D9CB;
-    --r-chip:8px;
-    --r-card:16px;
-    --shadow-raised:0 10px 24px -14px rgba(20,17,13,0.28);
+    --r-chip:var(--radius-2);
+    --r-card:var(--radius-3);
+    --shadow-raised:var(--shadow-3);
     --max:1320px;
   }
 
@@ -89,59 +97,37 @@
   .btn-quiet:hover{background:#F6E7DF;text-decoration:none}
   .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;align-items:center}
 
-  /* stage — the name and the plane. Nothing to read, nothing to click. */
-  .stage{position:relative;overflow:hidden;padding:0;min-height:70vh;display:grid;background:var(--white)}
-  .stage-inner{position:relative;display:grid;place-items:center;min-height:70vh;width:100%}
-  /* The name takes three quarters of the width: full bleed left the plane
-     looking like a speck against it. 19.5vw gets the seven letters close on
-     their own; the script then measures and lands it exactly. */
-  .stage-title{
-    position:relative;z-index:2;display:inline-block;margin:0;white-space:nowrap;
-    font-size:19.5vw;line-height:.82;letter-spacing:-.05em;font-weight:800;
-  }
-  .stage-title span{display:inline-block;will-change:transform}
-  .stage-cue{
-    position:absolute;bottom:34px;left:28px;z-index:2;
-    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--muted);
-  }
-  .stage-cue:hover{text-decoration:none;color:var(--signal-deep)}
-
-  /* The plane follows the cursor across the whole page. Fixed and click-through,
-     so the real cursor keeps doing the work of clicking, typing and selecting. */
-  .plane{
-    position:fixed;top:0;left:0;z-index:999;width:44px;height:44px;
-    pointer-events:none;opacity:0;
-  }
-  .plane.parked{position:absolute;z-index:3;opacity:1}
-  /* The plane is the cursor. Class comes from script, so no-JS keeps the arrow.
-     The booking block hands the system cursor back: it is a cross-origin iframe,
-     and the visitor needs a real pointer and I-beam to fill the form in. */
-  .fv-cursor,.fv-cursor *{cursor:none}
-  .fv-cursor .booking,.fv-cursor .booking *{cursor:auto}
-  @keyframes fvGlide{
-    from{transform:translate(-50%,-50%) translateY(0) rotate(0deg)}
-    to{transform:translate(-50%,-50%) translateY(-10px) rotate(3deg)}
-  }
-  .plane.drift{animation:fvGlide 3s ease-in-out infinite alternate}
-
-  /* intro — the copy, below the stage */
+  /* hero — the wordmark, the offer, the proof. One section, one read. */
   .hero{position:relative}
   .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:start}
   .hero-side{display:grid;gap:24px;align-content:start}
+  .hero-word{margin:0 0 8px}
   .hero-h{font-size:clamp(40px,6.4vw,72px);line-height:.9;letter-spacing:-.045em;font-weight:800;margin:0 0 24px}
   .hero .lead{max-width:46ch}
-  /* the stack. Icon data from Simple Icons (CC0), unmodified and set in each
-     project's own brand colour. The names and marks are trademarks of their
-     owners, shown to say what the work is built with, not as endorsements.
-     AWS Bedrock is named in text with a neutral glyph: AWS permits fair-use
-     naming in plain text but not third-party use of its logos. */
-  .stack{margin:0;padding:24px 24px 16px;background:var(--white);border-radius:var(--r-card)}
+  /* One entrance, once, on first paint. Static for anyone who asked for
+     stillness — no script needed either way. */
+  @media (prefers-reduced-motion: no-preference){
+    .hero-enter{animation:heroIn .5s var(--ease-3) both}
+  }
+  @keyframes heroIn{
+    from{opacity:0;transform:translateY(12px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+
+  /* capabilities — a card grid, not a bulleted list. Icon data from Simple
+     Icons (CC0), unmodified and set in each project's own brand colour. The
+     names and marks are trademarks of their owners, shown to say what the
+     work is built with, not as endorsements. AWS Bedrock is named in text
+     with a neutral glyph: AWS permits fair-use naming in plain text but not
+     third-party use of its logos. */
+  .stack{margin:0;padding:24px 24px;background:var(--white);border-radius:var(--r-card)}
   .stack figcaption{margin-bottom:8px}
-  .stack-list{list-style:none;margin:0;padding:0}
-  .stack-list li{display:grid;grid-template-columns:28px 1fr auto;align-items:center;
-    gap:12px;padding:8px 0}
-  .stack-list li + li{box-shadow:inset 0 1px 0 var(--sand)}
+  .cap-grid{list-style:none;margin:0;padding:0;
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--size-3)}
+  .cap-card{
+    background:var(--paper);border:1px solid var(--sand);border-radius:var(--r-card);
+    padding:var(--size-4);display:grid;gap:var(--size-2);align-content:start;
+  }
   /* Ink chips, not white ones: the pale marks are unreadable on white, and six
      lifted tiles is the template pattern the guide disowns. On ink every brand
      colour clears the 3:1 floor for graphics. */
@@ -158,10 +144,10 @@
   .stack-mark.m-pydantic{color:#E92063}
   .stack-mark.m-supabase{color:#3FCF8E}
   .stack-mark.m-bedrock{color:var(--sand)}
-  .stack-list b{font-size:15px;font-weight:700;letter-spacing:-.01em}
-  .stack-list span{
+  .cap-card b{font-size:15px;font-weight:700;letter-spacing:-.01em}
+  .cap-card span{
     font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;
-    text-transform:uppercase;color:var(--muted);text-align:right;
+    text-transform:uppercase;color:var(--muted);
   }
   .stack-note{margin:14px 0 0;font-size:11px;color:var(--muted);line-height:1.5}
 
@@ -175,15 +161,6 @@
 
   .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
 
-  /* steps */
-  .step{display:grid;grid-template-columns:96px 1fr;gap:24px;padding:24px 0}
-  .step + .step{box-shadow:inset 0 1px 0 var(--sand)}
-  .step .num{
-    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;
-    color:var(--muted);padding-top:6px;
-  }
-  .step h3{margin-bottom:6px;font-size:21px}
-  .step p{margin:0;color:var(--muted);font-size:16px;max-width:62ch}
   .terms{margin-top:28px;background:var(--tint);border-radius:var(--r-card);padding:20px 24px}
   .terms p{margin:0;font-size:16px;color:var(--ink-2)}
 
@@ -236,13 +213,9 @@
     .nav-links a:not(.btn){display:none}
     .foot-meta{margin-left:0;text-align:left}
   }
-  @media (hover:none){
-    .stage,.stage-inner{min-height:50vh}
-  }
   @media (max-width:600px){
     .calendly-inline-widget{height:950px !important}
     .proof-grid{grid-template-columns:1fr}
-    .step{grid-template-columns:1fr;gap:6px}
     .booking{padding:22px 14px 12px;border-radius:var(--r-card)}
   }
 </style>
@@ -269,43 +242,17 @@
 
 <main id="top">
 
-  <!-- 1 — STAGE. The name at full width, and the plane. -->
-  <section class="stage">
-    <div class="stage-inner">
-      <h1 class="stage-title" aria-label="fravalu">fravalu</h1>
-      <a class="stage-cue" href="#intro">What I do &#8595;</a>
-    </div>
-  </section>
-
-  <!-- 2 — WHAT I DO. One section: the offer, the steps, the proof. -->
+  <!-- WHAT I DO. One section: the wordmark, the offer, the read, the proof. -->
   <section class="hero" id="intro">
     <div class="wrap hero-grid">
-      <div class="hero-copy">
+      <div class="hero-copy hero-enter">
+        <h1 class="hero-word" aria-label="fravalu">fravalu</h1>
         <p class="label">AI and workflow automation for SMEs</p>
         <h2 class="hero-h">Find the hours your&nbsp;team keeps losing.</h2>
         <p class="lead">I spend two weeks inside your business and sit with the people doing the work. You get a ranked, costed plan for the tasks worth automating, and I build the top of the list.</p>
 
-        <div class="step">
-          <div class="num">Week 01</div>
-          <div>
-            <h3>Map the work</h3>
-            <p>I work alongside your team and put hours against every repeated task: where documents come from, who retypes what, which spreadsheet gets reconciled every Friday.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="num">Week 02</div>
-          <div>
-            <h3>Rank it together</h3>
-            <p>We go through the map side by side and agree what to build first and what already works well as it is. Every line comes costed.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="num">After</div>
-          <div>
-            <h3>Build what pays back</h3>
-            <p>I build the two or three that pay back fastest, then hand them over with documentation your team can run. You own the code and the accounts it runs in.</p>
-          </div>
-        </div>
+        <p>I work alongside your team and put hours against every repeated task: where documents come from, who retypes what, which spreadsheet gets reconciled every Friday.</p>
+        <p>We go through the map side by side and agree what to build first and what already works well as it is. Every line comes costed. I build the two or three that pay back fastest, then hand them over with documentation your team can run. You own the code and the accounts it runs in.</p>
 
         <div class="terms">
           <p>Two weeks. One fixed fee, agreed before I start. The plan is yours to keep.</p>
@@ -320,28 +267,28 @@
       <div class="hero-side">
         <figure class="stack">
           <figcaption class="label">What I build with</figcaption>
-          <ul class="stack-list">
-          <li>
+          <ul class="cap-grid">
+          <li class="cap-card">
             <span class="stack-mark m-n8n"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.4737 5.6842c-1.1772 0-2.1663.8051-2.4468 1.8947h-2.8955c-1.235 0-2.289.893-2.492 2.111l-.1038.623a1.263 1.263 0 0 1-1.246 1.0555H11.289c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947s-2.1663.8051-2.4467 1.8947H4.973c-.2805-1.0896-1.2696-1.8947-2.4468-1.8947C1.1311 9.4737 0 10.6047 0 12s1.131 2.5263 2.5263 2.5263c1.1772 0 2.1663-.8051 2.4468-1.8947h1.4223c.2804 1.0896 1.2696 1.8947 2.4467 1.8947 1.1772 0 2.1663-.8051 2.4468-1.8947h1.0008a1.263 1.263 0 0 1 1.2459 1.0555l.1038.623c.203 1.218 1.257 2.111 2.492 2.111h.3692c.2804 1.0895 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263c-1.1772 0-2.1664.805-2.4468 1.8947h-.3692a1.263 1.263 0 0 1-1.246-1.0555l-.1037-.623A2.52 2.52 0 0 0 13.9607 12a2.52 2.52 0 0 0 .821-1.4794l.1038-.623a1.263 1.263 0 0 1 1.2459-1.0555h2.8955c.2805 1.0896 1.2696 1.8947 2.4468 1.8947 1.3952 0 2.5263-1.131 2.5263-2.5263s-1.131-2.5263-2.5263-2.5263m0 1.2632a1.263 1.263 0 0 1 1.2631 1.2631 1.263 1.263 0 0 1-1.2631 1.2632 1.263 1.263 0 0 1-1.2632-1.2632 1.263 1.263 0 0 1 1.2632-1.2631M2.5263 10.7368A1.263 1.263 0 0 1 3.7895 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 1.2632 12a1.263 1.263 0 0 1 1.2631-1.2632m6.3158 0A1.263 1.263 0 0 1 10.1053 12a1.263 1.263 0 0 1-1.2632 1.2632A1.263 1.263 0 0 1 7.579 12a1.263 1.263 0 0 1 1.2632-1.2632m10.1053 3.7895a1.263 1.263 0 0 1 1.2631 1.2632 1.263 1.263 0 0 1-1.2631 1.2631 1.263 1.263 0 0 1-1.2632-1.2631 1.263 1.263 0 0 1 1.2632-1.2632"></path></svg></span>
             <b>n8n</b><span>Workflow glue</span>
           </li>
-          <li>
+          <li class="cap-card">
             <span class="stack-mark m-langgraph"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19H10A5 5 0 115 14ZM19 14A5 5 0 1114 19H19ZM10 5A5 5 0 105 10V5ZM19 5V10A5 5 0 1014 5Z"></path></svg></span>
             <b>LangGraph</b><span>Agent graphs</span>
           </li>
-          <li>
+          <li class="cap-card">
             <span class="stack-mark m-openrouter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.778 1.844v1.919q-.569-.026-1.138-.032-.708-.008-1.415.037c-1.93.126-4.023.728-6.149 2.237-2.911 2.066-2.731 1.95-4.14 2.75-.396.223-1.342.574-2.185.798-.841.225-1.753.333-1.751.333v4.229s.768.108 1.61.333c.842.224 1.789.575 2.185.799 1.41.798 1.228.683 4.14 2.75 2.126 1.509 4.22 2.11 6.148 2.236.88.058 1.716.041 2.555.005v1.918l7.222-4.168-7.222-4.17v2.176c-.86.038-1.611.065-2.278.021-1.364-.09-2.417-.357-3.979-1.465-2.244-1.593-2.866-2.027-3.68-2.508.889-.518 1.449-.906 3.822-2.59 1.56-1.109 2.614-1.377 3.978-1.466.667-.044 1.418-.017 2.278.02v2.176L24 6.014Z"></path></svg></span>
             <b>OpenRouter</b><span>Model routing</span>
           </li>
-          <li>
+          <li class="cap-card">
             <span class="stack-mark m-pydantic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m23.826 17.316-4.23-5.866-6.847-9.496c-.348-.48-1.151-.48-1.497 0l-6.845 9.494-4.233 5.868a.925.925 0 0 0 .46 1.417l11.078 3.626h.002a.92.92 0 0 0 .572 0h.002l11.077-3.626c.28-.092.5-.31.59-.592a.916.916 0 0 0-.13-.825h.002ZM12.001 4.07l4.44 6.158-4.152-1.36c-.032-.01-.066-.008-.098-.016a.8.8 0 0 0-.096-.016c-.032-.004-.062-.016-.094-.016s-.062.012-.094.016a.74.74 0 0 0-.096.016c-.032.006-.066.006-.096.016L7.59 10.221l-.026.008 4.44-6.158h-.002Zm-6.273 8.7 4.834-1.583.516-.168v9.19L2.41 17.372l3.317-4.6Zm7.197 7.437V11.02l5.35 1.752 3.316 4.598-8.666 2.838Z"></path></svg></span>
             <b>Pydantic AI</b><span>Typed outputs</span>
           </li>
-          <li>
+          <li class="cap-card">
             <span class="stack-mark m-bedrock"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 22 7l-10 5L2 7zm0 8.2 7.7-3.85L22 12l-10 5L2 12l2.3-1.65zm0 5.5 7.7-3.85L22 17l-10 5L2 17l2.3-1.65z"></path></svg></span>
             <b>AWS Bedrock</b><span>Managed models</span>
           </li>
-          <li>
+          <li class="cap-card">
             <span class="stack-mark m-supabase"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z"></path></svg></span>
             <b>Supabase</b><span>Postgres and auth</span>
           </li>
@@ -383,7 +330,7 @@
     </div>
   </section>
 
-  <!-- 4 — BOOK -->
+  <!-- BOOK -->
   <section id="book">
     <div class="wrap split">
       <div>
@@ -437,206 +384,6 @@
     </div>
   </div>
 </footer>
-
-<svg class="plane" viewBox="0 0 100 100" aria-hidden="true">
-  <polygon points="97,50 6,10 6,42 64,50 6,58 6,90" fill="#F0562D"></polygon>
-  <polygon points="97,50 6,58 6,90" fill="#C13E1D"></polygon>
-</svg>
-
-<!-- GSAP 3.13.0, served from this origin. A CDN copy gets blocked by content
-     blockers often enough to leave visitors with no cursor at all, and this is
-     the only script the page loads. Standard licence, header kept intact. -->
-<script src="gsap.min.js"></script>
-<script>
-  // Motion budget: the plane trails the cursor across the page, and the wordmark
-  // gives way as it passes. Nothing else moves, bar the 150ms hovers in CSS.
-  (function () {
-    var plane = document.querySelector('.plane');
-    var stage = document.querySelector('.stage');
-    var title = stage && stage.querySelector('.stage-title');
-
-    // The name runs the full width of the stage. Measure it at a known size and
-    // scale from there, so it lands on both edges whatever the viewport is and
-    // whatever the webfont does to the metrics once it arrives.
-    var FILL = 0.75;   // of the stage width: full bleed dwarfed the plane
-    function fit() {
-      if (!title || !stage) return;
-      title.style.fontSize = '200px';
-      var w = title.getBoundingClientRect().width;
-      if (w) title.style.fontSize = (200 * stage.clientWidth * FILL / w) + 'px';
-    }
-    // A new width means a new fitted size, and the resting centres move with it.
-    function refit() { fit(); if (rest && rest.length) measure(); }
-
-    fit();
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(refit);
-
-    if (!plane) { window.addEventListener('resize', refit); return; }
-
-    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var fine = window.matchMedia('(hover:hover)').matches;
-
-    // Park the plane over the map: a slow glide when motion is welcome, still
-    // when it is not. This is where the plane ends up whenever it cannot follow
-    // a cursor, so it is never left hidden.
-    function park(still) {
-      if (!stage) return;
-      stage.querySelector('.stage-inner').appendChild(plane);
-      plane.classList.add('parked');
-      plane.style.left = '50%';
-      plane.style.top = '26%';
-      if (window.gsap) gsap.set(plane, { clearProps: 'transform' });
-      if (still) plane.style.transform = 'translate(-50%,-50%)';
-      else plane.classList.add('drift');
-    }
-
-    // No GSAP means no follower, so show the parked plane rather than nothing.
-    if (!window.gsap) { park(reduced); window.addEventListener('resize', refit); return; }
-
-    gsap.set(plane, { xPercent: -50, yPercent: -50, transformOrigin: '50% 50%' });
-
-    // No cursor to follow, or the visitor asked for stillness.
-    if (!fine || reduced) { park(reduced); window.addEventListener('resize', refit); return; }
-
-    // Split the name into letters so the plane can push them apart. The h1 keeps
-    // its aria-label, so what is read out stays one word.
-    var letters = [], nudge = [], rest = [];
-    if (title) {
-      title.innerHTML = title.textContent.replace(/\S/g, function (ch) {
-        return '<span aria-hidden="true">' + ch + '</span>';
-      });
-      letters = Array.prototype.slice.call(title.children);
-      nudge = letters.map(function (el) {
-        return gsap.quickTo(el, 'x', { duration: 0.45, ease: 'power3.out' });
-      });
-    }
-
-    var REACH = 300;   // px of influence around the plane
-    var SHOVE = 46;    // px a letter gives way at most
-    var stageBox = null;
-
-    // Resting centres, in stage coordinates, measured with the letters home.
-    function measure() {
-      if (!stage) return;
-      stageBox = stage.getBoundingClientRect();
-      letters.forEach(function (el) { gsap.killTweensOf(el); gsap.set(el, { x: 0 }); });
-      rest = letters.map(function (el) {
-        var b = el.getBoundingClientRect();
-        return { x: b.left - stageBox.left + b.width / 2, y: b.top - stageBox.top + b.height / 2,
-                 h: b.width / 2 };
-      });
-    }
-    function reframe() { if (stage) stageBox = stage.getBoundingClientRect(); }
-    measure();
-    window.addEventListener('resize', refit);
-    window.addEventListener('scroll', reframe, { passive: true });
-
-    // Letters give way as the plane crosses the word: fra valu, fraval u.
-    function part(x, y) {
-      rest.forEach(function (c, i) {
-        var dx = x - c.x, dy = (y - c.y) * 0.8;   // the word is tall: ease off y
-        var d = Math.sqrt(dx * dx + dy * dy);
-        if (d > REACH) { nudge[i](0); return; }
-        var t = 1 - d / REACH;
-        var off = -Math.sign(dx) * t * t * (3 - 2 * t) * SHOVE;   // smooth falloff
-        // The word now touches both edges, so hold the outer letters inside the
-        // stage instead of letting them slide out of the frame.
-        nudge[i](Math.max(c.h - c.x, Math.min(stageBox.width - c.h - c.x, off)));
-      });
-    }
-    function home() { nudge.forEach(function (fn) { fn(0); }); }
-
-    // The plane stands in for the pointer, so the system cursor goes away.
-    document.documentElement.classList.add('fv-cursor');
-
-    // Short catch-up: enough to bank into a turn, tight enough to aim with.
-    var toX = gsap.quickTo(plane, 'x', { duration: 0.16, ease: 'power2.out' });
-    var toY = gsap.quickTo(plane, 'y', { duration: 0.16, ease: 'power2.out' });
-    var toR = gsap.quickTo(plane, 'rotation', { duration: 0.4, ease: 'power2.out' });
-
-    // quickTo drives one property; scale is a transform shorthand, so it gets a
-    // plain tween. Hover is rare enough that this costs nothing.
-    function grow(v) {
-      gsap.to(plane, { scale: v, duration: 0.15, ease: 'power2.out', overwrite: 'auto' });
-    }
-
-    var last = null, angle = 0, seen = false, shown = true, over = 0;
-
-    function fade(to, dur) {
-      gsap.to(plane, { opacity: to, duration: dur || 0.25, ease: 'power2.out', overwrite: 'auto' });
-    }
-
-    function hide() { if (!shown) return; shown = false; fade(0); home(); }
-    function show() { if (shown) return; shown = true; if (seen && !over) fade(1); }
-
-    window.addEventListener('pointermove', function (e) {
-      var x = e.clientX, y = e.clientY;
-
-      // A move over the page is proof the pointer is here. Scrolling and the
-      // hand-off to the Calendly iframe can both leave the counters stale, so
-      // this is what brings the plane back rather than an enter event.
-      if (!e.target || !e.target.closest || !e.target.closest(QUIET)) { over = 0; show(); }
-
-      if (!seen) {
-        seen = true;
-        gsap.set(plane, { x: x, y: y });
-        if (shown) fade(over ? 0 : 1, 0.3);
-      }
-
-      if (last) {
-        var dx = x - last.x, dy = y - last.y;
-        if (dx * dx + dy * dy > 9) {                 // ignore jitter
-          var want = Math.atan2(dy, dx) * 180 / Math.PI;
-          // Shortest way round, so the plane never spins the long way.
-          var delta = ((want - angle + 540) % 360) - 180;
-          angle += delta;
-          toR(angle);
-        }
-      }
-      last = { x: x, y: y };
-      toX(x);
-      toY(y);
-    }, { passive: true });
-
-    // The plane pushes the letters, not the pointer, so the gap opens where the
-    // nose is. Only while the plane is over the stage, and it lets go on the way
-    // out, so the wordmark is never left broken.
-    var wasInside = false;
-    gsap.ticker.add(function () {
-      if (!seen || !rest.length || !stageBox) return;
-      var x = gsap.getProperty(plane, 'x') - stageBox.left;
-      var y = gsap.getProperty(plane, 'y') - stageBox.top;
-      var inside = y > -REACH && y < stageBox.height + REACH;
-      if (inside) part(x, y);
-      else if (wasInside) home();
-      wasInside = inside;
-    });
-
-    // Over anything clickable the plane grows a little, the way a pointer turns
-    // into a hand. Over the booking block it leaves and the system cursor is back.
-    var GRAB = 'a,button,input,select,textarea';
-    var QUIET = '.booking,iframe';
-    document.addEventListener('pointerover', function (e) {
-      if (!e.target.closest) return;
-      if (e.target.closest(QUIET)) { over++; if (seen) fade(0); return; }
-      if (e.target.closest(GRAB)) { grow(1.25); }
-    });
-    document.addEventListener('pointerout', function (e) {
-      if (e.target.closest && e.target.closest(QUIET)) {
-        over = Math.max(0, over - 1);
-        if (!over && seen && shown) fade(1);
-      } else if (e.target.closest && e.target.closest(GRAB)) {
-        grow(1);
-      }
-    });
-
-    // Leaving the page takes the plane with it. A null relatedTarget on
-    // pointerout is not a reliable test for that — scrolling and iframes both
-    // produce one — so the departure is read off the document itself.
-    document.documentElement.addEventListener('pointerleave', hide);
-    window.addEventListener('blur', hide);
-  })();
-</script>
 
 </body>
 </html>
