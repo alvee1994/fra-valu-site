@@ -1,0 +1,30 @@
+title: Fravalu
+description: >-
+  Two weeks learning how your business runs, then a ranked, costed plan for
+  the work worth automating. The plan is yours to keep.
+url: "https://fra-valu.com"
+lang: en
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+collections:
+  notes:
+    output: true
+    permalink: /notes/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: note
+
+exclude:
+  - README.md
+  - CLAUDE.md
+  - Gemfile
+  - Gemfile.lock
+  - .obsidian

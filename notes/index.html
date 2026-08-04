@@ -1,0 +1,20 @@
+---
+layout: default
+title: Notes
+description: Notes on automation, AI, and running an SME on less busywork.
+permalink: /notes/
+---
+<section>
+  <div class="wrap notes-index">
+    <h2>Notes.</h2>
+    <ul class="notes-list">
+      {% assign notes = site.notes | sort: 'date' | reverse %}
+      {% for note in notes %}
+      <li>
+        <time datetime="{{ note.date | date_to_xmlschema }}">{{ note.date | date: "%-d %B %Y" }}</time>
+        <a href="{{ note.url | relative_url }}">{{ note.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
