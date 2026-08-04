@@ -2,7 +2,27 @@
 
 Published site for Fravalu, served via GitHub Pages at https://fra-valu.com.
 
-This repo holds **only** the deployed site: `index.html`, images, and vendored JS. No build step — files are served as-is.
+This repo holds **only** the deployed site. It's a Jekyll site — GitHub Pages builds it server-side on every push to `main`, no local build step required to publish.
+
+## Structure
+
+- `index.md` — homepage. Front matter + the hero/capabilities/booking sections, layout in `_layouts/default.html`.
+- `_notes/*.md` — plain-markdown notes, one file per note. This is the Obsidian-friendly part: open this repo as an Obsidian vault, write a note under `_notes/`, push. See `_notes/2026-08-04-writing-notes-in-obsidian.md` for the front matter format.
+- `notes/index.html` — auto-generated listing of everything in `_notes/`.
+- `_layouts/` — `default.html` (site chrome: head, header, footer) and `note.html` (article wrapper for notes).
+- `assets/site.css` — site styling, split out of what used to be an inline `<style>` block.
+- `open-props.*.css`, images, `CNAME` — vendored/static as before.
+
+## Local preview (optional)
+
+Needs Ruby + Bundler.
+
+```sh
+bundle install
+bundle exec jekyll serve
+```
+
+Not required to publish — GitHub Pages builds the same way on push.
 
 ## Where things come from
 
