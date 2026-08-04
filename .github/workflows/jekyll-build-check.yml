@@ -1,0 +1,17 @@
+name: Jekyll build check
+
+on:
+  push:
+    branches: [jekyll-migration]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - run: bundle exec jekyll build --future --strict_front_matter
