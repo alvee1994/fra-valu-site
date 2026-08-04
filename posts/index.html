@@ -1,0 +1,20 @@
+---
+layout: default
+title: Posts
+description: Notes on automation, AI, and running an SME on less busywork.
+permalink: /posts/
+---
+<section>
+  <div class="wrap posts-index">
+    <h2>Posts.</h2>
+    <ul class="posts-list">
+      {% assign posts = site.writing | sort: 'date' | reverse %}
+      {% for post in posts %}
+      <li>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %B %Y" }}</time>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

@@ -11,16 +11,16 @@ kramdown:
   hard_wrap: false
 
 collections:
-  notes:
+  writing:
     output: true
-    permalink: /notes/:title/
+    permalink: /posts/:title/
 
 defaults:
   - scope:
       path: ""
-      type: notes
+      type: writing
     values:
-      layout: note
+      layout: post
 
 exclude:
   - README.md

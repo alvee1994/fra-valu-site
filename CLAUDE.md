@@ -4,9 +4,9 @@ Guidance for Claude Code working in this repository.
 
 ## What this repo is
 
-The published site for Fravalu — served at https://fra-valu.com via GitHub Pages. It's a Jekyll site: GitHub Pages builds it server-side on push to `main`, no local build step required to publish. See `README.md` for the file layout (`index.md`, `_notes/`, `_layouts/`, `assets/site.css`).
+The published site for Fravalu — served at https://fra-valu.com via GitHub Pages. It's a Jekyll site: GitHub Pages builds it server-side on push to `main`, no local build step required to publish. See `README.md` for the file layout (`index.md`, `_writing/`, `_layouts/`, `assets/site.css`).
 
-`_notes/*.md` is written for editing in Obsidian — open this repo as a vault, write plain markdown with front matter (`title`, `date`, `description`), push. Don't hand-write HTML for note content; the `note` layout handles presentation.
+`_writing/*.md` is written for editing in Obsidian — open this repo as a vault, write plain markdown with front matter (`title`, `date`, `description`), push. No date in the filename; `date:` is set once at creation and never edited afterward. Don't hand-write HTML for post content; the `post` layout handles presentation. Published at `/posts/`.
 
 ## Related repo: `fra-valu`
 
@@ -26,4 +26,4 @@ This repo exists specifically so the public site can live in a public repo witho
 
 ## Formats
 
-Homepage chrome (`index.md`, `_layouts/`) stays plain HTML/CSS embedded in Liquid templates, matching the existing style. Note content (`_notes/*.md`) is plain markdown, no raw HTML — that's the part meant to be written in Obsidian.
+Homepage chrome (`index.md`, `_layouts/`) stays plain HTML/CSS embedded in Liquid templates, matching the existing style. Post content (`_writing/*.md`) is plain markdown, no raw HTML — that's the part meant to be written in Obsidian.

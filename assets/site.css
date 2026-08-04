@@ -399,33 +399,33 @@ footer {
   line-height: 2
 }
 
-/* notes — article prose for markdown content written in Obsidian */
-.notes-index {
+/* posts — article prose for markdown content written in Obsidian */
+.posts-index {
   max-width: 66ch
 }
 
-.notes-list {
+.posts-list {
   list-style: none;
   margin: 32px 0 0;
   padding: 0
 }
 
-.notes-list li {
+.posts-list li {
   padding: 18px 0;
   border-top: 1px solid var(--paper-2)
 }
 
-.notes-list li:last-child {
+.posts-list li:last-child {
   border-bottom: 1px solid var(--paper-2)
 }
 
-.notes-list a {
+.posts-list a {
   color: var(--ink);
   font-weight: 700;
   font-size: 19px
 }
 
-.notes-list time {
+.posts-list time {
   display: block;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 12px;
@@ -435,37 +435,37 @@ footer {
   margin-bottom: 6px
 }
 
-.note article {
+.post article {
   max-width: 66ch
 }
 
-.note article p {
+.post article p {
   font-size: 18px;
   color: var(--ink-2)
 }
 
-.note article h2 {
+.post article h2 {
   margin-top: 48px;
   margin-bottom: 16px
 }
 
-.note article h3 {
+.post article h3 {
   margin-top: 36px;
   margin-bottom: 12px
 }
 
-.note article a {
+.post article a {
   text-decoration: underline
 }
 
-.note article code {
+.post article code {
   background: var(--paper-2);
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 15px
 }
 
-.note article pre {
+.post article pre {
   background: var(--navy);
   color: var(--paper);
   padding: 20px;
@@ -473,19 +473,19 @@ footer {
   overflow-x: auto
 }
 
-.note article pre code {
+.post article pre code {
   background: none;
   padding: 0
 }
 
-.note article blockquote {
+.post article blockquote {
   margin: 0 0 18px;
   padding-left: 18px;
   border-left: 3px solid var(--yellow-dark);
   color: var(--muted)
 }
 
-.note-back {
+.post-back {
   display: inline-block;
   margin-bottom: 32px;
   font-family: 'IBM Plex Mono', monospace;

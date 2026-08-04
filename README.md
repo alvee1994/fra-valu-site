@@ -7,9 +7,9 @@ This repo holds **only** the deployed site. It's a Jekyll site — GitHub Pages 
 ## Structure
 
 - `index.md` — homepage. Front matter + the hero/capabilities/booking sections, layout in `_layouts/default.html`.
-- `_notes/*.md` — plain-markdown notes, one file per note. This is the Obsidian-friendly part: open this repo as an Obsidian vault, write a note under `_notes/`, push. See `_notes/2026-08-04-writing-notes-in-obsidian.md` for the front matter format.
-- `notes/index.html` — auto-generated listing of everything in `_notes/`.
-- `_layouts/` — `default.html` (site chrome: head, header, footer) and `note.html` (article wrapper for notes).
+- `_writing/*.md` — plain-markdown posts, one file per post, no date in the filename. This is the Obsidian-friendly part: open this repo as an Obsidian vault, write a post under `_writing/`, push. See `_writing/writing-notes-in-obsidian.md` for the front matter format.
+- `posts/index.html` — auto-generated listing of everything in `_writing/`, served at `/posts/`.
+- `_layouts/` — `default.html` (site chrome: head, header, footer) and `post.html` (article wrapper for posts).
 - `assets/site.css` — site styling, split out of what used to be an inline `<style>` block.
 - `open-props.*.css`, images, `CNAME` — vendored/static as before.
 
