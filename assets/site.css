@@ -219,6 +219,7 @@ header {
   flex-wrap: wrap;
   gap: 14px;
   margin-top: 32px;
+  margin-bottom: 0;
   align-items: center
 }
 
@@ -301,6 +302,11 @@ header {
   align-items: flex-start;
   flex-wrap: wrap;
   margin-top: 56px
+}
+
+.bio-copy {
+  flex: 1;
+  min-width: 240px
 }
 
 .bio-photo {
