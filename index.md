@@ -36,7 +36,7 @@ permalink: /
 <section class="band-tint">
   <div class="wrap intro-split">
     <p class="eyebrow">One accountable program</p>
-    <p>We're an AI and workflow automation consultancy for businesses without an IT implementation team. You get a ranked, costed plan for what is worth automating, and a build that proves the first item on it.</p>
+    <p>You get a plan that ranks each task by what automating it would save and cost. Then we build the top item on the list and prove the saving.</p>
   </div>
 </section>
 
@@ -45,15 +45,15 @@ permalink: /
     <span class="ghost-num">01</span>
     <div class="section-head">
       <p class="eyebrow">The short answer</p>
-      <h2>What does an automation partner actually do?</h2>
+      <h2>What does an automation partner do?</h2>
     </div>
     <div class="answer-grid">
       <div>
-        <p>We find where a business loses hours to repeated manual work, and which of those processes are worth automating.</p>
+        <p>We find where a business loses hours to repeated manual work. Then we work out which of those processes are worth automating.</p>
       </div>
       <div>
-        <p>We sit with the people doing the work, map every repeated task, and price it in hours and money. Then we recommend what to automate, in what order, and what it costs to build.</p>
-        <p>We build with plain, widely used tools, wired into the systems you already run. Some processes we recommend you leave alone, because the hours saved would not cover the build.</p>
+        <p>We sit with the people doing the work and list every repeated task. Each one gets a price in hours and money. Then we tell you what to automate first, and what it costs to build.</p>
+        <p>We build with plain, widely used tools, wired into the systems you already run. Some processes we tell you to leave alone. Automating them would cost more than it saves.</p>
       </div>
     </div>
 
@@ -62,7 +62,7 @@ permalink: /
       <ul>
         <li>We diagnose before we quote. The plan is yours either way.</li>
         <li>Every recommendation carries a price and an estimated saving.</li>
-        <li>We build inside your tools, and you own the code.</li>
+        <li>We build inside your tools. The code is yours to keep.</li>
       </ul>
     </div>
   </div>
@@ -74,7 +74,7 @@ permalink: /
     <div class="section-head">
       <p class="eyebrow">How we work</p>
       <h2>We build the one thing that pays back first.</h2>
-      <p>Every engagement runs in the same order. Skipping a stage is how automation projects end up expensive and unused.</p>
+      <p>Every engagement runs in the same order. Skip a step, and the project gets expensive and goes unused.</p>
     </div>
 
     <div class="answer-grid" style="grid-template-columns:1fr">
@@ -114,7 +114,7 @@ permalink: /
       <div class="service-card">
         <div class="sc-top"><div class="sc-icon" aria-hidden="true">&#9881;</div><span class="sc-num">02</span></div>
         <h3>Workflow and automation design</h3>
-        <p>We design the automation before we build it, so it matches your process.</p>
+        <p>We design the automation before we build it. That way, it matches your process.</p>
         <ul class="sc-bullets">
           <li>Workflow architecture</li>
           <li>Tool and model selection</li>
@@ -140,7 +140,7 @@ permalink: /
       <div class="service-card">
         <div class="sc-top"><div class="sc-icon" aria-hidden="true">&#9776;</div><span class="sc-num">04</span></div>
         <h3>Measurement and reporting</h3>
-        <p>We check the saving against what we projected, in numbers your team can read without us.</p>
+        <p>We measure what the automation saved. The numbers are ones your team can read without us.</p>
         <ul class="sc-bullets">
           <li>Before-and-after time tracking</li>
           <li>Plain-language reporting</li>
@@ -155,7 +155,7 @@ permalink: /
 
 <section class="cta-band" id="pricing">
   <div class="wrap">
-    <h3>One fixed price per workflow, agreed before we build.</h3>
+    <h3>One fixed price per workflow. We agree it before we build.</h3>
     <div class="btn-row">
       <a class="btn btn-quiet-inverse" href="#contact">Discuss your workflows &rarr;</a>
       <a class="btn btn-outline-inverse" href="#faq">Read the FAQ &rarr;</a>
@@ -186,7 +186,7 @@ permalink: /
       </div>
       <div class="faq-item">
         <h3>How is pricing decided?</h3>
-        <p>Every workflow on the list carries a fixed price before we start.</p>
+        <p>Every workflow gets a fixed price, agreed before we start.</p>
       </div>
     </div>
   </div>
@@ -226,7 +226,7 @@ permalink: /
       "name": "How is pricing decided?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Every workflow on the list carries a fixed price before we start."
+        "text": "Every workflow gets a fixed price, agreed before we start."
       }
     }
   ]
@@ -238,7 +238,7 @@ permalink: /
     <div>
       <p class="eyebrow">Let's talk</p>
       <h2 style="font-size:clamp(28px,3.4vw,38px)">Tell us where the hours go.</h2>
-      <p style="font-size:18px;color:var(--slate);max-width:48ch;margin:0 0 28px">We map where your hours go and tell you what automating them would save.</p>
+      <p style="font-size:18px;color:var(--slate);max-width:48ch;margin:0 0 28px">Pick a time below, or email us directly. We'll take it from there.</p>
       <div class="cta-row" style="padding-left:0">
         <a class="btn btn-primary" href="mailto:contact@fra-valu.com">contact@fra-valu.com</a>
       </div>
