@@ -117,19 +117,19 @@ header{
 }
 
 /* word-tiled background — decorative, the repeated processes we automate.
-   justify-content:space-between spreads each wrapped row edge-to-edge so the
-   pattern reads as wallpaper, not scattered labels. Ink at moderate opacity
-   so the tiles stay subtle but dark enough that the difference-blob below
-   can invert them to light where it passes over (matches the MiMo ref). */
+   Packed from the left with a tight column gap and small type so rows hold
+   many tokens and the pattern reads as dense wallpaper. Low opacity keeps it
+   behind the hero copy; the difference-blob still inverts it to light where it
+   passes over. */
 .hero-word-bg{
   position:absolute;inset:0;z-index:0;
   display:flex;flex-wrap:wrap;align-content:flex-start;
-  justify-content:space-between;
-  row-gap:10px;padding:18px;
+  justify-content:flex-start;
+  column-gap:18px;row-gap:4px;padding:12px;
   font-family:'Fraunces',serif;font-weight:700;
-  font-size:clamp(26px,3.4vw,42px);
-  letter-spacing:.01em;line-height:1.1;
-  color:var(--ink);opacity:.22;
+  font-size:clamp(18px,2.4vw,28px);
+  letter-spacing:.01em;line-height:1.05;
+  color:var(--ink);opacity:.08;
   overflow:hidden;user-select:none;pointer-events:none;
 }
 .hero-word-bg span{white-space:nowrap}
