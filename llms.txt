@@ -1,0 +1,18 @@
+# Fravalu
+
+> AI and workflow automation consultancy for SMEs without an in-house IT implementation team. Based in Rotterdam, Netherlands (KVK 42095902).
+
+Fravalu audits how a business actually runs, produces a ranked and costed plan for what is worth automating, and builds the first workflow on that list to prove it. The plan is the client's to keep whether or not a build follows. Engagements run in a fixed order: map the repeated work, rank and price each process, build the workflow that pays back first, then measure the saving against what was projected.
+
+Fixed price per workflow, agreed before building starts. Built with widely used tools inside the client's existing systems; the client owns the code.
+
+## Pages
+
+- [Home](https://fra-valu.com/): what we do, how we work, service scope, FAQ, contact
+- [Posts](https://fra-valu.com/posts/): writing on automation and workflow design
+
+## Contact
+
+- Email: contact@fra-valu.com
+- Booking: https://calendly.com/alvee-fra-valu/30min
+- LinkedIn: https://www.linkedin.com/in/alveeahmed/

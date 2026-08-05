@@ -11,7 +11,36 @@
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:title" content="{{ page.title }}">
   <meta property="og:description" content="{{ page.description | default: site.description }}">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="{{ '/assets/og-image.png' | absolute_url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description" content="{{ page.description | default: site.description }}">
+  <meta name="twitter:image" content="{{ '/assets/og-image.png' | absolute_url }}">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Fravalu",
+    "url": "https://fra-valu.com",
+    "logo": "{{ '/assets/og-image.png' | absolute_url }}",
+    "description": "AI and workflow automation consultancy for SMEs without an in-house IT implementation team.",
+    "email": "contact@fra-valu.com",
+    "identifier": {
+      "@type": "PropertyValue",
+      "name": "KVK",
+      "value": "42095902"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rotterdam",
+      "addressCountry": "NL"
+    },
+    "areaServed": "NL",
+    "sameAs": [
+      "https://www.linkedin.com/in/alveeahmed/"
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link

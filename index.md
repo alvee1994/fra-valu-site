@@ -192,6 +192,47 @@ permalink: /
   </div>
 </section>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do we need an IT implementation team to work with you?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We work with businesses that do not have one. We bring the judgement about what is worth automating."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if the audit finds nothing worth automating?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Then we tell you that. The plan is yours either way."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you lock us into your tools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. We build with widely used tools inside your systems, and you own everything we build."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is pricing decided?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every workflow on the list carries a fixed price before we start."
+      }
+    }
+  ]
+}
+</script>
+
 <section id="contact" class="band-tint">
   <div class="wrap contact-grid">
     <div>
