@@ -7,14 +7,56 @@
   var wordBg = document.querySelector('.hero-word-bg');
   if (!hero || !blob) return;
 
-  if (wordBg) {
-    var words = (wordBg.getAttribute('data-words') || '').split(',').filter(Boolean);
-    if (words.length) {
-      var html = '';
-      for (var i = 0; i < 60; i++) html += '<span>' + words[i % words.length] + '</span>';
-      wordBg.innerHTML = html;
+  /* Tile the word background. A fixed span count can't work — how many words
+     a row holds and how many rows the hero has both depend on the viewport —
+     so add spans until the last one clears the hero's bottom edge, and redo
+     it whenever the hero resizes. */
+  var words = wordBg ? (wordBg.getAttribute('data-words') || '').split(',').filter(Boolean) : [];
+
+  function fillWords() {
+    if (!wordBg || !words.length) return;
+    if (getComputedStyle(wordBg).display === 'none') return;
+
+    wordBg.textContent = '';
+    var target = wordBg.clientHeight;
+    if (!target) return;
+
+    var placed = 0;
+    var batch = words.length * 3;
+
+    for (var pass = 0; pass < 12; pass++) {
+      var frag = document.createDocumentFragment();
+      for (var i = 0; i < batch; i++, placed++) {
+        var span = document.createElement('span');
+        span.textContent = words[placed % words.length];
+        frag.appendChild(span);
+      }
+      wordBg.appendChild(frag);
+
+      // spans' offsetParent is wordBg itself (it is positioned)
+      var last = wordBg.lastElementChild;
+      var filled = last.offsetTop + last.offsetHeight;
+      if (filled >= target || placed > 1200) break;
+
+      // extrapolate the shortfall instead of creeping a batch at a time
+      batch = Math.min(Math.max(Math.ceil(placed * (target - filled) / filled), words.length), 400);
     }
   }
+
+  fillWords();
+
+  var refill;
+  function scheduleFill() {
+    clearTimeout(refill);
+    refill = setTimeout(fillWords, 150);
+  }
+  if (window.ResizeObserver) {
+    new ResizeObserver(scheduleFill).observe(hero);
+  } else {
+    window.addEventListener('resize', scheduleFill);
+  }
+  // webfonts land after first paint and change how many words a row holds
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fillWords);
 
   var canHover = window.matchMedia('(pointer: fine)').matches;
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

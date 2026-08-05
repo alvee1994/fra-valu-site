@@ -86,15 +86,27 @@ header{
 .btn-outline-inverse:hover{background:var(--white);color:var(--accent)}
 
 /* hero */
-.hero{position:relative;padding:96px 0 76px;overflow:hidden;isolation:isolate}
+/* the white is set here rather than inherited from body: isolation:isolate
+   makes the hero its own blend group, and the blob further down has nothing
+   to invert against unless that white is painted inside the group */
+.hero{position:relative;padding:96px 0 76px;overflow:hidden;isolation:isolate;background:var(--paper)}
 .hero-inner{position:relative;z-index:1;max-width:800px;margin:0 auto;text-align:center}
+/* open-props normalize caps every <p> and <h1> with max-inline-size at zero
+   specificity (60ch for p). That shrinks the box inside the centred column,
+   and text-align:center then centres the text in the shrunken box — left of
+   the column's true centre. Auto inline margins recentre the box without
+   throwing away the measure cap. */
+.hero-inner p{margin-inline:auto}
 .hero h1{
   font-family:'Fraunces',serif;
   font-weight:800;
   font-size:clamp(38px,5.2vw,58px);
   line-height:1.05;
   letter-spacing:-.03em;
-  margin:0 0 22px;
+  /* auto inline margins and no measure cap: the 800px column is the only
+     width limit the hero headline should answer to (see .hero-inner p) */
+  margin:0 auto 22px;
+  max-inline-size:none;
 }
 .hero h1 .accent{color:var(--accent)}
 .hero-lead{font-size:18px;color:var(--slate);max-width:56ch;margin:0 auto 28px}
@@ -104,7 +116,9 @@ header{
   font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--ash)
 }
 
-/* word-tiled background — decorative, the repeated processes we automate */
+/* word-tiled background — decorative, the repeated processes we automate.
+   cursor-blob.js fills this with as many spans as the hero's current height
+   takes, and refills on resize; nothing here assumes a span count. */
 .hero-word-bg{
   position:absolute;inset:0;z-index:0;
   display:flex;flex-wrap:wrap;align-content:flex-start;gap:8px 22px;
@@ -112,7 +126,7 @@ header{
   font-family:'Fraunces',serif;font-weight:600;font-size:clamp(20px,2.6vw,30px);
   color:var(--accent);opacity:.07;
   overflow:hidden;user-select:none;pointer-events:none;
-  mask-image:linear-gradient(to bottom, black 55%, transparent 96%);
+  mask-image:linear-gradient(to bottom, black 90%, transparent 100%);
 }
 .hero-word-bg span{white-space:nowrap}
 
@@ -121,8 +135,8 @@ header{
    echoing the MiMo reference gif rather than sitting flat on top of it */
 .hero-blob{
   position:absolute;top:0;left:0;z-index:2;
-  width:120px;height:120px;margin:-60px 0 0 -60px;
-  background:var(--action);
+  width:240px;height:240px;margin:-120px 0 0 -120px;
+  background:var(--accent);
   mix-blend-mode:difference;
   pointer-events:none;
   opacity:0;
