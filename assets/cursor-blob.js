@@ -33,15 +33,19 @@
 
     var colGap = 14;      // matches .word-row gap
     var heroWidth = hero.clientWidth;
+    var widthCache = {};
+    var offsets = [0,-14,-7,-21,-4,-17,-11,-2,-19,-9];
 
     for (var i = 0; ; i++) {
       var word = words[i % words.length];
-      var w = measureWordWidth(word);
-      var count = Math.ceil(heroWidth / (w + colGap)) + 2;
+      if (!widthCache[word]) widthCache[word] = measureWordWidth(word);
+      var w = widthCache[word];
+      var count = Math.ceil(heroWidth / (w + colGap)) + 4;
       if (count < 3) count = 3;
 
       var row = document.createElement('div');
       row.className = 'word-row';
+      row.style.marginLeft = offsets[i % offsets.length] + 'px';
       var frag = document.createDocumentFragment();
       for (var j = 0; j < count; j++) {
         var span = document.createElement('span');
