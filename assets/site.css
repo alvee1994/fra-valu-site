@@ -117,29 +117,34 @@ header{
 }
 
 /* word-tiled background — decorative, the repeated processes we automate.
-   Tighter gap and bigger type so rows pack like wallpaper rather than
-   scattered labels. Hard-clipped to the hero via overflow:hidden; the
-   previous bottom-fade mask softened the edge and broke the tiled look. */
+   justify-content:space-between spreads each wrapped row edge-to-edge so the
+   pattern reads as wallpaper, not scattered labels. Ink at moderate opacity
+   so the tiles stay subtle but dark enough that the difference-blob below
+   can invert them to light where it passes over (matches the MiMo ref). */
 .hero-word-bg{
   position:absolute;inset:0;z-index:0;
   display:flex;flex-wrap:wrap;align-content:flex-start;
-  gap:4px 28px;padding:16px;
+  justify-content:space-between;
+  row-gap:10px;padding:18px;
   font-family:'Fraunces',serif;font-weight:700;
-  font-size:clamp(28px,3.6vw,44px);
-  letter-spacing:.02em;line-height:1.05;
-  color:var(--accent);opacity:.09;
+  font-size:clamp(26px,3.4vw,42px);
+  letter-spacing:.01em;line-height:1.1;
+  color:var(--ink);opacity:.22;
   overflow:hidden;user-select:none;pointer-events:none;
 }
 .hero-word-bg span{white-space:nowrap}
 
 /* cursor blob — replaces the system pointer inside the hero on fine-pointer
-   devices. Solid accent green so it reads as the brand's dark plane; the
-   earlier mix-blend-mode:difference inverted accent-green over near-white
-   paper into pink, which broke the MiMo-style cue this was after. */
+   devices. White source + mix-blend-mode:difference: over the paper bg it
+   renders near-black (|255-paper|), and over the ink word-tiles it inverts
+   them to light, so the text shows THROUGH the blob instead of being blocked
+   by it (the MiMo reference behaviour). A green source here would tint the
+   text pink where it overlaps, so the blob reads dark/neutral, not green. */
 .hero-blob{
   position:absolute;top:0;left:0;z-index:2;
   width:260px;height:260px;margin:-130px 0 0 -130px;
-  background:var(--accent);
+  background:#fff;
+  mix-blend-mode:difference;
   pointer-events:none;
   opacity:0;
   will-change:transform,border-radius;
