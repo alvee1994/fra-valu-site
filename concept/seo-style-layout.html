@@ -7,22 +7,28 @@
 <meta name="description" content="One accountable program for finding, ranking, and automating the workflows that waste your team's time.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#171315;
-    --paper:#f7f5f3;
-    --cream:#e9e1e2;
-    --tint:#f3e9ea;
-    --accent:#7a263a;
-    --accent-hover:#641f31;
-    --action:#ffd84d;
-    --action-hover:#ffe780;
-    --signal:#49677a;
-    --slate:#62595d;
-    --ash:#7c7176;
-    --white:#ffffff;
-    --line:#e0d7d3;
+    --ink:#112733;
+    --text:#1C2D38;
+    --muted:#5C6C75;
+    --paper:#FFFFFF;
+    --cream:#F9FBFA;
+    --tint:#F9EBFF;
+    --accent:#00684A;
+    --accent-hover:#005038;
+    --action:#00ED64;
+    --action-hover:#00D45A;
+    --action-text:#00341F;
+    --signal:#00D2FF;
+    --mint:#C0FAE6;
+    --white:#FFFFFF;
+    --line:#E8EDEB;
+    --line-strong:#C1C7C6;
+    --danger:#DB3030;
+    --ash:#5C6C75;
+    --slate:#5C6C75;
     --max:1240px;
   }
   *{box-sizing:border-box}
@@ -31,7 +37,7 @@
     margin:0;
     background:var(--paper);
     color:var(--ink);
-    font-family:'Manrope',system-ui,sans-serif;
+    font-family:'Inter',system-ui,sans-serif;
     font-size:17px;
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
@@ -67,11 +73,11 @@
   .nav-links a:hover{color:var(--accent)}
   .btn{
     display:inline-flex;align-items:center;gap:8px;
-    padding:13px 22px;border-radius:6px;border:0;
+    padding:13px 22px;border-radius:7px;border:0;
     font-family:inherit;font-size:15px;font-weight:700;
     cursor:pointer;text-decoration:none;letter-spacing:-.01em;
   }
-  .btn-primary{background:var(--action);color:var(--ink)}
+  .btn-primary{background:var(--action);color:var(--action-text)}
   .btn-primary:hover{background:var(--action-hover)}
   .btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
   .btn-outline:hover{background:var(--ink);color:var(--paper)}
@@ -83,7 +89,7 @@
   .hero{padding:80px 0 64px}
   .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
   .hero h1{
-    font-family:'Manrope',sans-serif;
+    font-family:'Fraunces',serif;
     font-weight:800;
     font-size:clamp(42px,5.6vw,66px);
     line-height:1.02;
@@ -105,10 +111,10 @@
     isolation:isolate;
     position:relative;
     background:var(--white);
-    border:1px solid var(--ink);
-    border-radius:0;
+    border:1px solid var(--line-strong);
+    border-radius:16px;
     padding:22px 22px 26px;
-    box-shadow:14px 14px 0 var(--signal), 0 8px 24px rgba(23,19,21,.08);
+    box-shadow:0 4px 12px rgba(17,39,51,.10), 0 12px 28px rgba(17,39,51,.08);
   }
   .surface-header{
     position:relative;z-index:3;
@@ -130,7 +136,7 @@
     position:relative;margin-top:16px;
     display:grid;grid-template-columns:1fr 1fr;gap:.5rem;
     padding:.75rem;
-    border:1px solid var(--line);background:var(--cream);
+    border:1px solid var(--line-strong);background:var(--cream);
   }
   .surface-core{display:none}
   .surface-node{
@@ -155,19 +161,19 @@
   /* desktop: hexagonal connected map, diagonal signal lines, pulsing core */
   @media (min-width:680px){
     .surface-map{
-      display:block;min-height:400px;padding:0;border:1px solid var(--ink);
+      display:block;min-height:400px;padding:0;border:1px solid var(--line-strong);
       overflow:hidden;
       background:
-        linear-gradient(28deg, transparent calc(50% - 1px), rgba(73,103,122,.28) 50%, transparent calc(50% + 1px)),
-        linear-gradient(-28deg, transparent calc(50% - 1px), rgba(73,103,122,.28) 50%, transparent calc(50% + 1px)),
-        linear-gradient(90deg, transparent calc(50% - 1px), rgba(73,103,122,.22) 50%, transparent calc(50% + 1px)),
+        linear-gradient(28deg, transparent calc(50% - 1px), rgba(0,210,255,.28) 50%, transparent calc(50% + 1px)),
+        linear-gradient(-28deg, transparent calc(50% - 1px), rgba(0,210,255,.28) 50%, transparent calc(50% + 1px)),
+        linear-gradient(90deg, transparent calc(50% - 1px), rgba(0,210,255,.22) 50%, transparent calc(50% + 1px)),
         var(--cream);
     }
     .surface-core{
       display:flex;align-items:center;justify-content:center;
       position:absolute;top:50%;left:50%;z-index:3;
       width:76px;height:76px;background:var(--accent);
-      box-shadow:11px 11px 0 var(--signal);
+      box-shadow:0 8px 20px rgba(0,104,74,.35);
       animation:homeCoreSignal 5s ease-in-out infinite;
     }
     .surface-core span{
@@ -178,14 +184,14 @@
     .surface-node{
       position:absolute;width:38%;min-height:64px;padding:12px;border-radius:0;
     }
-    .surface-node:nth-of-type(1){top:1.25rem;left:1.25rem;animation:homeSignalDrift 5.5s ease-in-out infinite}
-    .surface-node:nth-of-type(2){top:1.25rem;right:1.25rem;animation:homeSignalDrift 6.4s ease-in-out -2.2s infinite reverse}
-    .surface-node:nth-of-type(3){top:50%;left:.75rem;transform:translateY(-50%)}
+    .surface-node:nth-of-type(1){top:1.75rem;left:1.75rem;animation:homeSignalDrift 5.5s ease-in-out infinite}
+    .surface-node:nth-of-type(2){top:1.75rem;right:1.75rem;animation:homeSignalDrift 6.4s ease-in-out -2.2s infinite reverse}
+    .surface-node:nth-of-type(3){top:50%;left:1.25rem;transform:translateY(-50%)}
     .surface-node:nth-of-type(3):hover{transform:translateY(calc(-50% - 3px))}
-    .surface-node:nth-of-type(4){top:50%;right:.75rem;transform:translateY(-50%)}
+    .surface-node:nth-of-type(4){top:50%;right:1.25rem;transform:translateY(-50%)}
     .surface-node:nth-of-type(4):hover{transform:translateY(calc(-50% - 3px))}
-    .surface-node:nth-of-type(5){bottom:1.25rem;left:1.25rem;animation:homeSignalDrift 5.5s ease-in-out infinite}
-    .surface-node:nth-of-type(6){bottom:1.25rem;right:1.25rem;animation:homeSignalDrift 6.4s ease-in-out -2.2s infinite reverse}
+    .surface-node:nth-of-type(5){bottom:1.75rem;left:1.75rem;animation:homeSignalDrift 5.5s ease-in-out infinite}
+    .surface-node:nth-of-type(6){bottom:1.75rem;right:1.75rem;animation:homeSignalDrift 6.4s ease-in-out -2.2s infinite reverse}
   }
   @keyframes homeCoreSignal{
     0%,100%{transform:translate(-50%,-50%) rotate(45deg) scale(1)}
@@ -201,7 +207,7 @@
 
   .surface-principle{
     margin-top:16px;padding:16px;
-    background:var(--tint);border:1px solid rgba(122,38,58,.24);
+    background:var(--tint);border:1px solid rgba(0,104,74,.24);border-radius:12px;
   }
   .surface-principle .eyebrow{margin-bottom:8px}
   .surface-principle p{margin:0;font-size:14px;line-height:1.55;color:var(--slate)}
@@ -224,7 +230,7 @@
   .band-tint{background:var(--tint)}
   .band-cream{background:var(--cream)}
 
-  h2{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.025em;line-height:1.08;margin:0 0 20px}
+  h2{font-family:'Fraunces',serif;font-weight:800;letter-spacing:-.025em;line-height:1.08;margin:0 0 20px}
   .section-head{max-width:760px;margin:0 0 40px}
   .section-head h2{font-size:clamp(30px,3.6vw,44px)}
   .section-head p{font-size:18px;color:var(--slate);max-width:60ch}
@@ -236,8 +242,8 @@
   .numbered-row{position:relative}
   .numbered-row .ghost-num{
     position:absolute;right:0;top:-8px;
-    font-family:'Manrope',sans-serif;font-weight:800;font-size:120px;
-    color:rgba(23,19,21,.06);line-height:1;
+    font-family:'Fraunces',serif;font-weight:800;font-size:120px;
+    color:rgba(17,39,51,.06);line-height:1;
     pointer-events:none;
   }
   .answer-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}
@@ -311,7 +317,7 @@
   }
   .foot-col a{display:block;color:#c7bfc2;text-decoration:none;font-size:14px;margin-bottom:10px}
   .foot-col a:hover{color:var(--action)}
-  .foot-bottom{margin-top:40px;padding-top:24px;border-top:1px solid #33282b;font-size:13px;color:#7c7176}
+  .foot-bottom{margin-top:40px;padding-top:24px;border-top:1px solid #C1C7C6;font-size:13px;color:#5C6C75}
 
   @media (max-width:920px){
     .hero-grid,.intro-split,.answer-grid,.service-grid,.contact-grid{grid-template-columns:1fr}
@@ -329,7 +335,7 @@
 <header>
   <div class="wrap nav">
     <a class="mark" href="#top">
-      <svg viewBox="0 0 100 100" fill="none"><g transform="rotate(-18 50 50)"><polygon points="97,50 6,10 6,42 64,50 6,58 6,90" fill="#7a263a"></polygon><polygon points="97,50 6,58 6,90" fill="#171315"></polygon></g></svg>
+      <svg viewBox="0 0 100 100" fill="none"><g transform="rotate(-18 50 50)"><polygon points="97,50 6,10 6,42 64,50 6,58 6,90" fill="#00684A"></polygon><polygon points="97,50 6,58 6,90" fill="#112733"></polygon></g></svg>
       fravalu
     </a>
     <nav class="nav-links">
@@ -365,7 +371,7 @@
       </div>
 
       <div class="surface-map">
-        <div class="surface-core" aria-label="fravalu"><span>FV</span></div>
+        <span class="surface-core" aria-label="fravalu"><span>FV</span></span>
 
           <div class="surface-node">
             <div class="surface-icon" aria-hidden="true">
@@ -621,7 +627,7 @@
     <div class="booking-card">
       <p class="sh-label" style="margin:0 0 14px">Pick a time</p>
       <div class="calendly-inline-widget"
-        data-url="https://calendly.com/alvee-fra-valu/30min?hide_gdpr_banner=1&hide_landing_page_details=1&background_color=f7f5f3&text_color=171315&primary_color=7a263a"
+        data-url="https://calendly.com/alvee-fra-valu/30min?hide_gdpr_banner=1&hide_landing_page_details=1&background_color=FFFFFF&text_color=112733&primary_color=00684A"
         style="min-width:280px;height:640px;"></div>
       <noscript>
         <p style="margin:0;font-size:14px;color:var(--slate)">Booking needs JavaScript. Write to
@@ -638,7 +644,7 @@
     <div class="foot-grid">
       <div>
         <div class="foot-mark">
-          <svg viewBox="0 0 100 100" fill="none"><g transform="rotate(-18 50 50)"><polygon points="97,50 6,10 6,42 64,50 6,58 6,90" fill="#ffd84d"></polygon><polygon points="97,50 6,58 6,90" fill="#c9a13d"></polygon></g></svg>
+          <svg viewBox="0 0 100 100" fill="none"><g transform="rotate(-18 50 50)"><polygon points="97,50 6,10 6,42 64,50 6,58 6,90" fill="#00ED64"></polygon><polygon points="97,50 6,58 6,90" fill="#00D45A"></polygon></g></svg>
           fravalu
         </div>
         <p style="max-width:32ch;font-size:14px;color:#a79fa2;margin:0">AI and workflow automation for SMEs.<br>Rotterdam, Netherlands.</p>
