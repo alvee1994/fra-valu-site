@@ -86,131 +86,54 @@ header{
 .btn-outline-inverse:hover{background:var(--white);color:var(--accent)}
 
 /* hero */
-.hero{padding:80px 0 64px}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+.hero{position:relative;padding:96px 0 76px;overflow:hidden;isolation:isolate}
+.hero-inner{position:relative;z-index:1;max-width:800px;margin:0 auto;text-align:center}
 .hero h1{
   font-family:'Fraunces',serif;
   font-weight:800;
-  font-size:clamp(42px,5.6vw,66px);
-  line-height:1.02;
+  font-size:clamp(38px,5.2vw,58px);
+  line-height:1.05;
   letter-spacing:-.03em;
   margin:0 0 22px;
-  border-left:4px solid var(--accent);
-  padding-left:22px;
 }
 .hero h1 .accent{color:var(--accent)}
-.hero-lead{font-size:19px;color:var(--slate);max-width:52ch;margin:0 0 28px;padding-left:26px}
-.cta-row{display:flex;flex-wrap:wrap;gap:14px;padding-left:26px}
+.hero-lead{font-size:18px;color:var(--slate);max-width:56ch;margin:0 auto 28px}
+.cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
 .hero-meta{
-  margin:26px 0 0;padding-left:26px;
-  font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ash)
+  margin:26px 0 0;
+  font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--ash)
 }
 
-/* surface panel — connected-map card for "where the hours go" */
-.surface-panel{
-  isolation:isolate;
-  position:relative;
-  background:var(--white);
-  border:1px solid var(--line-strong);
-  border-radius:16px;
-  padding:22px 22px 26px;
-  box-shadow:0 4px 12px rgba(17,39,51,.10), 0 12px 28px rgba(17,39,51,.08);
+/* word-tiled background — decorative, the repeated processes we automate */
+.hero-word-bg{
+  position:absolute;inset:0;z-index:0;
+  display:flex;flex-wrap:wrap;align-content:flex-start;gap:8px 22px;
+  padding:20px;
+  font-family:'Fraunces',serif;font-weight:600;font-size:clamp(20px,2.6vw,30px);
+  color:var(--accent);opacity:.07;
+  overflow:hidden;user-select:none;pointer-events:none;
+  mask-image:linear-gradient(to bottom, black 55%, transparent 96%);
 }
-.surface-header{
-  position:relative;z-index:3;
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
-  border-bottom:1px solid var(--line);padding-bottom:16px;
-}
-.surface-header .sh-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ash);margin:0}
-.surface-header .sh-title{margin:4px 0 0;font-size:16px;font-weight:700;letter-spacing:-.01em}
-.surface-status{
-  display:inline-flex;align-items:center;gap:6px;flex:none;
-  background:var(--tint);color:var(--accent);
-  padding:5px 10px;border-radius:20px;
-  font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
-}
-.surface-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.hero-word-bg span{white-space:nowrap}
 
-/* mobile default: plain static grid, no core, no lines */
-.surface-map{
-  position:relative;margin-top:16px;
-  display:grid;grid-template-columns:1fr 1fr;gap:.5rem;
-  padding:.75rem;
-  border:1px solid var(--line-strong);background:var(--cream);
+/* cursor blob — replaces the system pointer inside the hero on fine-pointer
+   devices; mix-blend-mode inverts whatever word/background it passes over,
+   echoing the MiMo reference gif rather than sitting flat on top of it */
+.hero-blob{
+  position:absolute;top:0;left:0;z-index:2;
+  width:120px;height:120px;margin:-60px 0 0 -60px;
+  background:var(--action);
+  mix-blend-mode:difference;
+  pointer-events:none;
+  opacity:0;
+  will-change:transform,border-radius;
 }
-.surface-core{display:none}
-.surface-node{
-  position:relative;z-index:2;
-  display:flex;align-items:center;gap:10px;
-  background:rgba(255,253,251,.94);border:1px solid var(--line);
-  border-radius:8px;padding:10px;
-  min-width:0;
-  transition:transform .24s ease,border-color .24s ease,background-color .24s ease;
-}
-.surface-node:hover{border-color:var(--accent);background:#fffdfb;transform:translateY(-3px)}
-.surface-icon{
-  width:34px;height:34px;flex:none;border-radius:7px;
-  background:var(--white);border:1px solid var(--line);
-  display:flex;align-items:center;justify-content:center;color:var(--accent);
-}
-.surface-icon svg{width:17px;height:17px}
-.surface-copy p{margin:0}
-.surface-copy .sc-name{font-size:13.5px;font-weight:600;color:var(--ink)}
-.surface-copy .sc-note{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--ash);margin-top:2px}
+.hero.has-blob{cursor:none}
+.hero.has-blob .hero-blob{opacity:1}
 
-/* desktop: hexagonal connected map, diagonal signal lines, pulsing core */
-@media (min-width:680px){
-  .surface-map{
-    display:block;min-height:400px;padding:0;border:1px solid var(--line-strong);
-    overflow:hidden;
-    background:
-      linear-gradient(28deg, transparent calc(50% - 1px), rgba(0,210,255,.28) 50%, transparent calc(50% + 1px)),
-      linear-gradient(-28deg, transparent calc(50% - 1px), rgba(0,210,255,.28) 50%, transparent calc(50% + 1px)),
-      linear-gradient(90deg, transparent calc(50% - 1px), rgba(0,210,255,.22) 50%, transparent calc(50% + 1px)),
-      var(--cream);
-  }
-  .surface-core{
-    display:flex;align-items:center;justify-content:center;
-    position:absolute;top:50%;left:50%;z-index:3;
-    width:76px;height:76px;background:var(--accent);
-    box-shadow:0 8px 20px rgba(0,104,74,.35);
-    animation:homeCoreSignal 5s ease-in-out infinite;
-  }
-  .surface-core span{
-    position:absolute;inset:0;transform:rotate(-45deg);
-    display:flex;align-items:center;justify-content:center;
-    color:var(--white);font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:.85rem;letter-spacing:-.04em;
-  }
-  .surface-node{
-    position:absolute;width:38%;min-height:64px;padding:12px;border-radius:0;
-  }
-  .surface-node:nth-of-type(1){top:1.75rem;left:1.75rem;animation:homeSignalDrift 5.5s ease-in-out infinite}
-  .surface-node:nth-of-type(2){top:1.75rem;right:1.75rem;animation:homeSignalDrift 6.4s ease-in-out -2.2s infinite reverse}
-  .surface-node:nth-of-type(3){top:50%;left:1.25rem;transform:translateY(-50%)}
-  .surface-node:nth-of-type(3):hover{transform:translateY(calc(-50% - 3px))}
-  .surface-node:nth-of-type(4){top:50%;right:1.25rem;transform:translateY(-50%)}
-  .surface-node:nth-of-type(4):hover{transform:translateY(calc(-50% - 3px))}
-  .surface-node:nth-of-type(5){bottom:1.75rem;left:1.75rem;animation:homeSignalDrift 5.5s ease-in-out infinite}
-  .surface-node:nth-of-type(6){bottom:1.75rem;right:1.75rem;animation:homeSignalDrift 6.4s ease-in-out -2.2s infinite reverse}
+@media (max-width:680px){
+  .hero-word-bg{display:none}
 }
-@keyframes homeCoreSignal{
-  0%,100%{transform:translate(-50%,-50%) rotate(45deg) scale(1)}
-  50%{transform:translate(-50%,-50%) rotate(45deg) scale(1.06)}
-}
-@keyframes homeSignalDrift{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-4px)}
-}
-@media (min-width:680px) and (prefers-reduced-motion:reduce){
-  .surface-core,.surface-node:nth-of-type(1),.surface-node:nth-of-type(2),.surface-node:nth-of-type(5),.surface-node:nth-of-type(6){animation:none}
-}
-
-.surface-principle{
-  margin-top:16px;padding:16px;
-  background:var(--tint);border:1px solid rgba(0,104,74,.24);border-radius:12px;
-}
-.surface-principle .eyebrow{margin-bottom:8px}
-.surface-principle p{margin:0;font-size:14px;line-height:1.55;color:var(--slate)}
 
 /* sticky subnav */
 .subnav{
@@ -343,7 +266,7 @@ footer{background:var(--ink);color:#a79fa2;padding:52px 0 40px;font-size:14px}
 .post-back{display:inline-block;margin-bottom:32px;font-family:'IBM Plex Mono',monospace;font-size:13px}
 
 @media (max-width:920px){
-  .hero-grid,.intro-split,.answer-grid,.service-grid,.contact-grid{grid-template-columns:1fr}
+  .intro-split,.answer-grid,.service-grid,.contact-grid{grid-template-columns:1fr}
   .service-grid{gap:1px}
   .nav-links a:not(.btn){display:none}
   section{padding:56px 0}
@@ -351,7 +274,4 @@ footer{background:var(--ink);color:#a79fa2;padding:52px 0 40px;font-size:14px}
 @media (max-width:600px){
   .calendly-inline-widget{height:950px !important}
   .booking-card{padding:16px}
-}
-@media (max-width:560px){
-  .surface-map{grid-template-columns:1fr}
 }

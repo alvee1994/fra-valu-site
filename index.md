@@ -8,97 +8,17 @@ permalink: /
 ---
 
 <section class="hero" id="top">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="eyebrow" style="padding-left:26px">AI &amp; workflow automation consultancy</p>
-      <h1>Your team loses hours every week.<br><span class="accent">We automate what pays.</span></h1>
-      <p class="hero-lead">We map how your team spends its week and price what each repeated task costs. Then we build the automations that pay back first.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#contact">Schedule a call</a>
-        <a class="btn btn-outline" href="#scope">See what we automate</a>
-      </div>
-      <p class="hero-meta">Fixed-fee audit and build &middot; SMEs without an in-house IT implementation team &middot; Diagnose, build, measure</p>
+  <div class="hero-word-bg" aria-hidden="true" data-words="Reports,Invoices,Spreadsheets,Scheduling,Updates,Client Requests"></div>
+  <div class="hero-blob" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <p class="eyebrow">AI &amp; workflow automation consultancy</p>
+    <h1>Your team loses hours every week.<br><span class="accent">We automate what pays.</span></h1>
+    <p class="hero-lead">We map how your team spends its week and price what each repeated task costs. Then we build the automations that pay back first.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#contact">Schedule a call</a>
+      <a class="btn btn-outline" href="#scope">See what we automate</a>
     </div>
-
-    <div class="surface-panel">
-      <div class="surface-header">
-        <div>
-          <p class="sh-label">Connected discovery map</p>
-          <p class="sh-title">One audit. Six places the hours hide.</p>
-        </div>
-        <span class="surface-status">Mapped</span>
-      </div>
-
-      <div class="surface-map">
-        <span class="surface-core" aria-label="fravalu"><span>FV</span></span>
-
-        <div class="surface-node">
-          <div class="surface-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="2"></rect><path d="M8 13v4M12 9v8M16 11v6"></path></svg>
-          </div>
-          <div class="surface-copy">
-            <p class="sc-name">Reports</p>
-            <p class="sc-note">Rebuilt by hand, every week</p>
-          </div>
-        </div>
-
-        <div class="surface-node">
-          <div class="surface-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h12v17l-2.5-1.5L13 20l-1.5-1.5L10 20l-2.5-1-1.5 1v-17Z"></path><path d="M8.5 8h7M8.5 11.5h7M8.5 15h4"></path></svg>
-          </div>
-          <div class="surface-copy">
-            <p class="sc-name">Invoices</p>
-            <p class="sc-note">Retyped between systems</p>
-          </div>
-        </div>
-
-        <div class="surface-node">
-          <div class="surface-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="2"></rect><path d="M3.5 9.5h17M9.5 9.5V20"></path></svg>
-          </div>
-          <div class="surface-copy">
-            <p class="sc-name">Spreadsheets</p>
-            <p class="sc-note">Reconciled every Friday</p>
-          </div>
-        </div>
-
-        <div class="surface-node">
-          <div class="surface-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="2"></rect><path d="m4.5 7 7.5 6 7.5-6"></path></svg>
-          </div>
-          <div class="surface-copy">
-            <p class="sc-name">Updates</p>
-            <p class="sc-note">Chased across email and chat</p>
-          </div>
-        </div>
-
-        <div class="surface-node">
-          <div class="surface-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8.5" r="3"></circle><path d="M3.5 19c.7-3 2.7-4.7 5.5-4.7s4.8 1.7 5.5 4.7"></path><path d="M16 8a2.6 2.6 0 1 1 0 5.2"></path><path d="M17 14.3c2 .4 3 1.7 3.5 3.9"></path></svg>
-          </div>
-          <div class="surface-copy">
-            <p class="sc-name">Client requests</p>
-            <p class="sc-note">Logged nowhere central</p>
-          </div>
-        </div>
-
-        <div class="surface-node">
-          <div class="surface-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="16" rx="2"></rect><path d="M3.5 9.5h17M8 3v3M16 3v3"></path><path d="M8 13.5h.01M12 13.5h.01M16 13.5h.01M8 17h.01M12 17h.01"></path></svg>
-          </div>
-          <div class="surface-copy">
-            <p class="sc-name">Scheduling</p>
-            <p class="sc-note">Rebooked by hand each time</p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="surface-principle">
-        <p class="eyebrow" style="margin-bottom:6px">The principle</p>
-        <p>We diagnose before we quote. You pay a fixed price per workflow.</p>
-      </div>
-    </div>
+    <p class="hero-meta">Fixed-fee audit and build &middot; SMEs without an in-house IT implementation team &middot; Diagnose, build, measure</p>
   </div>
 </section>
 
