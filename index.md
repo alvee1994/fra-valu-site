@@ -8,7 +8,7 @@ permalink: /
 ---
 
 <section class="hero" id="top">
-  <div class="hero-word-bg" aria-hidden="true" data-words="Reports,Invoices,Spreadsheets,Scheduling,Updates,Client Requests"></div>
+  <div class="hero-word-bg" aria-hidden="true" data-words="reports,invoices,spreadsheets,scheduling,updates,client requests"></div>
   <div class="hero-blob" aria-hidden="true"></div>
   <div class="wrap hero-inner">
     <p class="eyebrow">AI &amp; workflow automation consultancy</p>
