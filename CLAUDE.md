@@ -12,7 +12,7 @@ The published site for Fravalu — served at https://fra-valu.com via GitHub Pag
 
 The sibling repo [`fra-valu`](https://github.com/alvee1994/fra-valu) (private) is the source of truth for:
 
-- **Brand guide** — `brand/guide/fravalu-brand-guide-v2.0.html`: colour, type, voice, imagery rules. Check it before changing copy or design here.
+- **Brand guide** — `brand/guide/fravalu-brand-guide-v2.1.html`: colour, type, voice, imagery rules. Check it before changing copy or design here.
 - **Brand assets** — `brand/assets/`: logo SVGs/PNGs and the generator scripts that produce them.
 - Company/client/finance records — not relevant to this repo and must never be copied here.
 

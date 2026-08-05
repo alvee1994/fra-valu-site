@@ -28,7 +28,7 @@ Not required to publish — GitHub Pages builds the same way on push.
 
 The business/records repo, [`fra-valu`](https://github.com/alvee1994/fra-valu), is the source of truth for:
 
-- **Brand guide**: `brand/guide/fravalu-brand-guide-v2.0.html` — colour, type, voice, imagery rules
+- **Brand guide**: `brand/guide/fravalu-brand-guide-v2.1.html` — colour, type, voice, imagery rules
 - **Brand assets**: `brand/assets/` — logo SVGs/PNGs, generated via `build-assets.py` / `export-png.py`
 - Company records, client work, finance (not relevant here, and not public)
 
