@@ -7,11 +7,21 @@
   var wordBg = document.querySelector('.hero-word-bg');
   if (!hero || !blob) return;
 
-  /* Tile the word background. A fixed span count can't work — how many words
-     a row holds and how many rows the hero has both depend on the viewport —
-     so add spans until the last one clears the hero's bottom edge, and redo
-     it whenever the hero resizes. */
+  /* Tile the word background with one word repeated per row — each row is a
+     horizontal stripe of the same word (like wallpaper bands). Rows cycle
+     through the word list and stack vertically until the hero height is
+     filled. Redone on resize so the count always matches the viewport. */
   var words = wordBg ? (wordBg.getAttribute('data-words') || '').split(',').filter(Boolean) : [];
+
+  function measureWordWidth(word) {
+    var s = document.createElement('span');
+    s.textContent = word;
+    s.style.cssText = 'white-space:nowrap;visibility:hidden;position:absolute;pointer-events:none';
+    wordBg.appendChild(s);
+    var w = s.offsetWidth;
+    wordBg.removeChild(s);
+    return w;
+  }
 
   function fillWords() {
     if (!wordBg || !words.length) return;
@@ -21,25 +31,29 @@
     var target = wordBg.clientHeight;
     if (!target) return;
 
-    var placed = 0;
-    var batch = words.length * 3;
+    var colGap = 14;      // matches .word-row gap
+    var heroWidth = hero.clientWidth;
 
-    for (var pass = 0; pass < 12; pass++) {
+    for (var i = 0; ; i++) {
+      var word = words[i % words.length];
+      var w = measureWordWidth(word);
+      var count = Math.ceil(heroWidth / (w + colGap)) + 2;
+      if (count < 3) count = 3;
+
+      var row = document.createElement('div');
+      row.className = 'word-row';
       var frag = document.createDocumentFragment();
-      for (var i = 0; i < batch; i++, placed++) {
+      for (var j = 0; j < count; j++) {
         var span = document.createElement('span');
-        span.textContent = words[placed % words.length];
+        span.textContent = word;
         frag.appendChild(span);
       }
-      wordBg.appendChild(frag);
+      row.appendChild(frag);
+      wordBg.appendChild(row);
 
-      // spans' offsetParent is wordBg itself (it is positioned)
-      var last = wordBg.lastElementChild;
-      var filled = last.offsetTop + last.offsetHeight;
-      if (filled >= target || placed > 1200) break;
-
-      // extrapolate the shortfall instead of creeping a batch at a time
-      batch = Math.min(Math.max(Math.ceil(placed * (target - filled) / filled), words.length), 400);
+      var bottom = row.offsetTop + row.offsetHeight;
+      if (bottom >= target && i >= words.length) break;
+      if (i > 200) break;
     }
   }
 
