@@ -11,7 +11,7 @@ This repo holds **only** the deployed site. It's a Jekyll site — GitHub Pages 
 - `posts/index.html` — auto-generated listing of everything in `_writing/`, served at `/posts/`.
 - `_layouts/` — `default.html` (site chrome: head, header, footer) and `post.html` (article wrapper for posts).
 - `assets/site.css` — site styling, split out of what used to be an inline `<style>` block.
-- `open-props.*.css`, images, `CNAME` — vendored/static as before.
+- images, `CNAME` — vendored/static as before.
 
 ## Local preview (optional)
 
@@ -28,7 +28,7 @@ Not required to publish — GitHub Pages builds the same way on push.
 
 The business/records repo, [`fra-valu`](https://github.com/alvee1994/fra-valu), is the source of truth for:
 
-- **Brand guide**: `brand/guide/fravalu-brand-guide-v1.4.html` — colour, type, voice, imagery rules
+- **Brand guide**: `brand/guide/fravalu-brand-guide-v2.0.html` — colour, type, voice, imagery rules
 - **Brand assets**: `brand/assets/` — logo SVGs/PNGs, generated via `build-assets.py` / `export-png.py`
 - Company records, client work, finance (not relevant here, and not public)
 

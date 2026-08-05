@@ -22,7 +22,7 @@ permalink: /
   </div>
 </section>
 
-<nav class="subnav">
+<nav class="subnav" aria-label="Section">
   <div class="wrap">
     <a href="#what-we-do"><b>01</b> What we do</a>
     <a href="#how-we-work"><b>02</b> How we work</a>
@@ -99,7 +99,7 @@ permalink: /
 
     <div class="service-grid">
       <div class="service-card">
-        <div class="sc-top"><div class="sc-icon">&#9673;</div><span class="sc-num">01</span></div>
+        <div class="sc-top"><div class="sc-icon" aria-hidden="true">&#9673;</div><span class="sc-num">01</span></div>
         <h3>Process mapping and audit</h3>
         <p>We log how your team spends its week and price each repeated task.</p>
         <ul class="sc-bullets">
@@ -112,7 +112,7 @@ permalink: /
       </div>
 
       <div class="service-card">
-        <div class="sc-top"><div class="sc-icon">&#9881;</div><span class="sc-num">02</span></div>
+        <div class="sc-top"><div class="sc-icon" aria-hidden="true">&#9881;</div><span class="sc-num">02</span></div>
         <h3>Workflow and automation design</h3>
         <p>We design the automation before we build it, so it matches your process.</p>
         <ul class="sc-bullets">
@@ -125,7 +125,7 @@ permalink: /
       </div>
 
       <div class="service-card">
-        <div class="sc-top"><div class="sc-icon">&#9998;</div><span class="sc-num">03</span></div>
+        <div class="sc-top"><div class="sc-icon" aria-hidden="true">&#9998;</div><span class="sc-num">03</span></div>
         <h3>Build and integration</h3>
         <p>Scripts, cloud functions, and AI agents wired into the tools you already run.</p>
         <ul class="sc-bullets">
@@ -138,7 +138,7 @@ permalink: /
       </div>
 
       <div class="service-card">
-        <div class="sc-top"><div class="sc-icon">&#9776;</div><span class="sc-num">04</span></div>
+        <div class="sc-top"><div class="sc-icon" aria-hidden="true">&#9776;</div><span class="sc-num">04</span></div>
         <h3>Measurement and reporting</h3>
         <p>We check the saving against what we projected, in numbers your team can read without us.</p>
         <ul class="sc-bullets">
@@ -247,7 +247,7 @@ permalink: /
     <div class="booking-card">
       <p class="sh-label" style="margin:0 0 14px">Pick a time</p>
       <div class="calendly-inline-widget"
-        data-url="https://calendly.com/alvee-fra-valu/30min?hide_gdpr_banner=1&hide_landing_page_details=1&background_color=FFFFFF&text_color=112733&primary_color=00684A"
+        data-url="https://calendly.com/alvee-fra-valu/30min?hide_landing_page_details=1&background_color=FFFFFF&text_color=112733&primary_color=00684A"
         style="min-width:280px;height:640px;"></div>
       <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
       <noscript>
