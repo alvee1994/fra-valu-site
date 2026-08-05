@@ -15,10 +15,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
     rel="stylesheet">
   <link rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg transform='rotate(-18 50 50)'%3E%3Cpolygon points='97,50 6,10 6,42 64,50 6,58 6,90' fill='%23F4C542'/%3E%3Cpolygon points='97,50 6,58 6,90' fill='%23C89A2C'/%3E%3C/g%3E%3C/svg%3E">
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg transform='rotate(-18 50 50)'%3E%3Cpolygon points='97,50 6,10 6,42 64,50 6,58 6,90' fill='%2300684A'/%3E%3Cpolygon points='97,50 6,58 6,90' fill='%23112733'/%3E%3C/g%3E%3C/svg%3E">
   <!-- Open Props: vendored locally (no build step here), same reasoning as the
      old gsap.min.js used to get — a CDN copy is one more thing a content
      blocker can drop. Normalize first, then the token set. -->
@@ -34,45 +34,56 @@
       <a class="mark" href="{{ '/' | relative_url }}#top">
         <svg viewBox="0 0 100 100" width="26" height="26" aria-hidden="true" style="flex:none">
           <g transform="rotate(-18 50 50)">
-            <polygon points="97,50 6,10 6,42 64,50 6,58 6,90" fill="#F4C542"></polygon>
-            <polygon points="97,50 6,58 6,90" fill="#C89A2C"></polygon>
+            <polygon points="97,50 6,10 6,42 64,50 6,58 6,90" fill="#00684A"></polygon>
+            <polygon points="97,50 6,58 6,90" fill="#112733"></polygon>
           </g>
         </svg>
         <span>fravalu</span>
       </a>
       <nav class="nav-links">
-        <a href="{{ '/' | relative_url }}#intro">What I do</a>
+        <a href="{{ '/' | relative_url }}#what-we-do">What we do</a>
+        <a href="{{ '/' | relative_url }}#how-we-work">How we work</a>
+        <a href="{{ '/' | relative_url }}#scope">Service scope</a>
+        <a href="{{ '/' | relative_url }}#faq">FAQ</a>
         <a href="{{ '/posts/' | relative_url }}">Posts</a>
-        <a class="btn btn-primary" href="{{ '/' | relative_url }}#book">Schedule a call</a>
+        <a class="btn btn-primary" href="{{ '/' | relative_url }}#contact">Schedule a call</a>
       </nav>
     </div>
   </header>
 
-  <main id="top">
+  <main>
     {{ content }}
   </main>
 
   <footer>
-    <div class="wrap foot">
+    <div class="wrap foot-grid">
       <div>
-        <a class="mark" href="{{ '/' | relative_url }}#top" style="margin-bottom:12px">
-          <svg viewBox="0 0 100 100" width="22" height="22" aria-hidden="true" style="flex:none">
+        <div class="foot-mark">
+          <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
             <g transform="rotate(-18 50 50)">
-              <polygon points="97,50 6,10 6,42 64,50 6,58 6,90" fill="#F4C542"></polygon>
-              <polygon points="97,50 6,58 6,90" fill="#C89A2C"></polygon>
+              <polygon points="97,50 6,10 6,42 64,50 6,58 6,90" fill="#00ED64"></polygon>
+              <polygon points="97,50 6,58 6,90" fill="#00D45A"></polygon>
             </g>
           </svg>
-          <span>fravalu</span>
-        </a>
-        <p style="margin:0;max-width:36ch">AI and workflow automation for SMEs. Rotterdam, Netherlands.</p>
+          <a class="mark" href="{{ '/' | relative_url }}#top" style="color:inherit">fravalu</a>
+        </div>
+        <p style="max-width:32ch;font-size:14px;color:#a79fa2;margin:0">AI and workflow automation for SMEs.<br>Rotterdam, Netherlands.</p>
       </div>
-      <div class="foot-meta">
-        <div><a href="mailto:contact@fra-valu.com">contact@fra-valu.com</a></div>
-        <div><a href="https://www.linkedin.com/in/alveeahmed/" rel="me noopener"
-            target="_blank">linkedin.com/in/alveeahmed</a></div>
-        <div>KVK 42095902</div>
+      <div class="foot-col">
+        <h4>Program</h4>
+        <a href="{{ '/' | relative_url }}#what-we-do">What we do</a>
+        <a href="{{ '/' | relative_url }}#how-we-work">How we work</a>
+        <a href="{{ '/' | relative_url }}#scope">Service scope</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="{{ '/' | relative_url }}#faq">FAQ</a>
+        <a href="{{ '/posts/' | relative_url }}">Posts</a>
+        <a href="mailto:contact@fra-valu.com">contact@fra-valu.com</a>
+        <a href="https://www.linkedin.com/in/alveeahmed/" rel="me noopener" target="_blank">linkedin.com/in/alveeahmed</a>
       </div>
     </div>
+    <div class="wrap foot-bottom mono">KVK 42095902 &middot; fra-valu.com</div>
   </footer>
 
 </body>

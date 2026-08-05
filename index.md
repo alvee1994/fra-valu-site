@@ -2,83 +2,296 @@
 layout: default
 title: Fravalu, AI automation for SMEs
 description: >-
-  Two weeks learning how your business runs, then a ranked, costed plan for
-  the work worth automating. The plan is yours to keep.
+  A ranked, costed plan for the work worth automating, and the first
+  workflow built to prove it. The plan is yours to keep.
 permalink: /
 ---
 
-<!-- HERO -->
-<section class="hero" id="intro">
-  <div class="wrap hero-enter">
-    <p class="hero-word">AI and workflow automation for SMEs</p>
-    <h1 class="hero-h">Find the hours your&nbsp;team<br>keeps <em>losing</em>.</h1>
-    <p class="lead">I spend two weeks inside your business, come back with a ranked, costed plan, and build what
-      pays back fastest before handing it over, with the code staying yours.</p>
-
-    <div class="cta-row">
-      <a class="btn btn-primary" href="#book">Schedule a call</a>
-      <span class="muted" style="font-size:16px;max-width:30ch;color:#8891A8">A thirty minute call is enough, so
-        bring the process that eats your week.</span>
-    </div>
-  </div>
-</section>
-
-<!-- WHAT I DO -->
-<section id="capabilities" style="background:var(--paper)">
-  <div class="wrap">
-    <h2 style="margin-bottom:28px">What I do.</h2>
-    <div class="prose">
-      <p>I work with small and mid-sized businesses that suspect AI or automation could help them but aren't sure
-        where it actually fits. If there's a process in your week that feels dumber than it should be,
-        copying things between systems, chasing the same updates, compiling the same report, send it my way and I'll
-        tell you straight whether it's worth automating and roughly what it would take.</p>
-      <p>I build with Python, AWS, n8n, OpenRouter - I adapt the stack according to the job.</p>
-    </div>
-
-    <div class="bio">
-      <img class="bio-photo" src="{{ '/ahmed-alvee.jpg' | relative_url }}"
-        srcset="{{ '/ahmed-alvee.jpg' | relative_url }} 1x, {{ '/ahmed-alvee@2x.jpg' | relative_url }} 2x"
-        width="88" height="88" alt="Ahmed Alvee" loading="lazy" decoding="async">
-      <div style="flex:1;min-width:240px">
-        <p class="label" style="margin-bottom:6px">Who you work with</p>
-        <h3 style="margin-bottom:6px">Ahmed Alvee</h3>
-        <a class="bio-link" href="https://www.linkedin.com/in/alveeahmed/" rel="me noopener" target="_blank">
-          LinkedIn
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z">
-            </path>
-          </svg>
-        </a>
-        <p style="margin-top:14px;max-width:56ch">I worked as a solutions architect for four years on healthcare
-          data across five Southeast Asian markets, and I'm now finishing an MBA at Rotterdam School of Management.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BOOK -->
-<section id="book" style="background:var(--navy)">
-  <div class="wrap split">
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
     <div>
-      <h2>Let's connect.</h2>
-      <p class="lead" style="max-width:44ch;margin-top:16px">Tell me where hours go.</p>
+      <p class="eyebrow" style="padding-left:26px">AI &amp; workflow automation consultancy</p>
+      <h1>Your team loses hours every week.<br><span class="accent">We automate what pays.</span></h1>
+      <p class="hero-lead">We map how your team spends its week and price what each repeated task costs. Then we build the automations that pay back first.</p>
       <div class="cta-row">
-        <a class="btn btn-quiet" href="mailto:contact@fra-valu.com">contact@fra-valu.com</a>
+        <a class="btn btn-primary" href="#contact">Schedule a call</a>
+        <a class="btn btn-outline" href="#scope">See what we automate</a>
+      </div>
+      <p class="hero-meta">Fixed-fee audit and build &middot; SMEs without an in-house IT implementation team &middot; Diagnose, build, measure</p>
+    </div>
+
+    <div class="surface-panel">
+      <div class="surface-header">
+        <div>
+          <p class="sh-label">Connected discovery map</p>
+          <p class="sh-title">One audit. Six places the hours hide.</p>
+        </div>
+        <span class="surface-status">Mapped</span>
+      </div>
+
+      <div class="surface-map">
+        <span class="surface-core" aria-label="fravalu"><span>FV</span></span>
+
+        <div class="surface-node">
+          <div class="surface-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="2"></rect><path d="M8 13v4M12 9v8M16 11v6"></path></svg>
+          </div>
+          <div class="surface-copy">
+            <p class="sc-name">Reports</p>
+            <p class="sc-note">Rebuilt by hand, every week</p>
+          </div>
+        </div>
+
+        <div class="surface-node">
+          <div class="surface-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h12v17l-2.5-1.5L13 20l-1.5-1.5L10 20l-2.5-1-1.5 1v-17Z"></path><path d="M8.5 8h7M8.5 11.5h7M8.5 15h4"></path></svg>
+          </div>
+          <div class="surface-copy">
+            <p class="sc-name">Invoices</p>
+            <p class="sc-note">Retyped between systems</p>
+          </div>
+        </div>
+
+        <div class="surface-node">
+          <div class="surface-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="2"></rect><path d="M3.5 9.5h17M9.5 9.5V20"></path></svg>
+          </div>
+          <div class="surface-copy">
+            <p class="sc-name">Spreadsheets</p>
+            <p class="sc-note">Reconciled every Friday</p>
+          </div>
+        </div>
+
+        <div class="surface-node">
+          <div class="surface-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="2"></rect><path d="m4.5 7 7.5 6 7.5-6"></path></svg>
+          </div>
+          <div class="surface-copy">
+            <p class="sc-name">Updates</p>
+            <p class="sc-note">Chased across email and chat</p>
+          </div>
+        </div>
+
+        <div class="surface-node">
+          <div class="surface-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8.5" r="3"></circle><path d="M3.5 19c.7-3 2.7-4.7 5.5-4.7s4.8 1.7 5.5 4.7"></path><path d="M16 8a2.6 2.6 0 1 1 0 5.2"></path><path d="M17 14.3c2 .4 3 1.7 3.5 3.9"></path></svg>
+          </div>
+          <div class="surface-copy">
+            <p class="sc-name">Client requests</p>
+            <p class="sc-note">Logged nowhere central</p>
+          </div>
+        </div>
+
+        <div class="surface-node">
+          <div class="surface-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="16" rx="2"></rect><path d="M3.5 9.5h17M8 3v3M16 3v3"></path><path d="M8 13.5h.01M12 13.5h.01M16 13.5h.01M8 17h.01M12 17h.01"></path></svg>
+          </div>
+          <div class="surface-copy">
+            <p class="sc-name">Scheduling</p>
+            <p class="sc-note">Rebooked by hand each time</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="surface-principle">
+        <p class="eyebrow" style="margin-bottom:6px">The principle</p>
+        <p>We diagnose before we quote. You pay a fixed price per workflow.</p>
       </div>
     </div>
-    <div class="booking">
-      <p class="label">Pick a time</p>
-      <!-- Calendly inline widget begin -->
+  </div>
+</section>
+
+<nav class="subnav">
+  <div class="wrap">
+    <a href="#what-we-do"><b>01</b> What we do</a>
+    <a href="#how-we-work"><b>02</b> How we work</a>
+    <a href="#scope"><b>03</b> Service scope</a>
+    <a href="#pricing"><b>04</b> Pricing</a>
+    <a href="#faq"><b>05</b> FAQ</a>
+    <a href="#contact"><b>06</b> Contact</a>
+  </div>
+</nav>
+
+<section class="band-tint">
+  <div class="wrap intro-split">
+    <p class="eyebrow">One accountable program</p>
+    <p>Fravalu is an AI and workflow automation consultancy for businesses without an IT implementation team. You get a ranked, costed plan for what is worth automating, and a build that proves the first item on it.</p>
+  </div>
+</section>
+
+<section id="what-we-do">
+  <div class="wrap numbered-row">
+    <span class="ghost-num">01</span>
+    <div class="section-head">
+      <p class="eyebrow">The short answer</p>
+      <h2>What does an automation partner actually do?</h2>
+    </div>
+    <div class="answer-grid">
+      <div>
+        <p>We find where a business loses hours to repeated manual work, and which of those processes are worth automating.</p>
+      </div>
+      <div>
+        <p>We sit with the people doing the work, map every repeated task, and price it in hours and money. Then we recommend what to automate, in what order, and what it costs to build.</p>
+        <p>We build with plain, widely used tools, wired into the systems you already run. Some processes we recommend you leave alone, because the hours saved would not cover the build.</p>
+      </div>
+    </div>
+
+    <div class="takeaways">
+      <div class="tk-head">Key takeaways</div>
+      <ul>
+        <li>We diagnose before we quote. The plan is yours either way.</li>
+        <li>Every recommendation carries a price and an estimated saving.</li>
+        <li>We build inside your tools, and you own the code.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="how-we-work" class="band-cream">
+  <div class="wrap numbered-row">
+    <span class="ghost-num">02</span>
+    <div class="section-head">
+      <p class="eyebrow">How we work</p>
+      <h2>We build the one thing that pays back first.</h2>
+      <p>Every engagement runs in the same order. Skipping a stage is how automation projects end up expensive and unused.</p>
+    </div>
+
+    <div class="answer-grid" style="grid-template-columns:1fr">
+      <div>
+        <p><strong>Map.</strong> We sit with your team and log every repeated task.</p>
+        <p><strong>Rank and price.</strong> Each process gets an estimated saving and a fixed build price.</p>
+        <p><strong>Build.</strong> We build the workflow that pays back first and hand you the code.</p>
+        <p><strong>Measure.</strong> We check the saving against what we projected, and tell you where it fell short.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="scope">
+  <div class="wrap numbered-row">
+    <span class="ghost-num">03</span>
+    <div class="section-head">
+      <p class="eyebrow">Complete service scope</p>
+      <h2>Everything one automation program covers.</h2>
+      <p>The full shape of what we do.</p>
+    </div>
+
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="sc-top"><div class="sc-icon">&#9673;</div><span class="sc-num">01</span></div>
+        <h3>Process mapping and audit</h3>
+        <p>We log how your team spends its week and price each repeated task.</p>
+        <ul class="sc-bullets">
+          <li>Time-and-task interviews</li>
+          <li>Cost-per-process estimate</li>
+          <li>Ranked opportunity list</li>
+          <li>Fixed price per item</li>
+        </ul>
+        <a class="sc-link" href="#contact">Talk to us &rarr;</a>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-top"><div class="sc-icon">&#9881;</div><span class="sc-num">02</span></div>
+        <h3>Workflow and automation design</h3>
+        <p>We design the automation before we build it, so it matches your process.</p>
+        <ul class="sc-bullets">
+          <li>Workflow architecture</li>
+          <li>Tool and model selection</li>
+          <li>Edge-case and failure mapping</li>
+          <li>Acceptance criteria</li>
+        </ul>
+        <a class="sc-link" href="#contact">Talk to us &rarr;</a>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-top"><div class="sc-icon">&#9998;</div><span class="sc-num">03</span></div>
+        <h3>Build and integration</h3>
+        <p>Scripts, cloud functions, and AI agents wired into the tools you already run.</p>
+        <ul class="sc-bullets">
+          <li>Python and cloud automation</li>
+          <li>AI agent and LLM workflows</li>
+          <li>Existing-tool integration</li>
+          <li>Code handed over, yours to keep</li>
+        </ul>
+        <a class="sc-link" href="#contact">Talk to us &rarr;</a>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-top"><div class="sc-icon">&#9776;</div><span class="sc-num">04</span></div>
+        <h3>Measurement and reporting</h3>
+        <p>We check the saving against what we projected, in numbers your team can read without us.</p>
+        <ul class="sc-bullets">
+          <li>Before-and-after time tracking</li>
+          <li>Plain-language reporting</li>
+          <li>Documentation for your team</li>
+          <li>Honest gap analysis</li>
+        </ul>
+        <a class="sc-link" href="#contact">Talk to us &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="pricing">
+  <div class="wrap">
+    <h3>One fixed price per workflow, agreed before we build.</h3>
+    <div class="btn-row">
+      <a class="btn btn-quiet-inverse" href="#contact">Discuss your workflows &rarr;</a>
+      <a class="btn btn-outline-inverse" href="#faq">Read the FAQ &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap numbered-row">
+    <span class="ghost-num">05</span>
+    <div class="section-head">
+      <p class="eyebrow">FAQ</p>
+      <h2>What people ask before working with us.</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>Do we need an IT implementation team to work with you?</h3>
+        <p>No. We work with businesses that do not have one. We bring the judgement about what is worth automating.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if the audit finds nothing worth automating?</h3>
+        <p>Then we tell you that. The plan is yours either way.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do you lock us into your tools?</h3>
+        <p>No. We build with widely used tools inside your systems, and you own everything we build.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How is pricing decided?</h3>
+        <p>Every workflow on the list carries a fixed price before we start.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="band-tint">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="eyebrow">Let's talk</p>
+      <h2 style="font-size:clamp(28px,3.4vw,38px)">Tell us where the hours go.</h2>
+      <p style="font-size:18px;color:var(--slate);max-width:48ch;margin:0 0 28px">We map where your hours go and tell you what automating them would save.</p>
+      <div class="cta-row" style="padding-left:0">
+        <a class="btn btn-primary" href="mailto:contact@fra-valu.com">contact@fra-valu.com</a>
+      </div>
+    </div>
+
+    <div class="booking-card">
+      <p class="sh-label" style="margin:0 0 14px">Pick a time</p>
       <div class="calendly-inline-widget"
-        data-url="https://calendly.com/alvee-fra-valu/30min?hide_gdpr_banner=1&hide_landing_page_details=1&background_color=ffffff&text_color=161d33&primary_color=f4c542"
-        style="min-width:320px;height:700px;"></div>
+        data-url="https://calendly.com/alvee-fra-valu/30min?hide_gdpr_banner=1&hide_landing_page_details=1&background_color=FFFFFF&text_color=112733&primary_color=00684A"
+        style="min-width:280px;height:640px;"></div>
       <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-      <!-- Calendly inline widget end -->
       <noscript>
-        <p style="margin:0">Booking needs JavaScript. Write to
-          <a href="mailto:contact@fra-valu.com">contact@fra-valu.com</a> and I will send you times.
+        <p style="margin:0;font-size:14px;color:var(--slate)">Booking needs JavaScript. Write to
+          <a href="mailto:contact@fra-valu.com">contact@fra-valu.com</a> and we will send you times.
         </p>
       </noscript>
     </div>
