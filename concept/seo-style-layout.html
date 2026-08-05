@@ -100,32 +100,66 @@
     font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ash)
   }
 
-  .discovery-card{
+  /* surface panel — connected-map card for "where the hours go" */
+  .surface-panel{
     background:var(--white);
     border:1px solid var(--line);
     border-radius:14px;
-    padding:26px;
+    padding:22px 22px 26px;
+    box-shadow:0 1px 2px rgba(23,19,21,.04);
   }
-  .discovery-card .dc-label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ash)}
-  .discovery-card h3{font-size:19px;margin:6px 0 18px;letter-spacing:-.01em}
-  .dc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:relative}
-  .dc-item{
-    background:var(--paper);border:1px solid var(--line);border-radius:10px;
-    padding:14px;font-size:13px;
+  .surface-header{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    border-bottom:1px solid var(--line);padding-bottom:16px;
   }
-  .dc-item strong{display:block;font-size:14px;margin-bottom:4px}
-  .dc-item span{color:var(--ash);font-family:'IBM Plex Mono',monospace;font-size:11px}
-  .dc-center{
-    grid-column:1 / -1;
-    background:var(--accent);color:var(--white);
-    border-radius:10px;padding:16px;text-align:center;
-    font-family:'IBM Plex Mono',monospace;font-weight:700;letter-spacing:.05em;font-size:13px;
+  .surface-header .sh-label{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ash);margin:0}
+  .surface-header .sh-title{margin:4px 0 0;font-size:16px;font-weight:700;letter-spacing:-.01em}
+  .surface-status{
+    display:inline-flex;align-items:center;gap:6px;flex:none;
+    background:var(--tint);color:var(--accent);
+    padding:5px 10px;border-radius:20px;
+    font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
   }
-  .dc-principle{
-    margin-top:18px;padding:16px;background:var(--tint);border-radius:10px;
+  .surface-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent)}
+
+  .surface-map{position:relative;margin-top:20px}
+  .surface-map-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .surface-core{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(45deg);
+    width:56px;height:56px;background:var(--accent);z-index:2;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 16px rgba(122,38,58,.28);
+    border-radius:8px;
   }
-  .dc-principle .eyebrow{margin-bottom:8px}
-  .dc-principle p{margin:0;font-size:14px;color:var(--slate)}
+  .surface-core::before{
+    content:'';position:absolute;inset:-30px;z-index:-1;border-radius:50%;
+    background:radial-gradient(circle, rgba(122,38,58,.10) 0%, rgba(122,38,58,0) 70%);
+  }
+  .surface-core span{
+    transform:rotate(-45deg);color:var(--white);
+    font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:10px;letter-spacing:.04em;
+  }
+  .surface-node{
+    display:flex;align-items:center;gap:12px;
+    background:rgba(233,225,226,.4);border:1px solid var(--line);
+    border-radius:10px;padding:12px;
+  }
+  .surface-icon{
+    width:36px;height:36px;flex:none;border-radius:8px;
+    background:var(--white);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;color:var(--accent);
+  }
+  .surface-icon svg{width:18px;height:18px}
+  .surface-copy p{margin:0}
+  .surface-copy .sc-name{font-size:14px;font-weight:600;color:var(--ink)}
+  .surface-copy .sc-note{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ash);margin-top:2px}
+
+  .surface-principle{
+    margin-top:16px;padding:16px;
+    background:var(--tint);border:1px solid rgba(122,38,58,.16);border-radius:10px;
+  }
+  .surface-principle .eyebrow{margin-bottom:8px}
+  .surface-principle p{margin:0;font-size:14px;line-height:1.55;color:var(--slate)}
 
   /* sticky subnav */
   .subnav{
@@ -209,6 +243,13 @@
   .cta-band .btn-row{display:flex;gap:14px;flex-wrap:wrap}
   .cta-diamonds{position:absolute;left:0;top:0;bottom:0;width:60%;opacity:.5;pointer-events:none}
 
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}
+  .booking-card{
+    background:var(--white);border:1px solid var(--line);border-radius:14px;
+    padding:22px;box-shadow:0 1px 2px rgba(23,19,21,.04);
+  }
+
   /* FAQ */
   .faq-item{border-top:1px solid var(--line);padding:26px 0}
   .faq-item:last-child{border-bottom:1px solid var(--line)}
@@ -228,10 +269,13 @@
   .foot-bottom{margin-top:40px;padding-top:24px;border-top:1px solid #33282b;font-size:13px;color:#7c7176}
 
   @media (max-width:920px){
-    .hero-grid,.intro-split,.answer-grid,.service-grid{grid-template-columns:1fr}
+    .hero-grid,.intro-split,.answer-grid,.service-grid,.contact-grid{grid-template-columns:1fr}
     .service-grid{gap:1px}
     .nav-links a:not(.btn){display:none}
     section{padding:56px 0}
+  }
+  @media (max-width:560px){
+    .surface-map-grid{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -266,17 +310,83 @@
       <p class="hero-meta">Fixed-fee audit and build · SMEs without an in-house data team · Diagnose, build, measure</p>
     </div>
 
-    <div class="discovery-card">
-      <p class="dc-label">Where the hours go</p>
-      <h3>One map. Every repeated task.</h3>
-      <div class="dc-grid">
-        <div class="dc-item"><strong>Reports</strong><span>REBUILT BY HAND, EVERY WEEK</span></div>
-        <div class="dc-item"><strong>Invoices</strong><span>RETYPED BETWEEN SYSTEMS</span></div>
-        <div class="dc-center">RANKED PLAN</div>
-        <div class="dc-item"><strong>Spreadsheets</strong><span>RECONCILED EVERY FRIDAY</span></div>
-        <div class="dc-item"><strong>Updates</strong><span>CHASED ACROSS EMAIL AND CHAT</span></div>
+    <div class="surface-panel">
+      <div class="surface-header">
+        <div>
+          <p class="sh-label">Connected discovery map</p>
+          <p class="sh-title">One audit. Six places the hours hide.</p>
+        </div>
+        <span class="surface-status">Mapped</span>
       </div>
-      <div class="dc-principle">
+
+      <div class="surface-map">
+        <div class="surface-core" aria-label="fravalu"><span>FV</span></div>
+        <div class="surface-map-grid">
+
+          <div class="surface-node">
+            <div class="surface-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="2"></rect><path d="M8 13v4M12 9v8M16 11v6"></path></svg>
+            </div>
+            <div class="surface-copy">
+              <p class="sc-name">Reports</p>
+              <p class="sc-note">Rebuilt by hand, every week</p>
+            </div>
+          </div>
+
+          <div class="surface-node">
+            <div class="surface-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h12v17l-2.5-1.5L13 20l-1.5-1.5L10 20l-2.5-1-1.5 1v-17Z"></path><path d="M8.5 8h7M8.5 11.5h7M8.5 15h4"></path></svg>
+            </div>
+            <div class="surface-copy">
+              <p class="sc-name">Invoices</p>
+              <p class="sc-note">Retyped between systems</p>
+            </div>
+          </div>
+
+          <div class="surface-node">
+            <div class="surface-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="2"></rect><path d="M3.5 9.5h17M9.5 9.5V20"></path></svg>
+            </div>
+            <div class="surface-copy">
+              <p class="sc-name">Spreadsheets</p>
+              <p class="sc-note">Reconciled every Friday</p>
+            </div>
+          </div>
+
+          <div class="surface-node">
+            <div class="surface-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="2"></rect><path d="m4.5 7 7.5 6 7.5-6"></path></svg>
+            </div>
+            <div class="surface-copy">
+              <p class="sc-name">Updates</p>
+              <p class="sc-note">Chased across email and chat</p>
+            </div>
+          </div>
+
+          <div class="surface-node">
+            <div class="surface-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8.5" r="3"></circle><path d="M3.5 19c.7-3 2.7-4.7 5.5-4.7s4.8 1.7 5.5 4.7"></path><path d="M16 8a2.6 2.6 0 1 1 0 5.2"></path><path d="M17 14.3c2 .4 3 1.7 3.5 3.9"></path></svg>
+            </div>
+            <div class="surface-copy">
+              <p class="sc-name">Client requests</p>
+              <p class="sc-note">Logged nowhere central</p>
+            </div>
+          </div>
+
+          <div class="surface-node">
+            <div class="surface-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="16" rx="2"></rect><path d="M3.5 9.5h17M8 3v3M16 3v3"></path><path d="M8 13.5h.01M12 13.5h.01M16 13.5h.01M8 17h.01M12 17h.01"></path></svg>
+            </div>
+            <div class="surface-copy">
+              <p class="sc-name">Scheduling</p>
+              <p class="sc-note">Rebooked by hand each time</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="surface-principle">
         <p class="eyebrow" style="margin-bottom:6px">The principle</p>
         <p>Diagnose before we quote, and price what we agree to build, not the hours it takes us.</p>
       </div>
@@ -460,15 +570,30 @@
 </section>
 
 <section id="contact" class="band-tint">
-  <div class="wrap" style="max-width:640px;text-align:left">
-    <p class="eyebrow">Let's talk</p>
-    <h2 style="font-size:clamp(28px,3.4vw,38px)">Tell us where the hours go.</h2>
-    <p style="font-size:18px;color:var(--slate);max-width:48ch;margin:0 0 28px">We map where your team's hours go and give you a first read on what automating them would save.</p>
-    <div class="cta-row" style="padding-left:0">
-      <a class="btn btn-primary" href="mailto:contact@fra-valu.com">contact@fra-valu.com</a>
+  <div class="wrap contact-grid">
+    <div>
+      <p class="eyebrow">Let's talk</p>
+      <h2 style="font-size:clamp(28px,3.4vw,38px)">Tell us where the hours go.</h2>
+      <p style="font-size:18px;color:var(--slate);max-width:48ch;margin:0 0 28px">We map where your team's hours go and give you a first read on what automating them would save.</p>
+      <div class="cta-row" style="padding-left:0">
+        <a class="btn btn-primary" href="mailto:contact@fra-valu.com">contact@fra-valu.com</a>
+      </div>
+    </div>
+
+    <div class="booking-card">
+      <p class="sh-label" style="margin:0 0 14px">Pick a time</p>
+      <div class="calendly-inline-widget"
+        data-url="https://calendly.com/alvee-fra-valu/30min?hide_gdpr_banner=1&hide_landing_page_details=1&background_color=f7f5f3&text_color=171315&primary_color=7a263a"
+        style="min-width:280px;height:640px;"></div>
+      <noscript>
+        <p style="margin:0;font-size:14px;color:var(--slate)">Booking needs JavaScript. Write to
+          <a href="mailto:contact@fra-valu.com">contact@fra-valu.com</a> and we will send you times.
+        </p>
+      </noscript>
     </div>
   </div>
 </section>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
 <footer>
   <div class="wrap">
