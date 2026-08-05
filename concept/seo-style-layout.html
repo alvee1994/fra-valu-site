@@ -102,13 +102,16 @@
 
   /* surface panel — connected-map card for "where the hours go" */
   .surface-panel{
+    isolation:isolate;
+    position:relative;
     background:var(--white);
-    border:1px solid var(--line);
-    border-radius:14px;
+    border:1px solid var(--ink);
+    border-radius:0;
     padding:22px 22px 26px;
-    box-shadow:0 1px 2px rgba(23,19,21,.04);
+    box-shadow:14px 14px 0 var(--signal), 0 8px 24px rgba(23,19,21,.08);
   }
   .surface-header{
+    position:relative;z-index:3;
     display:flex;align-items:center;justify-content:space-between;gap:16px;
     border-bottom:1px solid var(--line);padding-bottom:16px;
   }
@@ -122,41 +125,83 @@
   }
   .surface-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent)}
 
-  .surface-map{position:relative;margin-top:20px}
-  .surface-map-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .surface-core{
-    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(45deg);
-    width:56px;height:56px;background:var(--accent);z-index:2;
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 6px 16px rgba(122,38,58,.28);
-    border-radius:8px;
+  /* mobile default: plain static grid, no core, no lines */
+  .surface-map{
+    position:relative;margin-top:16px;
+    display:grid;grid-template-columns:1fr 1fr;gap:.5rem;
+    padding:.75rem;
+    border:1px solid var(--line);background:var(--cream);
   }
-  .surface-core::before{
-    content:'';position:absolute;inset:-30px;z-index:-1;border-radius:50%;
-    background:radial-gradient(circle, rgba(122,38,58,.10) 0%, rgba(122,38,58,0) 70%);
-  }
-  .surface-core span{
-    transform:rotate(-45deg);color:var(--white);
-    font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:10px;letter-spacing:.04em;
-  }
+  .surface-core{display:none}
   .surface-node{
-    display:flex;align-items:center;gap:12px;
-    background:rgba(233,225,226,.4);border:1px solid var(--line);
-    border-radius:10px;padding:12px;
+    position:relative;z-index:2;
+    display:flex;align-items:center;gap:10px;
+    background:rgba(255,253,251,.94);border:1px solid var(--line);
+    border-radius:8px;padding:10px;
+    min-width:0;
+    transition:transform .24s ease,border-color .24s ease,background-color .24s ease;
   }
+  .surface-node:hover{border-color:var(--accent);background:#fffdfb;transform:translateY(-3px)}
   .surface-icon{
-    width:36px;height:36px;flex:none;border-radius:8px;
+    width:34px;height:34px;flex:none;border-radius:7px;
     background:var(--white);border:1px solid var(--line);
     display:flex;align-items:center;justify-content:center;color:var(--accent);
   }
-  .surface-icon svg{width:18px;height:18px}
+  .surface-icon svg{width:17px;height:17px}
   .surface-copy p{margin:0}
-  .surface-copy .sc-name{font-size:14px;font-weight:600;color:var(--ink)}
-  .surface-copy .sc-note{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ash);margin-top:2px}
+  .surface-copy .sc-name{font-size:13.5px;font-weight:600;color:var(--ink)}
+  .surface-copy .sc-note{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--ash);margin-top:2px}
+
+  /* desktop: hexagonal connected map, diagonal signal lines, pulsing core */
+  @media (min-width:680px){
+    .surface-map{
+      display:block;min-height:400px;padding:0;border:1px solid var(--ink);
+      overflow:hidden;
+      background:
+        linear-gradient(28deg, transparent calc(50% - 1px), rgba(73,103,122,.28) 50%, transparent calc(50% + 1px)),
+        linear-gradient(-28deg, transparent calc(50% - 1px), rgba(73,103,122,.28) 50%, transparent calc(50% + 1px)),
+        linear-gradient(90deg, transparent calc(50% - 1px), rgba(73,103,122,.22) 50%, transparent calc(50% + 1px)),
+        var(--cream);
+    }
+    .surface-core{
+      display:flex;align-items:center;justify-content:center;
+      position:absolute;top:50%;left:50%;z-index:3;
+      width:76px;height:76px;background:var(--accent);
+      box-shadow:11px 11px 0 var(--signal);
+      animation:homeCoreSignal 5s ease-in-out infinite;
+    }
+    .surface-core span{
+      position:absolute;inset:0;transform:rotate(-45deg);
+      display:flex;align-items:center;justify-content:center;
+      color:var(--white);font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:.85rem;letter-spacing:-.04em;
+    }
+    .surface-node{
+      position:absolute;width:38%;min-height:64px;padding:12px;border-radius:0;
+    }
+    .surface-node:nth-of-type(1){top:1.25rem;left:1.25rem;animation:homeSignalDrift 5.5s ease-in-out infinite}
+    .surface-node:nth-of-type(2){top:1.25rem;right:1.25rem;animation:homeSignalDrift 6.4s ease-in-out -2.2s infinite reverse}
+    .surface-node:nth-of-type(3){top:50%;left:.75rem;transform:translateY(-50%)}
+    .surface-node:nth-of-type(3):hover{transform:translateY(calc(-50% - 3px))}
+    .surface-node:nth-of-type(4){top:50%;right:.75rem;transform:translateY(-50%)}
+    .surface-node:nth-of-type(4):hover{transform:translateY(calc(-50% - 3px))}
+    .surface-node:nth-of-type(5){bottom:1.25rem;left:1.25rem;animation:homeSignalDrift 5.5s ease-in-out infinite}
+    .surface-node:nth-of-type(6){bottom:1.25rem;right:1.25rem;animation:homeSignalDrift 6.4s ease-in-out -2.2s infinite reverse}
+  }
+  @keyframes homeCoreSignal{
+    0%,100%{transform:translate(-50%,-50%) rotate(45deg) scale(1)}
+    50%{transform:translate(-50%,-50%) rotate(45deg) scale(1.06)}
+  }
+  @keyframes homeSignalDrift{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-4px)}
+  }
+  @media (min-width:680px) and (prefers-reduced-motion:reduce){
+    .surface-core,.surface-node:nth-of-type(1),.surface-node:nth-of-type(2),.surface-node:nth-of-type(5),.surface-node:nth-of-type(6){animation:none}
+  }
 
   .surface-principle{
     margin-top:16px;padding:16px;
-    background:var(--tint);border:1px solid rgba(122,38,58,.16);border-radius:10px;
+    background:var(--tint);border:1px solid rgba(122,38,58,.24);
   }
   .surface-principle .eyebrow{margin-bottom:8px}
   .surface-principle p{margin:0;font-size:14px;line-height:1.55;color:var(--slate)}
@@ -275,7 +320,7 @@
     section{padding:56px 0}
   }
   @media (max-width:560px){
-    .surface-map-grid{grid-template-columns:1fr}
+    .surface-map{grid-template-columns:1fr}
   }
 </style>
 </head>
@@ -307,7 +352,7 @@
         <a class="btn btn-primary" href="#contact">Schedule a call</a>
         <a class="btn btn-outline" href="#scope">See what we automate</a>
       </div>
-      <p class="hero-meta">Fixed-fee audit and build · SMEs without an in-house data team · Diagnose, build, measure</p>
+      <p class="hero-meta">Fixed-fee audit and build · SMEs without an in-house IT implementation team · Diagnose, build, measure</p>
     </div>
 
     <div class="surface-panel">
@@ -321,7 +366,6 @@
 
       <div class="surface-map">
         <div class="surface-core" aria-label="fravalu"><span>FV</span></div>
-        <div class="surface-map-grid">
 
           <div class="surface-node">
             <div class="surface-icon" aria-hidden="true">
@@ -383,7 +427,6 @@
             </div>
           </div>
 
-        </div>
       </div>
 
       <div class="surface-principle">
@@ -408,7 +451,7 @@
 <section class="band-tint">
   <div class="wrap intro-split">
     <p class="eyebrow">One accountable program</p>
-    <p>Fravalu is an AI and workflow automation consultancy for small and mid-sized businesses that do not have a data team of their own. We combine process mapping, automation design, and measurement into one program: a ranked, costed plan for what is worth automating, and a build that proves the first item on it.</p>
+    <p>Fravalu is an AI and workflow automation consultancy for small and mid-sized businesses that do not have an IT implementation team of their own. We combine process mapping, automation design, and measurement into one program: a ranked, costed plan for what is worth automating, and a build that proves the first item on it.</p>
   </div>
 </section>
 
@@ -550,7 +593,7 @@
 
     <div class="faq-list">
       <div class="faq-item">
-        <h3>Do we need a data team to work with you?</h3>
+        <h3>Do we need an IT implementation team to work with you?</h3>
         <p>No. We work specifically with businesses that do not have one. That is the gap we fill: the judgement about what is worth automating, not just the build.</p>
       </div>
       <div class="faq-item">
