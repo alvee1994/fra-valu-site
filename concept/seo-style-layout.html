@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fravalu — AI &amp; workflow automation for SMEs</title>
+<meta name="description" content="One accountable program for finding, ranking, and automating the workflows that waste your team's time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#171315;
+    --paper:#f7f5f3;
+    --cream:#e9e1e2;
+    --tint:#f3e9ea;
+    --accent:#7a263a;
+    --accent-hover:#641f31;
+    --action:#ffd84d;
+    --action-hover:#ffe780;
+    --signal:#49677a;
+    --slate:#62595d;
+    --ash:#7c7176;
+    --white:#ffffff;
+    --line:#e0d7d3;
+    --max:1240px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Manrope',system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .mono{font-family:'IBM Plex Mono',monospace}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+  a{color:inherit}
+  img,svg{display:block;max-width:100%}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:600;
+    margin:0 0 14px;
+  }
+
+  /* header */
+  header{
+    position:sticky;top:0;z-index:30;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;gap:28px;height:74px;
+  }
+  .mark{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .mark svg{width:22px;height:22px}
+  .nav-links{margin-left:auto;display:flex;align-items:center;gap:26px}
+  .nav-links a{font-size:15px;font-weight:500;text-decoration:none;color:var(--slate)}
+  .nav-links a:hover{color:var(--accent)}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 22px;border-radius:6px;border:0;
+    font-family:inherit;font-size:15px;font-weight:700;
+    cursor:pointer;text-decoration:none;letter-spacing:-.01em;
+  }
+  .btn-primary{background:var(--action);color:var(--ink)}
+  .btn-primary:hover{background:var(--action-hover)}
+  .btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+  .btn-outline:hover{background:var(--ink);color:var(--paper)}
+  .btn-quiet-inverse{background:var(--action);color:var(--ink)}
+  .btn-outline-inverse{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.5)}
+  .btn-outline-inverse:hover{background:var(--white);color:var(--accent)}
+
+  /* hero */
+  .hero{padding:80px 0 64px}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+  .hero h1{
+    font-family:'Manrope',sans-serif;
+    font-weight:800;
+    font-size:clamp(42px,5.6vw,66px);
+    line-height:1.02;
+    letter-spacing:-.03em;
+    margin:0 0 22px;
+    border-left:4px solid var(--accent);
+    padding-left:22px;
+  }
+  .hero h1 .accent{color:var(--accent)}
+  .hero-lead{font-size:19px;color:var(--slate);max-width:52ch;margin:0 0 28px;padding-left:26px}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;padding-left:26px}
+  .hero-meta{
+    margin:26px 0 0;padding-left:26px;
+    font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ash)
+  }
+
+  .discovery-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px;
+  }
+  .discovery-card .dc-label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ash)}
+  .discovery-card h3{font-size:19px;margin:6px 0 18px;letter-spacing:-.01em}
+  .dc-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:relative}
+  .dc-item{
+    background:var(--paper);border:1px solid var(--line);border-radius:10px;
+    padding:14px;font-size:13px;
+  }
+  .dc-item strong{display:block;font-size:14px;margin-bottom:4px}
+  .dc-item span{color:var(--ash);font-family:'IBM Plex Mono',monospace;font-size:11px}
+  .dc-center{
+    grid-column:1 / -1;
+    background:var(--accent);color:var(--white);
+    border-radius:10px;padding:16px;text-align:center;
+    font-family:'IBM Plex Mono',monospace;font-weight:700;letter-spacing:.05em;font-size:13px;
+  }
+  .dc-principle{
+    margin-top:18px;padding:16px;background:var(--tint);border-radius:10px;
+  }
+  .dc-principle .eyebrow{margin-bottom:8px}
+  .dc-principle p{margin:0;font-size:14px;color:var(--slate)}
+
+  /* sticky subnav */
+  .subnav{
+    position:sticky;top:74px;z-index:20;
+    background:var(--ink);color:var(--cream);
+  }
+  .subnav .wrap{display:flex;overflow-x:auto;gap:2px}
+  .subnav a{
+    flex:none;display:flex;align-items:center;gap:8px;
+    padding:16px 18px;font-size:13px;font-weight:500;text-decoration:none;
+    color:#bcb3ae;white-space:nowrap;
+  }
+  .subnav a b{font-family:'IBM Plex Mono',monospace;color:#8b8185;font-weight:600;font-size:12px}
+  .subnav a:hover{color:var(--white)}
+
+  section{padding:80px 0}
+  .band-tint{background:var(--tint)}
+  .band-cream{background:var(--cream)}
+
+  h2{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.025em;line-height:1.08;margin:0 0 20px}
+  .section-head{max-width:760px;margin:0 0 40px}
+  .section-head h2{font-size:clamp(30px,3.6vw,44px)}
+  .section-head p{font-size:18px;color:var(--slate);max-width:60ch}
+
+  .intro-split{display:grid;grid-template-columns:.9fr 2fr;gap:48px;align-items:start}
+  .intro-split p{font-size:19px;line-height:1.6;color:var(--ink);margin:0}
+
+  /* numbered rows */
+  .numbered-row{position:relative}
+  .numbered-row .ghost-num{
+    position:absolute;right:0;top:-8px;
+    font-family:'Manrope',sans-serif;font-weight:800;font-size:120px;
+    color:rgba(23,19,21,.06);line-height:1;
+    pointer-events:none;
+  }
+  .answer-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}
+  .answer-grid p{font-size:17px;color:var(--slate);margin:0 0 18px}
+  .answer-grid p:last-child{margin-bottom:0}
+
+  .takeaways{
+    margin-top:28px;background:var(--tint);border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  }
+  .takeaways .tk-head{padding:16px 22px;font-weight:700;border-bottom:1px solid var(--line);font-size:15px}
+  .takeaways ul{list-style:none;margin:0;padding:0}
+  .takeaways li{
+    display:flex;gap:14px;padding:16px 22px;border-top:1px solid var(--line);font-size:15px;color:var(--slate)
+  }
+  .takeaways li:first-child{border-top:0}
+  .takeaways li::before{content:'\2713';color:var(--accent);font-weight:700;flex:none}
+
+  /* service grid */
+  .service-grid{
+    display:grid;grid-template-columns:1fr 1fr;
+    border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    background:var(--line);
+    gap:1px;
+  }
+  .service-card{background:var(--white);padding:32px}
+  .service-card:nth-child(4n+1),.service-card:nth-child(4n+4){background:var(--paper)}
+  .sc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px}
+  .sc-icon{
+    width:40px;height:40px;border-radius:9px;background:var(--tint);
+    display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:18px
+  }
+  .sc-num{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ash)}
+  .service-card h3{font-size:19px;margin:0 0 10px;letter-spacing:-.01em}
+  .service-card p{font-size:15px;color:var(--slate);margin:0 0 16px}
+  .sc-bullets{list-style:none;margin:0 0 18px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 14px}
+  .sc-bullets li{font-size:13.5px;color:var(--slate);display:flex;gap:8px}
+  .sc-bullets li::before{content:'\2713';color:var(--accent);font-weight:700;flex:none}
+  .sc-link{font-size:13.5px;font-weight:700;color:var(--accent);text-decoration:none}
+  .sc-link:hover{text-decoration:underline}
+
+  /* CTA band */
+  .cta-band{
+    background:var(--accent);color:var(--white);
+    padding:56px 0;position:relative;overflow:hidden;
+  }
+  .cta-band .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;position:relative;z-index:1}
+  .cta-band h3{margin:0;font-size:24px;font-weight:700;letter-spacing:-.01em}
+  .cta-band .btn-row{display:flex;gap:14px;flex-wrap:wrap}
+  .cta-diamonds{position:absolute;left:0;top:0;bottom:0;width:60%;opacity:.5;pointer-events:none}
+
+  /* FAQ */
+  .faq-item{border-top:1px solid var(--line);padding:26px 0}
+  .faq-item:last-child{border-bottom:1px solid var(--line)}
+  .faq-item h3{font-size:18px;margin:0 0 10px;letter-spacing:-.01em}
+  .faq-item p{font-size:15.5px;color:var(--slate);margin:0;max-width:70ch}
+
+  footer{background:var(--ink);color:#a79fa2;padding:52px 0 40px;font-size:14px}
+  .foot-grid{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between}
+  .foot-mark{display:flex;align-items:center;gap:9px;color:var(--white);font-weight:800;font-size:18px;margin-bottom:10px}
+  .foot-mark svg{width:20px;height:20px}
+  .foot-col h4{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:#8b8185;margin:0 0 14px;font-weight:600;
+  }
+  .foot-col a{display:block;color:#c7bfc2;text-decoration:none;font-size:14px;margin-bottom:10px}
+  .foot-col a:hover{color:var(--action)}
+  .foot-bottom{margin-top:40px;padding-top:24px;border-top:1px solid #33282b;font-size:13px;color:#7c7176}
+
+  @media (max-width:920px){
+    .hero-grid,.intro-split,.answer-grid,.service-grid{grid-template-columns:1fr}
+    .service-grid{gap:1px}
+    .nav-links a:not(.btn){display:none}
+    section{padding:56px 0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="mark" href="#top">
+      <svg viewBox="0 0 100 100" fill="none"><g transform="rotate(-18 50 50)"><polygon points="97,50 6,10 6,42 64,50 6,58 6,90" fill="#7a263a"></polygon><polygon points="97,50 6,58 6,90" fill="#171315"></polygon></g></svg>
+      fravalu
+    </a>
+    <nav class="nav-links">
+      <a href="#what-we-do">What we do</a>
+      <a href="#how-we-work">How we work</a>
+      <a href="#scope">Service scope</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-primary" href="#contact">Schedule a call</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow" style="padding-left:26px">AI &amp; workflow automation consultancy</p>
+      <h1>Find the hours your team keeps losing.<br><span class="accent">Automate what pays.</span></h1>
+      <p class="hero-lead">We map how your team actually spends its week, rank every process worth automating against what it saves, and build the ones that pay back first, inside the tools you already run.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contact">Schedule a call</a>
+        <a class="btn btn-outline" href="#scope">See what we automate</a>
+      </div>
+      <p class="hero-meta">Fixed-fee audit and build · SMEs without an in-house data team · Diagnose, build, measure</p>
+    </div>
+
+    <div class="discovery-card">
+      <p class="dc-label">Where the hours go</p>
+      <h3>One map. Every repeated task.</h3>
+      <div class="dc-grid">
+        <div class="dc-item"><strong>Reports</strong><span>REBUILT BY HAND, EVERY WEEK</span></div>
+        <div class="dc-item"><strong>Invoices</strong><span>RETYPED BETWEEN SYSTEMS</span></div>
+        <div class="dc-center">RANKED PLAN</div>
+        <div class="dc-item"><strong>Spreadsheets</strong><span>RECONCILED EVERY FRIDAY</span></div>
+        <div class="dc-item"><strong>Updates</strong><span>CHASED ACROSS EMAIL AND CHAT</span></div>
+      </div>
+      <div class="dc-principle">
+        <p class="eyebrow" style="margin-bottom:6px">The principle</p>
+        <p>Diagnose before we quote, and price what we agree to build, not the hours it takes us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<nav class="subnav">
+  <div class="wrap">
+    <a href="#what-we-do"><b>01</b> What we do</a>
+    <a href="#how-we-work"><b>02</b> How we work</a>
+    <a href="#scope"><b>03</b> Service scope</a>
+    <a href="#pricing"><b>04</b> Pricing</a>
+    <a href="#faq"><b>05</b> FAQ</a>
+    <a href="#contact"><b>06</b> Contact</a>
+  </div>
+</nav>
+
+<section class="band-tint">
+  <div class="wrap intro-split">
+    <p class="eyebrow">One accountable program</p>
+    <p>Fravalu is an AI and workflow automation consultancy for small and mid-sized businesses that do not have a data team of their own. We combine process mapping, automation design, and measurement into one program: a ranked, costed plan for what is worth automating, and a build that proves the first item on it.</p>
+  </div>
+</section>
+
+<section id="what-we-do">
+  <div class="wrap numbered-row">
+    <span class="ghost-num">01</span>
+    <div class="section-head">
+      <p class="eyebrow">The short answer</p>
+      <h2>What does an automation partner actually do?</h2>
+    </div>
+    <div class="answer-grid">
+      <div>
+        <p>An automation partner finds where a business loses hours to repeated manual work, and separates the processes worth automating from the ones that already run well enough. It turns that judgement into a plan you can act on, then builds the highest-value piece of it.</p>
+      </div>
+      <div>
+        <p>We start with your team, not a tool. We sit with the people doing the work, map every repeated task, and price what each one costs in hours and money. Only then do we recommend what to automate, in what order, and what it should cost to build.</p>
+        <p>We build with the plain, widely used tools your team can maintain: scripts, cloud functions, and the AI models suited to each task, wired into the systems you already run. Nothing proprietary, and nothing that locks you to us.</p>
+        <p>Automation is the output, not the pitch. Some of what we find, we recommend you leave alone, because the hours saved would not cover the build.</p>
+      </div>
+    </div>
+
+    <div class="takeaways">
+      <div class="tk-head">Key takeaways</div>
+      <ul>
+        <li>We diagnose before we quote. The plan is yours whether you build with us or not.</li>
+        <li>Every recommendation carries a price and an estimated saving, ranked against the rest.</li>
+        <li>We build inside your existing tools. No proprietary platform, no lock-in.</li>
+        <li>Leaving a process alone is a valid recommendation, and we say so when it applies.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="how-we-work" class="band-cream">
+  <div class="wrap numbered-row">
+    <span class="ghost-num">02</span>
+    <div class="section-head">
+      <p class="eyebrow">How we work</p>
+      <h2>Diagnose, then build the one thing that pays back first.</h2>
+      <p>Every engagement runs the same way, in this order. Skipping a stage is how automation projects end up expensive and unused.</p>
+    </div>
+
+    <div class="answer-grid">
+      <div>
+        <p>We map your week, put a price on the ranked list, and build the highest-value workflow first, so you see the return before committing to more.</p>
+      </div>
+      <div>
+        <p><strong>Map.</strong> We sit with your team and log every repeated task: the reports, the copy and paste between systems, the chasing, the manual entry.</p>
+        <p><strong>Rank and price.</strong> Each process gets an estimated saving and a fixed build price. You see the full list before agreeing to anything.</p>
+        <p><strong>Build.</strong> We build the workflow that pays back first, inside the tools you already use, and hand you the code.</p>
+        <p><strong>Measure.</strong> We check the saving against what we projected, and tell you plainly where it fell short.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="scope">
+  <div class="wrap numbered-row">
+    <span class="ghost-num">03</span>
+    <div class="section-head">
+      <p class="eyebrow">Complete service scope</p>
+      <h2>Everything one automation program covers.</h2>
+      <p>Discipline pages go deeper on implementation. This is the full shape of what we do.</p>
+    </div>
+
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="sc-top"><div class="sc-icon">&#9673;</div><span class="sc-num">01</span></div>
+        <h3>Process mapping and audit</h3>
+        <p>We log how your team actually spends its week and price the hours each repeated task costs.</p>
+        <ul class="sc-bullets">
+          <li>Time-and-task interviews</li>
+          <li>Cost-per-process estimate</li>
+          <li>Ranked opportunity list</li>
+          <li>Fixed price per item</li>
+        </ul>
+        <a class="sc-link" href="#contact">Talk about your workflows &rarr;</a>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-top"><div class="sc-icon">&#9881;</div><span class="sc-num">02</span></div>
+        <h3>Workflow and automation design</h3>
+        <p>We design the automation before we build it, so the build matches the process and not a template.</p>
+        <ul class="sc-bullets">
+          <li>Workflow architecture</li>
+          <li>Tool and model selection</li>
+          <li>Edge-case and failure mapping</li>
+          <li>Acceptance criteria</li>
+        </ul>
+        <a class="sc-link" href="#contact">Talk about your workflows &rarr;</a>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-top"><div class="sc-icon">&#9998;</div><span class="sc-num">03</span></div>
+        <h3>Build and integration</h3>
+        <p>We build inside the tools you already run: scripts, cloud functions, and AI agents wired to your systems.</p>
+        <ul class="sc-bullets">
+          <li>Python and cloud automation</li>
+          <li>AI agent and LLM workflows</li>
+          <li>Existing-tool integration</li>
+          <li>Code handed over, yours to keep</li>
+        </ul>
+        <a class="sc-link" href="#contact">Talk about your workflows &rarr;</a>
+      </div>
+
+      <div class="service-card">
+        <div class="sc-top"><div class="sc-icon">&#9776;</div><span class="sc-num">04</span></div>
+        <h3>Measurement and reporting</h3>
+        <p>We check the saving against what we projected, in plain numbers your team can read without us.</p>
+        <ul class="sc-bullets">
+          <li>Before-and-after time tracking</li>
+          <li>Plain-language reporting</li>
+          <li>Documentation for your team</li>
+          <li>Honest gap analysis</li>
+        </ul>
+        <a class="sc-link" href="#contact">Talk about your workflows &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="pricing">
+  <div class="wrap">
+    <h3>One fixed price per workflow, agreed before we build.</h3>
+    <div class="btn-row">
+      <a class="btn btn-quiet-inverse" href="#contact">Discuss your workflows &rarr;</a>
+      <a class="btn btn-outline-inverse" href="#faq">Read the FAQ &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap numbered-row">
+    <span class="ghost-num">05</span>
+    <div class="section-head">
+      <p class="eyebrow">FAQ</p>
+      <h2>What people ask before working with us.</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>Do we need a data team to work with you?</h3>
+        <p>No. We work specifically with businesses that do not have one. That is the gap we fill: the judgement about what is worth automating, not just the build.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if the audit finds nothing worth automating?</h3>
+        <p>Then we tell you that. The plan is the product, and it stays yours whether you build anything with us or not.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do you lock us into your tools?</h3>
+        <p>No. We build with plain, widely used tools inside the systems you already run, and you own everything we build.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How is pricing decided?</h3>
+        <p>Every workflow on the ranked list carries a fixed price before we start building it, so you agree the scope and cost together, upfront.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="band-tint">
+  <div class="wrap" style="max-width:640px;text-align:left">
+    <p class="eyebrow">Let's talk</p>
+    <h2 style="font-size:clamp(28px,3.4vw,38px)">Tell us where the hours go.</h2>
+    <p style="font-size:18px;color:var(--slate);max-width:48ch;margin:0 0 28px">We map where your team's hours go and give you a first read on what automating them would save.</p>
+    <div class="cta-row" style="padding-left:0">
+      <a class="btn btn-primary" href="mailto:contact@fra-valu.com">contact@fra-valu.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-mark">
+          <svg viewBox="0 0 100 100" fill="none"><g transform="rotate(-18 50 50)"><polygon points="97,50 6,10 6,42 64,50 6,58 6,90" fill="#ffd84d"></polygon><polygon points="97,50 6,58 6,90" fill="#c9a13d"></polygon></g></svg>
+          fravalu
+        </div>
+        <p style="max-width:32ch;font-size:14px;color:#a79fa2;margin:0">AI and workflow automation for SMEs.<br>Rotterdam, Netherlands.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Program</h4>
+        <a href="#what-we-do">What we do</a>
+        <a href="#how-we-work">How we work</a>
+        <a href="#scope">Service scope</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a href="mailto:contact@fra-valu.com">contact@fra-valu.com</a>
+      </div>
+    </div>
+    <div class="foot-bottom mono">KVK 42095902 &middot; fra-valu.com</div>
+  </div>
+</footer>
+
+</body>
+</html>
