@@ -163,7 +163,7 @@ permalink: /
 <section class="cta-band" id="pricing">
   <div class="wrap">
     <h3>One fixed price per workflow. We agree it before we build.</h3>
-    <p>The audit starts from &euro;1,200. Every build after that gets its own fixed price, agreed before we start.</p>
+    <p>The audit starts from &euro;1,200, scoped to your team size and the number of processes we study. You get a ranked, priced list of tasks and a fixed build price for what's worth automating. Every build after that gets its own fixed price, agreed before we start.</p>
     <div class="btn-row">
       <a class="btn btn-quiet-inverse" href="#contact">Discuss your workflows &rarr;</a>
       <a class="btn btn-outline-inverse" href="#faq">Read the FAQ &rarr;</a>
@@ -194,7 +194,7 @@ permalink: /
       </div>
       <div class="faq-item">
         <h3>How is pricing decided?</h3>
-        <p>The audit starts from &euro;1,200. Every workflow we build after that gets its own fixed price, agreed before we start.</p>
+        <p>The audit starts from &euro;1,200, scoped to your team size and the number of processes we study. You get a ranked, priced list of what's worth automating. Every workflow we build after that gets its own fixed price, agreed before we start.</p>
       </div>
     </div>
   </div>
@@ -234,7 +234,7 @@ permalink: /
       "name": "How is pricing decided?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The audit starts from €1,200. Every workflow we build after that gets its own fixed price, agreed before we start."
+        "text": "The audit starts from €1,200, scoped to your team size and the number of processes we study. You get a ranked, priced list of what's worth automating. Every workflow we build after that gets its own fixed price, agreed before we start."
       }
     }
   ]
