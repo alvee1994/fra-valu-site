@@ -189,10 +189,6 @@ permalink: /
         <p>Then we tell you that. The plan is yours either way.</p>
       </div>
       <div class="faq-item">
-        <h3>Why does the audit cost money instead of being free?</h3>
-        <p>A free audit gets paid for by the sale that follows it. It tends to find exactly enough to justify one. Ours doesn't work that way. You pay for the audit itself. That's why it can tell you not to automate something and still be worth the fee.</p>
-      </div>
-      <div class="faq-item">
         <h3>Do you lock us into your tools?</h3>
         <p>No. We build with widely used tools inside your systems, and you own everything we build.</p>
       </div>
@@ -223,14 +219,6 @@ permalink: /
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Then we tell you that. The plan is yours either way."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why does the audit cost money instead of being free?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A free audit gets paid for by the sale that follows it. It tends to find exactly enough to justify one. Ours doesn't work that way. You pay for the audit itself. That's why it can tell you not to automate something and still be worth the fee."
       }
     },
     {
