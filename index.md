@@ -33,6 +33,13 @@ permalink: /
   </div>
 </nav>
 
+<section>
+  <div class="wrap intro-split">
+    <p class="eyebrow">The cost hiding in plain sight</p>
+    <p>A spreadsheet exported by hand every Monday. An inbox checked line by line. A CRM field updated one row at a time. None of it shows up on a budget line, so nobody fixes it. It just keeps costing an hour here and an hour there, every week, forever.</p>
+  </div>
+</section>
+
 <section class="band-tint">
   <div class="wrap intro-split">
     <p class="eyebrow">One accountable program</p>
@@ -156,6 +163,7 @@ permalink: /
 <section class="cta-band" id="pricing">
   <div class="wrap">
     <h3>One fixed price per workflow. We agree it before we build.</h3>
+    <p>The audit starts from &euro;1,200. Every build after that gets its own fixed price, agreed before we start.</p>
     <div class="btn-row">
       <a class="btn btn-quiet-inverse" href="#contact">Discuss your workflows &rarr;</a>
       <a class="btn btn-outline-inverse" href="#faq">Read the FAQ &rarr;</a>
@@ -181,12 +189,16 @@ permalink: /
         <p>Then we tell you that. The plan is yours either way.</p>
       </div>
       <div class="faq-item">
+        <h3>Why does the audit cost money instead of being free?</h3>
+        <p>A free audit gets paid for by the sale that follows it, so it tends to find exactly enough to justify one. Ours doesn't work that way. You pay for the audit itself, which is why it can tell you not to automate something and still be worth the fee.</p>
+      </div>
+      <div class="faq-item">
         <h3>Do you lock us into your tools?</h3>
         <p>No. We build with widely used tools inside your systems, and you own everything we build.</p>
       </div>
       <div class="faq-item">
         <h3>How is pricing decided?</h3>
-        <p>Every workflow gets a fixed price, agreed before we start.</p>
+        <p>The audit starts from &euro;1,200. Every workflow we build after that gets its own fixed price, agreed before we start.</p>
       </div>
     </div>
   </div>
@@ -215,6 +227,14 @@ permalink: /
     },
     {
       "@type": "Question",
+      "name": "Why does the audit cost money instead of being free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A free audit gets paid for by the sale that follows it, so it tends to find exactly enough to justify one. Ours doesn't work that way. You pay for the audit itself, which is why it can tell you not to automate something and still be worth the fee."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Do you lock us into your tools?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -226,7 +246,7 @@ permalink: /
       "name": "How is pricing decided?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Every workflow gets a fixed price, agreed before we start."
+        "text": "The audit starts from €1,200. Every workflow we build after that gets its own fixed price, agreed before we start."
       }
     }
   ]
