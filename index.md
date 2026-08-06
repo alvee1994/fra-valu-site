@@ -190,7 +190,7 @@ permalink: /
       </div>
       <div class="faq-item">
         <h3>Why does the audit cost money instead of being free?</h3>
-        <p>A free audit gets paid for by the sale that follows it, so it tends to find exactly enough to justify one. Ours doesn't work that way. You pay for the audit itself, which is why it can tell you not to automate something and still be worth the fee.</p>
+        <p>A free audit gets paid for by the sale that follows it. It tends to find exactly enough to justify one. Ours doesn't work that way. You pay for the audit itself. That's why it can tell you not to automate something and still be worth the fee.</p>
       </div>
       <div class="faq-item">
         <h3>Do you lock us into your tools?</h3>
@@ -230,7 +230,7 @@ permalink: /
       "name": "Why does the audit cost money instead of being free?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A free audit gets paid for by the sale that follows it, so it tends to find exactly enough to justify one. Ours doesn't work that way. You pay for the audit itself, which is why it can tell you not to automate something and still be worth the fee."
+        "text": "A free audit gets paid for by the sale that follows it. It tends to find exactly enough to justify one. Ours doesn't work that way. You pay for the audit itself. That's why it can tell you not to automate something and still be worth the fee."
       }
     },
     {
