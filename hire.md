@@ -9,11 +9,17 @@ noindex: true
 plain_nav: true
 ---
 
+<style>
+  @media (max-width:640px){
+    .hire-photo{float:none!important;width:100%!important;max-width:100%!important;margin:18px 0!important}
+  }
+</style>
+
 <section>
-  <div class="wrap" style="max-width:66ch">
+  <div class="wrap" style="max-width:760px;overflow:hidden">
     <p class="eyebrow">Ahmed Alvee</p>
 
-    <img src="{{ '/assets/hire-mba-start.jpg' | relative_url }}" alt="Ahmed Alvee in Rotterdam, on the first snow day of his MBA" style="border-radius:14px;margin:18px 0;width:100%">
+    <img class="hire-photo" src="{{ '/assets/hire-mba-start.jpg' | relative_url }}" alt="Ahmed Alvee in Rotterdam, on the first snow day of his MBA" style="border-radius:14px;float:left;width:280px;max-width:40%;margin:4px 24px 12px 0">
 
     <p>Hi! This is Alvee. That photo is from my first week in Rotterdam, snow and all, after years in Singapore. I'm an MBA student at Rotterdam School of Management, finishing in 2027, and looking for a full-time role in Europe. I enjoy the harmony and synchronicity of systems, hence Solutions Architecture.</p>
 
