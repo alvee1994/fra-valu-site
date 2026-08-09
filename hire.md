@@ -33,7 +33,7 @@ plain_nav: true
 
     <p>Alongside all of this, I run <a href="{{ '/' | relative_url }}">Fravalu</a>, a small practice I registered with the KVK here. I help businesses automate the dull parts of their work, then check what it actually saved them. It keeps my hands on the tools.</p>
 
-    <p style="margin-top:40px">If you're hiring for work like this, this is the best way to reach me.</p>
+    <p style="margin-top:40px">If you're hiring to architect systems, build automations, or engineer agentic ones, reach me on LinkedIn.</p>
     <p><a class="btn btn-outline" href="https://linkedin.com/in/alveeahmed" rel="noopener" target="_blank">Message me on LinkedIn</a></p>
   </div>
 </section>
