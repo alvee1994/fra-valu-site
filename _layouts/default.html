@@ -69,6 +69,11 @@
         </svg>
         <span>fravalu</span>
       </a>
+      {% if page.plain_nav %}
+      <nav class="nav-links" aria-label="Primary">
+        <a href="{{ '/' | relative_url }}">fravalu.com</a>
+      </nav>
+      {% else %}
       <nav class="nav-links" aria-label="Primary">
         <a href="{{ '/' | relative_url }}#what-we-do">What we do</a>
         <a href="{{ '/' | relative_url }}#how-we-work">How we work</a>
@@ -76,6 +81,7 @@
         <a href="{{ '/' | relative_url }}#faq">FAQ</a>
         <a class="btn btn-primary" href="{{ '/' | relative_url }}#contact">Schedule a call</a>
       </nav>
+      {% endif %}
     </div>
   </header>
 
@@ -84,6 +90,22 @@
   </main>
 
   <footer>
+    {% if page.plain_nav %}
+    <div class="wrap foot-grid">
+      <div>
+        <div class="foot-mark">
+          <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <g transform="rotate(-18 50 50)">
+              <polygon points="97,50 6,10 6,42 64,50 6,58 6,90" fill="#00ED64"></polygon>
+              <polygon points="97,50 6,58 6,90" fill="#00D45A"></polygon>
+            </g>
+          </svg>
+          <a class="mark" href="{{ '/' | relative_url }}" style="color:inherit">fravalu</a>
+        </div>
+        <p style="max-width:32ch;font-size:14px;color:#a79fa2;margin:0">Ahmed Alvee's personal page.<br>Rotterdam, Netherlands.</p>
+      </div>
+    </div>
+    {% else %}
     <div class="wrap foot-grid">
       <div>
         <div class="foot-mark">
@@ -110,6 +132,7 @@
         <a href="https://www.linkedin.com/company/fravalu" rel="noopener" target="_blank">linkedin.com/company/fravalu</a>
       </div>
     </div>
+    {% endif %}
     <div class="wrap foot-bottom mono">KVK 42095902 &middot; fra-valu.com</div>
   </footer>
 

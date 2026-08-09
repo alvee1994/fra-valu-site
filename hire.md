@@ -2,33 +2,32 @@
 layout: default
 title: Ahmed Alvee
 description: >-
-  Solutions Architect, currently completing an MBA at Rotterdam School of
-  Management. Background, current work, and how to get in touch.
+  I build things that give people their time back. Background, current
+  work, and how to reach me.
 permalink: /hire/
 noindex: true
+plain_nav: true
 ---
 
 <section>
   <div class="wrap" style="max-width:66ch">
     <p class="eyebrow">Ahmed Alvee</p>
-    <h1>Solutions Architect, now completing an MBA at Rotterdam School of Management.</h1>
+    <h1>I build things that give people their time back. I'm looking for my next full-time role.</h1>
 
     <img src="{{ '/assets/hire-mba-start.jpg' | relative_url }}" alt="Ahmed Alvee in Rotterdam, on the first snow day of his MBA" style="border-radius:14px;margin:28px 0;width:100%">
 
-    <p>I'm an engineer who moved into solutions architecture, then went back to school for an MBA. I like the same kind of problem in every setting: a workflow that wastes people's time, and a system that could fix it.</p>
+    <p>That photo is from my first week in Rotterdam, snow and all, after years in Singapore. I'm an MBA student at Rotterdam School of Management, finishing in 2027, and looking for a full-time role in Europe. This page sits on fra-valu.com because Fravalu is a business I built along the way. It isn't a pitch for that. It's just where I explain who I am and what I want next: work that sits between engineering and the business, turning a messy problem into something a team can build.</p>
 
-    <p>Right now, I'm an MBA student at Rotterdam School of Management. Every cohort has to build its own elective schedule by hand from spreadsheets. So I built the <a href="https://alvee1994.github.io/mba27-electives/" rel="noopener" target="_blank">electives navigator</a>, a tool that lets my classmates plan their schedule instead. Going forward, I'm working with RSM to improve this process for the cohorts after mine.</p>
+    <p>I trained as an engineer. At the Singapore University of Technology and Design, I helped build the navigation system for a robot that drives itself: the part that senses what's around it and decides where to go, the same job the limbic system does in an animal's brain. Here's <a href="https://www.youtube.com/watch?v=qfH4ocXLslI" rel="noopener" target="_blank">the robot in action</a>. I also wrote a Python library for smart-wearable data, then trained models that could tell seven hand gestures apart.</p>
 
-    <p>Also during the MBA, I joined a five-person team advising Truvalu, a global impact investor. Our goal: help them scale their Colombia portfolio from 21 to 45-50 companies. I led the search for the right AI tools and tested them by hand. I designed a five-stage monitoring workflow. Then I built the tools behind it: agents that pull data from messy documents, agents wired into Google Drive, and an automated intake form. Faculty and the client both rated the work highly.</p>
+    <p>After that, I built the interface and core logic for a robotic surgical system, in C++ and Qt. Then came almost four years at Mesh Bio, a health data company in Singapore. I left as a Solutions Architect, leading a team of engineers shipping across five Southeast Asian markets. We replaced slow, manual clinical steps with data pipelines on AWS. Productivity rose 80%. Most days, my real job was translation: vague client requests in, specs my engineers could build from out.</p>
 
-    <p>Before the MBA, I was a Solutions Architect at Mesh Bio, a healthcare data company. I led a team building systems across five Southeast Asian markets. I built automated data pipelines on AWS that raised productivity 80%. I owned delivery end to end. I also sat between engineering, sales, and regional partners. I turned vague business needs into specs engineers could build from.</p>
+    <p>Earlier this year, I spent two months with four MBA classmates helping Truvalu, a global impact investor. They want to grow their Colombia portfolio from 21 companies to nearly 50, with the same small team. We designed a five-stage way of working with AI in the loop: collect, clean up, analyse, report, sum up. It should cut their monitoring time by about 45%, or 10.5 hours saved per company, per cycle. Then we built it and showed it running: agents pulling clean data out of messy documents, agents wired into their Google Drive, an intake form that files itself.</p>
 
-    <p>Earlier, I built the interface and core software for a robotic surgical system at Creative Medtech Solutions. Before that, I was a research assistant at Singapore University of Technology and Design. There, I was part of the team that built an autonomous robot's navigation system. That's the part that senses its surroundings and decides where to move, like the limbic system in an animal's brain. Here's <a href="https://www.youtube.com/watch?v=qfH4ocXLslI" rel="noopener" target="_blank">the robot in action</a>. I also wrote a Python library for smart-wearable data and trained models to recognize hand gestures. That's where I got my engineering degree.</p>
+    <p>Here's a smaller one I like. Every MBA class here plans its own elective schedule by hand, out of spreadsheets, and everyone just puts up with it. So I built the <a href="https://alvee1994.github.io/mba27-electives/" rel="noopener" target="_blank">electives navigator</a>, a tool that does the planning for you. My classmates use it now, and I'm working with RSM to fix this for the years after mine.</p>
 
-    <p>Alongside all of this, I built Fravalu, a small practice that helps businesses automate their workflows. It's where I test ideas end to end: map how a team spends its week, price what each task costs, build the automation that pays back first, then check if it worked.</p>
+    <p>Alongside all of this, I run <a href="{{ '/' | relative_url }}">Fravalu</a>, a small practice I registered with the KVK here. I help businesses automate the dull parts of their work, then check what it actually saved them. It keeps my hands on the tools.</p>
 
-    <p>Day to day, my stack is LangChain, Amazon Bedrock, Claude Code, Cursor, Pydantic, and n8n for AI and automation. AWS Lambda, SQS, SNS, Step Functions, and Terraform for cloud and backend. Python, Linux, Git, and ROS as general tools. I'm also AWS Certified Solutions Architect - Associate.</p>
-
-    <p style="margin-top:40px"><a class="btn btn-outline" href="https://linkedin.com/in/alveeahmed" rel="noopener" target="_blank">linkedin.com/in/alveeahmed</a></p>
+    <p style="margin-top:40px">If you're hiring for work like this, <a class="btn btn-outline" href="https://linkedin.com/in/alveeahmed" rel="noopener" target="_blank">LinkedIn</a> is the best way to reach me.</p>
   </div>
 </section>
