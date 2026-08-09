@@ -11,8 +11,9 @@ plain_nav: true
 
 <style>
   @media (max-width:640px){
-    .hire-electives-row{flex-direction:column}
+    .hire-electives-row{flex-direction:column;align-items:center}
     .hire-electives-row img{height:auto!important;width:100%!important}
+    .hire-conflicts-img{width:60%!important;max-width:220px!important}
     .hire-video{width:100%!important}
   }
 </style>
@@ -39,7 +40,7 @@ plain_nav: true
 
     <div class="hire-electives-row" style="display:flex;justify-content:center;gap:16px;align-items:flex-start;flex-wrap:wrap;margin:0 0 8px">
       <img src="{{ '/assets/hire-electives-calendar.jpg' | relative_url }}" alt="Electives navigator calendar view, showing a term's course sessions colour-coded by subject" style="border-radius:14px;border:1px solid var(--line);height:320px;width:auto;max-width:100%;display:block">
-      <img src="{{ '/assets/hire-electives-conflicts.jpg' | relative_url }}" alt="Electives navigator conflict panel, flagging overlapping course sessions" style="border-radius:14px;border:1px solid var(--line);height:320px;width:auto;max-width:100%;display:block">
+      <img class="hire-conflicts-img" src="{{ '/assets/hire-electives-conflicts.jpg' | relative_url }}" alt="Electives navigator conflict panel, flagging overlapping course sessions" style="border-radius:14px;border:1px solid var(--line);height:320px;width:auto;max-width:100%;display:block">
     </div>
     <p style="font-size:13px;color:var(--slate);text-align:center;margin:0 0 28px">A term laid out on a real calendar instead of a spreadsheet. Clashing sessions get flagged before they become a problem.</p>
 
