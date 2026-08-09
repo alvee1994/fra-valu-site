@@ -12,11 +12,10 @@ plain_nav: true
 <section>
   <div class="wrap" style="max-width:66ch">
     <p class="eyebrow">Ahmed Alvee</p>
-    <h1>I build things that give people their time back. I'm looking for my next full-time role.</h1>
 
     <img src="{{ '/assets/hire-mba-start.jpg' | relative_url }}" alt="Ahmed Alvee in Rotterdam, on the first snow day of his MBA" style="border-radius:14px;margin:28px 0;width:100%">
 
-    <p>That photo is from my first week in Rotterdam, snow and all, after years in Singapore. I'm an MBA student at Rotterdam School of Management, finishing in 2027, and looking for a full-time role in Europe. I enjoy the harmony and synchronicity of systems, hence Solutions Architecture.</p>
+    <p>Hi! This is Alvee. That photo is from my first week in Rotterdam, snow and all, after years in Singapore. I'm an MBA student at Rotterdam School of Management, finishing in 2027, and looking for a full-time role in Europe. I enjoy the harmony and synchronicity of systems, hence Solutions Architecture.</p>
 
     <p>At the Singapore University of Technology and Design, I helped build the navigation system for a robot that drives itself: the part that senses what's around it and decides where to go, the same job the limbic system does in an animal's brain. Here's <a href="https://www.youtube.com/watch?v=qfH4ocXLslI" rel="noopener" target="_blank">the robot in action</a>. I also wrote a Python library for smart-wearable data, then trained models that could tell seven hand gestures apart.</p>
 
