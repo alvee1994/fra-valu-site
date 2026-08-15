@@ -160,6 +160,28 @@ permalink: /
   </div>
 </section>
 
+<section class="band-cream">
+  <div class="wrap">
+    <p class="eyebrow">Before Fravalu</p>
+    <h2 style="font-size:clamp(26px,3vw,36px);margin:0 0 8px">Built by someone who's already replaced manual work with automation.</h2>
+    <p style="font-size:17px;color:var(--slate);max-width:60ch;margin:0 0 32px">Fravalu is new. The person running it isn't new to this work.</p>
+    <div class="stat-grid">
+      <div class="stat-tile">
+        <div class="stat-num">80%</div>
+        <p>Productivity gain from replacing manual clinical steps with AWS data pipelines, leading a team shipping across five Southeast Asian markets at Mesh Bio.</p>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-num">45%</div>
+        <p>Cut in monitoring time projected for Truvalu, a global impact investor, from a five-stage AI workflow built for their Colombia portfolio &mdash; about 10.5 hours saved per company, per cycle.</p>
+      </div>
+      <div class="stat-tile">
+        <div class="stat-num">1</div>
+        <p>Tool built and adopted by an entire MBA cohort: the <a href="{{ '/hire/' | relative_url }}">electives navigator</a>, replacing a stack of PDFs with a real calendar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta-band" id="pricing">
   <div class="wrap">
     <h3>One fixed price per workflow. We agree it before we build.</h3>
@@ -180,6 +202,10 @@ permalink: /
     </div>
 
     <div class="faq-list">
+      <div class="faq-item">
+        <h3>Why charge for the audit, when other companies do it for free?</h3>
+        <p>A free audit is paid for by your next contract with them. It is built to find work they can sell you. A paid audit is paid for by you, so it stays honest either way &mdash; including when the honest answer is that nothing here is worth automating.</p>
+      </div>
       <div class="faq-item">
         <h3>Do we need an IT implementation team to work with you?</h3>
         <p>No. We work with businesses that do not have one. We bring the judgement about what is worth automating.</p>
@@ -205,6 +231,14 @@ permalink: /
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why charge for the audit, when other companies do it for free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A free audit is paid for by your next contract with them. It is built to find work they can sell you. A paid audit is paid for by you, so it stays honest either way, including when the honest answer is that nothing here is worth automating."
+      }
+    },
     {
       "@type": "Question",
       "name": "Do we need an IT implementation team to work with you?",

@@ -237,6 +237,12 @@ h2{font-family:'General Sans',sans-serif;font-weight:700;letter-spacing:-.025em;
 .service-card p{font-size:15px;color:var(--slate);margin:0 0 16px}
 .sc-bullets{list-style:none;margin:0 0 18px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 14px}
 .sc-bullets li{font-size:13.5px;color:var(--slate);display:flex;gap:8px}
+
+/* stat grid */
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.stat-num{font-size:40px;font-weight:700;color:var(--accent);letter-spacing:-.02em;margin-bottom:10px}
+.stat-tile p{font-size:15px;color:var(--slate);margin:0;max-width:34ch}
+.stat-tile a{color:var(--accent)}
 .sc-bullets li::before{content:'\2713';color:var(--accent);font-weight:700;flex:none}
 .sc-link{font-size:13.5px;font-weight:700;color:var(--accent);text-decoration:none}
 .sc-link:hover{text-decoration:underline}
@@ -298,7 +304,7 @@ footer{background:var(--ink);color:#a79fa2;padding:52px 0 40px;font-size:14px}
 .post-back{display:inline-block;margin-bottom:32px;font-family:'Inter',sans-serif;font-weight:600;letter-spacing:.03em;font-size:13px}
 
 @media (max-width:920px){
-  .intro-split,.answer-grid,.service-grid,.contact-grid{grid-template-columns:1fr}
+  .intro-split,.answer-grid,.service-grid,.contact-grid,.stat-grid{grid-template-columns:1fr}
   .service-grid{gap:1px}
   .nav-links a:not(.btn){display:none}
   section{padding:56px 0}
