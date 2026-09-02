@@ -11,12 +11,12 @@ permalink: /
 <section class="hero" id="top">
   <div class="wrap hero-inner">
     <h1>I build automations that <br><span class="accent">give people their time back.</span></h1>
-    <p class="hero-lead">Four years turning slow manual steps into data pipelines across five markets. Now doing that work on my own, from Rotterdam.</p>
+    <p class="hero-lead">Four years turning manual work into data pipelines across five markets. Now on my own, from Rotterdam.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#contact">Get in touch</a>
       <a class="btn btn-outline-inverse" href="#work">See the work</a>
     </div>
-    <p class="hero-meta">Available for contract work now &middot; &euro;100 per hour &middot; Permanent roles from March 2027</p>
+    <p class="hero-meta">Available for contract work now &middot; &euro;100 per hour &middot; Permanent roles without sponsorship after I graduate</p>
   </div>
 </section>
 
@@ -157,7 +157,7 @@ permalink: /
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">Hiring me</p>
-      <h2>Contract now, permanent from March 2027.</h2>
+      <h2>Contract now. Permanent without sponsorship after I graduate.</h2>
     </div>
 
     <ul class="timeline">
@@ -167,11 +167,11 @@ permalink: /
       </li>
       <li class="tl-item">
         <span class="tl-when">March 2027</span>
-        <p class="tl-what">My orientation year begins, which gives me free access to the Dutch labour market for twelve months.</p>
+        <p class="tl-what">I graduate. I can file for my orientation year permit before then, as soon as my graduation date is fixed, so the clock starts early.</p>
       </li>
       <li class="tl-item">
-        <span class="tl-when">March 2027 onward</span>
-        <p class="tl-what"><b>Permanent roles open up.</b> No work permit for you to sponsor, and no salary threshold to clear. If you are hiring ahead, I am glad to talk early.</p>
+        <span class="tl-when">After graduation</span>
+        <p class="tl-what"><b>Permanent roles open up.</b> The orientation year gives me free access to the Dutch labour market for twelve months: no work permit for you to sponsor, and no salary threshold to clear. If you are hiring ahead, I am glad to talk early.</p>
       </li>
     </ul>
 
