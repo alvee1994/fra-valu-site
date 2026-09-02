@@ -182,7 +182,7 @@ permalink: /
       </div>
       <div class="spec-row">
         <dt>Fixed-fee audit</dt>
-        <dd>From &euro;1,200. I log how your team spends its week, price each repeated task, and hand you a ranked list of what is worth automating. The list is yours to keep either way.</dd>
+        <dd>From &euro;1,200. I log how your team spends its week, price each repeated task, and hand you a ranked list of what is worth automating. The list is yours to keep either way. Some audits are free because the provider earns it back on the contract they sell you next. Mine is paid for by you, so the answer stays honest, including when the honest answer is that nothing needs automating.</dd>
       </div>
       <div class="spec-row">
         <dt>Before this</dt>
