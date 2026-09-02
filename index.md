@@ -2,16 +2,16 @@
 layout: default
 title: Ahmed Alvee, AI and workflow automation
 description: >-
-  I build automations that give people their time back. Available for
-  contract work now at €100 per hour, through my KVK-registered practice
-  in Rotterdam.
+  I turn manual processes into production systems. Available for contract
+  work now at €100 per hour, through my KVK-registered practice in
+  Rotterdam.
 permalink: /
 ---
 
 <section class="hero" id="top">
   <div class="wrap hero-inner">
-    <h1>I build automations that <br><span class="accent">give people their time back.</span></h1>
-    <p class="hero-lead">Four years turning manual work into data pipelines across five markets. Now on my own, from Rotterdam.</p>
+    <h1>I turn manual processes<br><span class="accent">into production systems.</span></h1>
+    <p class="hero-lead">Four years building data pipelines across five markets. Now on my own, from Rotterdam.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#contact">Get in touch</a>
       <a class="btn btn-outline-inverse" href="#work">See the work</a>
