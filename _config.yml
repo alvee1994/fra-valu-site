@@ -13,18 +13,6 @@ kramdown:
 plugins:
   - jekyll-sitemap
 
-collections:
-  writing:
-    output: true
-    permalink: /posts/:title/
-
-defaults:
-  - scope:
-      path: ""
-      type: writing
-    values:
-      layout: post
-
 exclude:
   - README.md
   - CLAUDE.md

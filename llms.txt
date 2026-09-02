@@ -8,8 +8,7 @@ Fixed price per workflow, agreed before building starts. Built with widely used 
 
 ## Pages
 
-- [Home](https://fra-valu.com/): what we do, how we work, service scope, FAQ, contact
-- [Posts](https://fra-valu.com/posts/): writing on automation and workflow design
+- [Home](https://fra-valu.com/): what I do, how I work, service scope, FAQ, contact
 
 ## Contact
 

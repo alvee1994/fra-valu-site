@@ -52,8 +52,8 @@ a:focus-visible,
 }
 .skip-link:focus{top:12px}
 
-#top,#what-we-do,#how-we-work,#scope,#pricing,#faq,#contact{
-  scroll-margin-top:132px
+section[id],div[id="top"]{
+  scroll-margin-top:146px
 }
 
 .eyebrow{
@@ -95,76 +95,26 @@ header{
 .btn-outline-inverse:hover{background:var(--white);color:var(--accent)}
 
 /* hero */
-/* the white is set here rather than inherited from body: isolation:isolate
-   makes the hero its own blend group, and the blob further down has nothing
-   to invert against unless that white is painted inside the group */
-.hero{position:relative;padding:96px 0 76px;overflow:hidden;isolation:isolate;background:var(--paper)}
-.hero-inner{position:relative;z-index:1;max-width:800px;margin:0 auto;text-align:center}
-/* open-props normalize caps every <p> and <h1> with max-inline-size at zero
-   specificity (60ch for p). That shrinks the box inside the centred column,
-   and text-align:center then centres the text in the shrunken box — left of
-   the column's true centre. Auto inline margins recentre the box without
-   throwing away the measure cap. */
+.hero{position:relative;display:flex;align-items:center;padding:72px 0;background:var(--ink);color:var(--white)}
+.hero-inner{position:relative;z-index:1;max-width:960px;margin:0 auto;text-align:center}
 .hero-inner p{margin-inline:auto}
 .hero h1{
   font-family:'General Sans',sans-serif;
   font-weight:700;
-  font-size:clamp(38px,5.2vw,58px);
-  line-height:1.05;
+  font-size:clamp(38px,5.5vw,64px);
+  line-height:1.12;
   letter-spacing:-.03em;
   /* auto inline margins and no measure cap: the 800px column is the only
      width limit the hero headline should answer to (see .hero-inner p) */
-  margin:0 auto 22px;
+  margin:0 0 20px;
   max-inline-size:none;
 }
-.hero h1 .accent{color:var(--accent)}
-.hero-lead{font-size:18px;color:var(--slate);max-width:56ch;margin:0 auto 28px}
+.hero h1 .accent{color:var(--mint)}
+.hero-lead{font-size:clamp(19px,2.2vw,28px);line-height:1.45;color:var(--mint);max-width:36ch;margin:0 0 40px;font-weight:400}
 .cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
 .hero-meta{
-  margin:26px 0 0;
-  font-family:'Inter',sans-serif;font-size:12.5px;font-weight:500;letter-spacing:.02em;color:var(--ash)
-}
-
-/* word-tiled background — decorative, the repeated processes we automate.
-   Each row carries one word repeated edge-to-edge (like wallpaper stripes)
-   instead of cycling through varied words per row. Column flex stacks rows
-   vertically; each row is a nowrap row flex so its word fills the hero width
-   before being clipped by overflow. */
-.hero-word-bg{
-  position:absolute;inset:0;z-index:0;
-  display:flex;flex-direction:column;
-  gap:3px;padding:4px 0 0;
-  font-family:'General Sans',sans-serif;font-weight:700;
-  font-size:clamp(18px,2.4vw,28px);
-  color:var(--ink);opacity:.04;
-  overflow:hidden;user-select:none;pointer-events:none;
-}
-.word-row{
-  display:flex;flex-wrap:nowrap;gap:14px;
-}
-.word-row span{white-space:nowrap;flex-shrink:0}
-
-/* cursor blob — replaces the system pointer inside the hero on fine-pointer
-   devices. White source + mix-blend-mode:difference: over the paper bg it
-   renders near-black (|255-paper|), and over the ink word-tiles it inverts
-   them to light, so the text shows THROUGH the blob instead of being blocked
-   by it (the MiMo reference behaviour). A green source here would tint the
-   text pink where it overlaps, so the blob reads dark/neutral, not green. */
-.hero-blob{
-  position:absolute;top:0;left:0;z-index:2;
-  width:180px;height:180px;margin:-90px 0 0 -90px;
-  background:#fff;
-  mix-blend-mode:difference;
-  pointer-events:none;
-  opacity:0;
-  will-change:transform,border-radius;
-}
-.hero.has-blob{cursor:none}
-.hero.has-blob a,.hero.has-blob button{cursor:pointer}
-.hero.has-blob .hero-blob{opacity:1}
-
-@media (max-width:680px){
-  .hero-word-bg{display:none}
+  margin:44px 0 0;
+  font-family:'Inter',sans-serif;font-size:13px;font-weight:500;letter-spacing:.02em;color:rgba(255,255,255,.55)
 }
 
 /* sticky subnav */
@@ -176,9 +126,9 @@ header{
 .subnav a{
   flex:none;display:flex;align-items:center;gap:8px;
   padding:16px 18px;font-size:13px;font-weight:500;text-decoration:none;
-  color:#bcb3ae;white-space:nowrap;
+  color:rgba(255,255,255,.6);white-space:nowrap;
 }
-.subnav a b{font-family:'Inter',sans-serif;color:#8b8185;font-weight:700;font-size:12px}
+.subnav a b{font-family:'Inter',sans-serif;color:rgba(255,255,255,.4);font-weight:700;font-size:12px}
 .subnav a:hover{color:var(--white)}
 
 section{padding:80px 0}
@@ -192,8 +142,8 @@ h2{font-family:'General Sans',sans-serif;font-weight:700;letter-spacing:-.025em;
 .section-head h2{font-size:clamp(30px,3.6vw,44px)}
 .section-head p{font-size:18px;color:var(--slate);max-width:60ch}
 
-.intro-split{display:grid;grid-template-columns:.9fr 2fr;gap:48px;align-items:start}
-.intro-split p{font-size:19px;line-height:1.6;color:var(--ink);margin:0}
+/* about intro — text column with an eyebrow above it */
+.intro-split .intro-text p{font-size:19px;line-height:1.6;color:var(--ink);margin:0;max-width:66ch}
 
 /* numbered rows */
 .numbered-row{position:relative}
@@ -264,46 +214,119 @@ h2{font-family:'General Sans',sans-serif;font-weight:700;letter-spacing:-.025em;
 .faq-item h3{font-size:18px;margin:0 0 10px;letter-spacing:-.01em}
 .faq-item p{font-size:15.5px;color:var(--slate);margin:0;max-width:70ch}
 
-footer{background:var(--ink);color:#a79fa2;padding:52px 0 40px;font-size:14px}
+footer{background:var(--ink);color:rgba(255,255,255,.6);padding:52px 0 40px;font-size:14px}
 .foot-grid{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between}
 .foot-mark{display:flex;align-items:center;gap:9px;color:var(--white);font-weight:800;font-size:18px;margin-bottom:10px}
 .foot-mark svg{width:20px;height:20px}
 .foot-col h4{
   font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-  color:#8b8185;margin:0 0 14px;font-weight:600;
+  color:rgba(255,255,255,.45);margin:0 0 14px;font-weight:600;
 }
-.foot-col a{display:block;color:#c7bfc2;text-decoration:none;font-size:14px;margin-bottom:10px}
+.foot-col a{display:block;color:rgba(255,255,255,.75);text-decoration:none;font-size:14px;margin-bottom:10px}
 .foot-col a:hover{color:var(--action)}
-.foot-bottom{margin-top:40px;padding-top:24px;border-top:1px solid #33282b;font-size:13px;color:#8b8185}
-
-/* posts — article prose for markdown content written in Obsidian */
-.posts-index{max-width:66ch}
-.posts-list{list-style:none;margin:32px 0 0;padding:0}
-.posts-list li{padding:18px 0;border-top:1px solid var(--line)}
-.posts-list li:last-child{border-bottom:1px solid var(--line)}
-.posts-list a{color:var(--ink);font-weight:700;font-size:19px}
-.posts-list time{
-  display:block;font-family:'Inter',sans-serif;font-weight:600;font-size:12px;
-  letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:6px
-}
-.post article{max-width:66ch}
-.post article p{font-size:18px;color:var(--slate)}
-.post article h2{margin-top:48px;margin-bottom:16px}
-.post article h3{margin-top:36px;margin-bottom:12px}
-.post article a{text-decoration:underline}
-.post article code{background:var(--line);padding:2px 6px;border-radius:4px;font-size:15px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-.post article pre{background:var(--ink);color:var(--paper);padding:20px;border-radius:12px;overflow-x:auto}
-.post article pre code{background:none;padding:0}
-.post article blockquote{margin:0 0 18px;padding-left:18px;border-left:3px solid var(--accent);color:var(--muted)}
-.post-back{display:inline-block;margin-bottom:32px;font-family:'Inter',sans-serif;font-weight:600;letter-spacing:.03em;font-size:13px}
+.foot-bottom{margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.15);font-size:13px;color:rgba(255,255,255,.45)}
 
 @media (max-width:920px){
-  .intro-split,.answer-grid,.service-grid,.contact-grid{grid-template-columns:1fr}
+  .answer-grid,.service-grid,.contact-grid{grid-template-columns:1fr}
   .service-grid{gap:1px}
   .nav-links a:not(.btn){display:none}
   section{padding:56px 0}
 }
-@media (max-width:600px){
+@media (max-width:640px){
+  .hero h1 br{display:none}
   .calendly-inline-widget{height:950px !important}
   .booking-card{padding:16px}
+}
+
+/* plain work list — replaces the service-card grid. One entry per row,
+   hairline rule between, no icons, no numbers, no boxes. */
+.work-list{margin:0;border-top:1px solid var(--line)}
+.work-item{display:grid;grid-template-columns:1fr 2fr;gap:24px 48px;padding:36px 0;border-bottom:1px solid var(--line)}
+.work-item h3{margin:0;font-family:'General Sans',sans-serif;font-size:20px;font-weight:600;letter-spacing:-.01em}
+.work-item .work-where{margin:6px 0 0;font-size:14px;color:var(--muted)}
+.work-item p{margin:0 0 12px;color:var(--slate);max-width:60ch}
+.work-item p:last-child{margin-bottom:0}
+.work-item .work-result{color:var(--ink);font-weight:500}
+@media (max-width:760px){
+  .work-item{grid-template-columns:1fr;gap:12px;padding:28px 0}
+}
+
+/* spec rows — label/value pairs for facts people scan for rather than read.
+   Hairline rules only, no boxes, no fills. */
+.spec{margin:0 0 28px;border-top:1px solid var(--line)}
+.spec-row{display:grid;grid-template-columns:210px 1fr;gap:8px 32px;padding:16px 0;border-bottom:1px solid var(--line)}
+.spec-row dt{font-weight:600;color:var(--ink)}
+.spec-row dd{margin:0;color:var(--slate)}
+.spec-row dd b{font-weight:600;color:var(--ink)}
+@media (max-width:640px){
+  .spec-row{grid-template-columns:1fr;gap:2px;padding:14px 0}
+}
+
+/* work cards — result line carries the number, meta line carries where and
+   what it was built with. No icons, no numbering. */
+.card-result{font-weight:600;color:var(--ink)!important;font-size:16px!important}
+.card-meta{font-size:13px!important;color:var(--muted)!important;margin:14px 0 0!important;
+  padding-top:14px;border-top:1px solid var(--line)}
+
+/* workflow — four steps, connected. Horizontal on wide screens, a vertical
+   rail on narrow ones. Flat fills and hairlines only. */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:0 0 8px;counter-reset:flow}
+.flow-step{position:relative;padding:0 20px 0 0;counter-increment:flow}
+.flow-step::before{
+  content:'';position:absolute;top:17px;left:0;right:0;height:1px;background:var(--line-strong)
+}
+.flow-step:last-child::before{right:auto;width:34px}
+.flow-num{
+  position:relative;z-index:1;width:34px;height:34px;border-radius:50%;
+  background:var(--accent);color:var(--white);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Inter',sans-serif;font-size:14px;font-weight:600;margin-bottom:16px
+}
+.flow-step h3{margin:0 0 6px;font-family:'General Sans',sans-serif;font-size:17px;font-weight:600;letter-spacing:-.01em}
+.flow-step p{margin:0;font-size:14.5px;color:var(--slate);padding-right:16px}
+@media (max-width:760px){
+  .flow{grid-template-columns:1fr;gap:0}
+  .flow-step{padding:0 0 26px 46px}
+  .flow-step::before{top:0;bottom:0;left:16px;right:auto;width:1px;height:auto}
+  .flow-step:last-child::before{height:17px;bottom:auto;width:1px}
+  .flow-num{position:absolute;left:0;top:0;margin:0}
+}
+
+/* timeline — what changes, and when. Vertical rail, one marker per milestone. */
+.timeline{margin:0 0 36px;padding:0;list-style:none}
+.tl-item{position:relative;padding:0 0 28px 34px}
+.tl-item::before{content:'';position:absolute;left:5px;top:6px;bottom:-6px;width:1px;background:var(--line-strong)}
+.tl-item:last-child{padding-bottom:0}
+.tl-item:last-child::before{display:none}
+.tl-item::after{
+  content:'';position:absolute;left:0;top:5px;width:11px;height:11px;border-radius:50%;
+  background:var(--paper);border:2px solid var(--accent)
+}
+.tl-item.is-now::after{background:var(--accent)}
+.tl-when{
+  display:block;font-family:'Inter',sans-serif;font-size:12.5px;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:5px
+}
+.tl-what{margin:0;color:var(--slate);max-width:60ch}
+.tl-what b{color:var(--ink);font-weight:600}
+
+/* about portrait */
+.about-photo{border-radius:14px;width:220px;max-width:100%;margin:0 0 24px}
+
+/* feature block — one project that earns images beside its description */
+.feature{display:grid;grid-template-columns:1fr 1.15fr;gap:36px 48px;align-items:start;
+  padding-top:36px;border-top:1px solid var(--line)}
+.feature h3{margin:0 0 12px;font-family:'General Sans',sans-serif;font-size:22px;font-weight:600;letter-spacing:-.015em}
+.feature p{color:var(--slate);margin:0 0 14px;max-width:56ch}
+.feature p b{color:var(--ink);font-weight:600}
+.shots{display:flex;gap:14px;flex-wrap:wrap;margin:0}
+.shots a{display:block;flex:none;max-width:100%}
+.shots img{border-radius:12px;border:1px solid var(--line);height:250px;width:auto;max-width:100%}
+.shots a:hover img{border-color:var(--line-strong)}
+.shots figcaption{font-size:13px;color:var(--muted);margin-top:10px;flex-basis:100%}
+.video-frame{position:relative;aspect-ratio:16/9;width:100%;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media (max-width:860px){
+  .feature{grid-template-columns:1fr;gap:24px}
+  .shots img{height:110px}
 }

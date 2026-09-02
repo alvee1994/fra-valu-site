@@ -51,7 +51,7 @@
   <link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap" rel="stylesheet">
   <link rel="icon"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg transform='rotate(-18 50 50)'%3E%3Cpolygon points='97,50 6,10 6,42 64,50 6,58 6,90' fill='%2300684A'/%3E%3Cpolygon points='97,50 6,58 6,90' fill='%23112733'/%3E%3C/g%3E%3C/svg%3E">
-  <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/site.css' | relative_url }}?v=20260903c">
 </head>
 
 <body>
@@ -75,11 +75,11 @@
       </nav>
       {% else %}
       <nav class="nav-links" aria-label="Primary">
-        <a href="{{ '/' | relative_url }}#what-we-do">What we do</a>
-        <a href="{{ '/' | relative_url }}#how-we-work">How we work</a>
-        <a href="{{ '/' | relative_url }}#scope">Service scope</a>
-        <a href="{{ '/' | relative_url }}#faq">FAQ</a>
-        <a class="btn btn-primary" href="{{ '/' | relative_url }}#contact">Schedule a call</a>
+        <a href="{{ '/' | relative_url }}#about">About</a>
+        <a href="{{ '/' | relative_url }}#work">Work</a>
+        <a href="{{ '/' | relative_url }}#how">How I work</a>
+        <a href="{{ '/' | relative_url }}#hire">Hiring me</a>
+        <a class="btn btn-primary" href="{{ '/' | relative_url }}#contact">Get in touch</a>
       </nav>
       {% endif %}
     </div>
@@ -102,7 +102,7 @@
           </svg>
           <a class="mark" href="{{ '/' | relative_url }}" style="color:inherit">fravalu</a>
         </div>
-        <p style="max-width:32ch;font-size:14px;color:#a79fa2;margin:0">Ahmed Alvee's personal page.<br>Rotterdam, Netherlands.</p>
+        <p style="max-width:32ch;font-size:14px;color:rgba(255,255,255,.6);margin:0">Ahmed Alvee's personal page.<br>Rotterdam, Netherlands.</p>
       </div>
     </div>
     {% else %}
@@ -117,17 +117,17 @@
           </svg>
           <a class="mark" href="{{ '/' | relative_url }}#top" style="color:inherit">fravalu</a>
         </div>
-        <p style="max-width:32ch;font-size:14px;color:#a79fa2;margin:0">AI and workflow automation for SMEs.<br>Rotterdam, Netherlands.</p>
+        <p style="max-width:32ch;font-size:14px;color:rgba(255,255,255,.6);margin:0">AI and workflow automation.<br>Rotterdam, Netherlands.</p>
       </div>
       <div class="foot-col">
-        <h4>Program</h4>
-        <a href="{{ '/' | relative_url }}#what-we-do">What we do</a>
-        <a href="{{ '/' | relative_url }}#how-we-work">How we work</a>
-        <a href="{{ '/' | relative_url }}#scope">Service scope</a>
+        <h4>Work</h4>
+        <a href="{{ '/' | relative_url }}#work">Selected work</a>
+        <a href="{{ '/' | relative_url }}#how">How I work</a>
+        <a href="{{ '/' | relative_url }}#hire">Hiring me</a>
       </div>
       <div class="foot-col">
-        <h4>Company</h4>
-        <a href="{{ '/' | relative_url }}#faq">FAQ</a>
+        <h4>Contact</h4>
+        <a href="{{ '/' | relative_url }}#about">About me</a>
         <a href="mailto:contact@fra-valu.com">contact@fra-valu.com</a>
         <a href="https://www.linkedin.com/company/fravalu" rel="noopener" target="_blank">linkedin.com/company/fravalu</a>
       </div>
@@ -136,7 +136,6 @@
     <div class="wrap foot-bottom mono">KVK 42095902 &middot; fra-valu.com</div>
   </footer>
 
-  <script src="{{ '/assets/cursor-blob.js' | relative_url }}" defer></script>
 </body>
 
 </html>

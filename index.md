@@ -1,254 +1,206 @@
 ---
 layout: default
-title: Fravalu, AI automation for SMEs
+title: Ahmed Alvee, AI and workflow automation
 description: >-
-  A ranked, costed plan for the work worth automating, and the first
-  workflow built to prove it. The plan is yours to keep.
+  I build automations that give people their time back. Available for
+  contract work now at €100 per hour, through my KVK-registered practice
+  in Rotterdam.
 permalink: /
 ---
 
 <section class="hero" id="top">
-  <div class="hero-word-bg" aria-hidden="true" data-words="reports,invoices,spreadsheets,scheduling,updates,client requests"></div>
-  <div class="hero-blob" aria-hidden="true"></div>
   <div class="wrap hero-inner">
-    <p class="eyebrow">AI &amp; workflow automation consultancy</p>
-    <h1>Your team loses hours every week.<br><span class="accent">We automate what pays.</span></h1>
-    <p class="hero-lead">We map how your team spends its week and price what each repeated task costs. Then we build the automations that pay back first.</p>
+    <h1>I build automations that <br><span class="accent">give people their time back.</span></h1>
+    <p class="hero-lead">Four years turning slow manual steps into data pipelines across five markets. Now doing that work on my own, from Rotterdam.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="#contact">Schedule a call</a>
-      <a class="btn btn-outline" href="#scope">See what we automate</a>
+      <a class="btn btn-primary" href="#contact">Get in touch</a>
+      <a class="btn btn-outline-inverse" href="#work">See the work</a>
     </div>
-    <p class="hero-meta">Fixed-fee audit and build &middot; SMEs without an in-house IT implementation team &middot; Diagnose, build, measure</p>
+    <p class="hero-meta">Available for contract work now &middot; &euro;100 per hour &middot; Permanent roles from March 2027</p>
   </div>
 </section>
 
 <nav class="subnav" aria-label="Section">
   <div class="wrap">
-    <a href="#what-we-do"><b>01</b> What we do</a>
-    <a href="#how-we-work"><b>02</b> How we work</a>
-    <a href="#scope"><b>03</b> Service scope</a>
-    <a href="#pricing"><b>04</b> Pricing</a>
-    <a href="#faq"><b>05</b> FAQ</a>
-    <a href="#contact"><b>06</b> Contact</a>
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#how">How I work</a>
+    <a href="#hire">Hiring me</a>
+    <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<section>
+<section id="about">
   <div class="wrap intro-split">
-    <p class="eyebrow">The cost hiding in plain sight</p>
-    <p>A spreadsheet exported by hand every Monday. An inbox checked line by line. A CRM field updated one row at a time. None of it shows up on a budget line, so nobody fixes it. It just keeps costing an hour here and an hour there, every week, forever.</p>
+    <p class="eyebrow">Hello</p>
+    <div class="intro-text">
+      <p>I am Alvee. I am finishing an MBA at Rotterdam School of Management. I like the way systems fit together, and that is what led me into solutions architecture. Most of my working life has gone into turning a task a team does by hand every week into something that runs on its own.</p>
+    </div>
   </div>
 </section>
 
-<section class="band-tint">
-  <div class="wrap intro-split">
-    <p class="eyebrow">One accountable program</p>
-    <p>You get a plan that ranks each task by what automating it would save and cost. Then we build the top item on the list and prove the saving.</p>
-  </div>
-</section>
-
-<section id="what-we-do">
-  <div class="wrap numbered-row">
-    <span class="ghost-num">01</span>
+<section id="work">
+  <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">The short answer</p>
-      <h2>What does an automation partner do?</h2>
-    </div>
-    <div class="answer-grid">
-      <div>
-        <p>We find where a business loses hours to repeated manual work. Then we work out which of those processes are worth automating.</p>
-      </div>
-      <div>
-        <p>We sit with the people doing the work and list every repeated task. Each one gets a price in hours and money. Then we tell you what to automate first, and what it costs to build.</p>
-        <p>We build with plain, widely used tools, wired into the systems you already run. Some processes we tell you to leave alone. Automating them would cost more than it saves.</p>
-      </div>
-    </div>
-
-    <div class="takeaways">
-      <div class="tk-head">Key takeaways</div>
-      <ul>
-        <li>We diagnose before we quote. The plan is yours either way.</li>
-        <li>Every recommendation carries a price and an estimated saving.</li>
-        <li>We build inside your tools. The code is yours to keep.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="how-we-work" class="band-cream">
-  <div class="wrap numbered-row">
-    <span class="ghost-num">02</span>
-    <div class="section-head">
-      <p class="eyebrow">How we work</p>
-      <h2>We build the one thing that pays back first.</h2>
-      <p>Every engagement runs in the same order. Skip a step, and the project gets expensive and goes unused.</p>
-    </div>
-
-    <div class="answer-grid" style="grid-template-columns:1fr">
-      <div>
-        <p><strong>Map.</strong> We sit with your team and log every repeated task.</p>
-        <p><strong>Rank and price.</strong> Each process gets an estimated saving and a fixed build price.</p>
-        <p><strong>Build.</strong> We build the workflow that pays back first and hand you the code.</p>
-        <p><strong>Measure.</strong> We check the saving against what we projected, and tell you where it fell short.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="scope">
-  <div class="wrap numbered-row">
-    <span class="ghost-num">03</span>
-    <div class="section-head">
-      <p class="eyebrow">Complete service scope</p>
-      <h2>Everything one automation program covers.</h2>
-      <p>The full shape of what we do.</p>
+      <p class="eyebrow">Work</p>
+      <h2>Four things I built, and what changed.</h2>
+      <p>All of it in earlier roles, before I started working on my own.</p>
     </div>
 
     <div class="service-grid">
       <div class="service-card">
-        <div class="sc-top"><div class="sc-icon" aria-hidden="true">&#9673;</div><span class="sc-num">01</span></div>
-        <h3>Process mapping and audit</h3>
-        <p>We log how your team spends its week and price each repeated task.</p>
-        <ul class="sc-bullets">
-          <li>Time-and-task interviews</li>
-          <li>Cost-per-process estimate</li>
-          <li>Ranked opportunity list</li>
-          <li>Fixed price per item</li>
-        </ul>
-        <a class="sc-link" href="#contact">Talk to us &rarr;</a>
+        <h3>Clinical records, thirty clinics</h3>
+        <p>Thirty clinics sent monthly patient records. Every clinic used its own format, and staff fixed each file by hand.</p>
+        <p class="card-result">An hour a file became six to ten minutes.</p>
+        <p class="card-meta">Mesh Bio, Singapore &middot; LangGraph, Claude on Bedrock, Pydantic, ChromaDB</p>
       </div>
 
       <div class="service-card">
-        <div class="sc-top"><div class="sc-icon" aria-hidden="true">&#9881;</div><span class="sc-num">02</span></div>
-        <h3>Workflow and automation design</h3>
-        <p>We design the automation before we build it. That way, it matches your process.</p>
-        <ul class="sc-bullets">
-          <li>Workflow architecture</li>
-          <li>Tool and model selection</li>
-          <li>Edge-case and failure mapping</li>
-          <li>Acceptance criteria</li>
-        </ul>
-        <a class="sc-link" href="#contact">Talk to us &rarr;</a>
+        <h3>Laboratory data handover</h3>
+        <p>Results moved between systems slowly enough that a batch took a week to come back.</p>
+        <p class="card-result">A week became a day.</p>
+        <p class="card-meta">Mesh Bio, Singapore &middot; Python, AWS Lambda, SQS, SNS, Step Functions</p>
       </div>
 
       <div class="service-card">
-        <div class="sc-top"><div class="sc-icon" aria-hidden="true">&#9998;</div><span class="sc-num">03</span></div>
-        <h3>Build and integration</h3>
-        <p>Scripts, cloud functions, and AI agents wired into the tools you already run.</p>
-        <ul class="sc-bullets">
-          <li>Python and cloud automation</li>
-          <li>AI agent and LLM workflows</li>
-          <li>Existing-tool integration</li>
-          <li>Code handed over, yours to keep</li>
-        </ul>
-        <a class="sc-link" href="#contact">Talk to us &rarr;</a>
+        <h3>Pipelines across five markets</h3>
+        <p>I led the team that built and ran our healthcare data pipelines. Most days I turned vague requests into clear specs engineers could build from.</p>
+        <p class="card-result">Clinical workflow output rose 80%.</p>
+        <p class="card-meta">Mesh Bio, Singapore &middot; Leading a team of engineers</p>
       </div>
 
       <div class="service-card">
-        <div class="sc-top"><div class="sc-icon" aria-hidden="true">&#9776;</div><span class="sc-num">04</span></div>
-        <h3>Measurement and reporting</h3>
-        <p>We measure what the automation saved. The numbers are ones your team can read without us.</p>
-        <ul class="sc-bullets">
-          <li>Before-and-after time tracking</li>
-          <li>Plain-language reporting</li>
-          <li>Documentation for your team</li>
-          <li>Honest gap analysis</li>
-        </ul>
-        <a class="sc-link" href="#contact">Talk to us &rarr;</a>
+        <h3>Portfolio monitoring</h3>
+        <p>An impact investor tracked twenty-one companies by hand and needed to reach nearly fifty with the same small team. We designed the workflow, then built agents that pull clean data out of messy documents.</p>
+        <p class="card-result">Projected to cut monitoring time by about 45%.</p>
+        <p class="card-meta">With four classmates, Rotterdam School of Management &middot; Gemini and Claude agents</p>
+      </div>
+    </div>
+
+    <div class="feature" style="margin-top:48px">
+      <div>
+        <p class="eyebrow">Built on my own</p>
+        <h3>Electives navigator</h3>
+        <p>Every year my school hands students a stack of PDFs: a course overview, a schedule, an outline per class. None of it is a calendar. So everyone copies dates across by hand and hopes nothing clashes.</p>
+        <p>I built a tool that does all of it at once. Pick courses, see them on a real calendar, clashes flagged automatically, instructor backgrounds a click away.</p>
+        <p><b>My classmates use it now</b>, and I am working with RSM to keep it running for the years after mine. Built with the Pi coding agent.</p>
+        <p><a class="btn btn-outline" href="https://alvee1994.github.io/mba27-electives/" rel="noopener" target="_blank">Open the navigator</a></p>
+      </div>
+      <figure class="shots">
+        <a href="{{ '/assets/hire-electives-calendar.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/hire-electives-calendar.jpg' | relative_url }}" alt="Electives navigator calendar view, showing a term's course sessions colour-coded by subject"></a>
+        <a href="{{ '/assets/hire-electives-conflicts.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/hire-electives-conflicts.jpg' | relative_url }}" alt="Electives navigator conflict panel, flagging overlapping course sessions"></a>
+        <figcaption>A term on a real calendar instead of a spreadsheet. Clashing sessions get flagged before they become a problem. Tap a screenshot to see it full size.</figcaption>
+      </figure>
+    </div>
+
+    <div class="feature" style="margin-top:48px">
+      <div>
+        <p class="eyebrow">Before the data work</p>
+        <h3>Robots, and the software around them</h3>
+        <p>At SUTD in Singapore I helped build the navigation system for a robot that drives itself. My part sensed what was around it and chose where to go, the same job an animal's brain does.</p>
+        <p>Before that I wrote a Python library for wearable data and trained models to tell seven hand gestures apart. Then I built the interface and core logic for a surgical robot in C++ and Qt.</p>
+      </div>
+      <div class="video-frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/qfH4ocXLslI" title="Autonomous robot navigation, SUTD" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowfullscreen></iframe>
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta-band" id="pricing">
+<section id="how" class="band-cream">
   <div class="wrap">
-    <h3>One fixed price per workflow. We agree it before we build.</h3>
-    <p>The audit starts from &euro;1,200, scoped to your team size and the number of processes we study. You get a ranked, priced list of tasks and a fixed build price for what's worth automating. Every build after that gets its own fixed price, agreed before we start.</p>
-    <div class="btn-row">
-      <a class="btn btn-quiet-inverse" href="#contact">Discuss your workflows &rarr;</a>
-      <a class="btn btn-outline-inverse" href="#faq">Read the FAQ &rarr;</a>
-    </div>
-  </div>
-</section>
-
-<section id="faq">
-  <div class="wrap numbered-row">
-    <span class="ghost-num">05</span>
     <div class="section-head">
-      <p class="eyebrow">FAQ</p>
-      <h2>What people ask before working with us.</h2>
+      <p class="eyebrow">How I work</p>
+      <h2>I build the one thing that pays back first.</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step">
+        <div class="flow-num">1</div>
+        <h3>Map</h3>
+        <p>I sit with the people doing the work and find out where the hours actually go.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">2</div>
+        <h3>Rank and price</h3>
+        <p>Every repeated task gets a cost. Most are not worth automating, and I say so before you spend anything.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">3</div>
+        <h3>Build</h3>
+        <p>Plain tools, inside the systems you already run. The code is yours to keep.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num">4</div>
+        <h3>Measure</h3>
+        <p>I check what it saved. If it came in under what I expected, you hear that from me first.</p>
+      </div>
     </div>
 
-    <div class="faq-list">
-      <div class="faq-item">
-        <h3>Do we need an IT implementation team to work with you?</h3>
-        <p>No. We work with businesses that do not have one. We bring the judgement about what is worth automating.</p>
+    <dl class="spec" style="margin-top:44px">
+      <div class="spec-row">
+        <dt>Language</dt>
+        <dd>Python, with C++ and Qt behind me</dd>
       </div>
-      <div class="faq-item">
-        <h3>What if the audit finds nothing worth automating?</h3>
-        <p>Then we tell you that. The plan is yours either way.</p>
+      <div class="spec-row">
+        <dt>AI and agents</dt>
+        <dd>LangChain, LangGraph, Amazon Bedrock, Claude, Gemini, Pydantic, ChromaDB, n8n</dd>
       </div>
-      <div class="faq-item">
-        <h3>Do you lock us into your tools?</h3>
-        <p>No. We build with widely used tools inside your systems, and you own everything we build.</p>
+      <div class="spec-row">
+        <dt>Cloud</dt>
+        <dd>AWS Lambda, SQS, SNS, Step Functions, Terraform. AWS Certified Solutions Architect.</dd>
       </div>
-      <div class="faq-item">
-        <h3>How is pricing decided?</h3>
-        <p>The audit starts from &euro;1,200, scoped to your team size and the number of processes we study. You get a ranked, priced list of what's worth automating. Every workflow we build after that gets its own fixed price, agreed before we start.</p>
-      </div>
-    </div>
+    </dl>
   </div>
 </section>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Do we need an IT implementation team to work with you?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. We work with businesses that do not have one. We bring the judgement about what is worth automating."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What if the audit finds nothing worth automating?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Then we tell you that. The plan is yours either way."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you lock us into your tools?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. We build with widely used tools inside your systems, and you own everything we build."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How is pricing decided?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The audit starts from €1,200, scoped to your team size and the number of processes we study. You get a ranked, priced list of what's worth automating. Every workflow we build after that gets its own fixed price, agreed before we start."
-      }
-    }
-  ]
-}
-</script>
+<section id="hire">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Hiring me</p>
+      <h2>Contract now, permanent from March 2027.</h2>
+    </div>
+
+    <ul class="timeline">
+      <li class="tl-item is-now">
+        <span class="tl-when">Now</span>
+        <p class="tl-what"><b>Contract work, and I can start immediately.</b> &euro;100 per hour, invoiced through Fravalu, my KVK-registered practice in Rotterdam. Nothing for you to arrange.</p>
+      </li>
+      <li class="tl-item">
+        <span class="tl-when">March 2027</span>
+        <p class="tl-what">My orientation year begins, which gives me free access to the Dutch labour market for twelve months.</p>
+      </li>
+      <li class="tl-item">
+        <span class="tl-when">March 2027 onward</span>
+        <p class="tl-what"><b>Permanent roles open up.</b> No work permit for you to sponsor, and no salary threshold to clear. If you are hiring ahead, I am glad to talk early.</p>
+      </li>
+    </ul>
+
+    <dl class="spec">
+      <div class="spec-row">
+        <dt>Based in</dt>
+        <dd>Rotterdam. Happy to travel for the parts of a project that need me in the room.</dd>
+      </div>
+      <div class="spec-row">
+        <dt>Fixed-fee audit</dt>
+        <dd>From &euro;1,200. I log how your team spends its week, price each repeated task, and hand you a ranked list of what is worth automating. The list is yours to keep either way.</dd>
+      </div>
+      <div class="spec-row">
+        <dt>Before this</dt>
+        <dd>Four years at Mesh Bio in Singapore, leaving as a Solutions Architect who led a team of engineers. Before that, surgical robots in C++ and Qt. My sensor research was at SUTD, the Singapore University of Technology and Design.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
 
 <section id="contact" class="band-tint">
   <div class="wrap contact-grid">
     <div>
       <p class="eyebrow">Let's talk</p>
-      <h2 style="font-size:clamp(28px,3.4vw,38px)">Tell us where the hours go.</h2>
-      <p style="font-size:18px;color:var(--slate);max-width:48ch;margin:0 0 28px">Pick a time below, or email us directly. We'll take it from there.</p>
+      <h2 style="font-size:clamp(28px,3.4vw,38px)">Tell me where the hours go.</h2>
+      <p style="font-size:18px;color:var(--slate);max-width:48ch;margin:0 0 28px">Pick a time below, or email me directly. I will take it from there.</p>
       <div class="cta-row" style="padding-left:0">
         <a class="btn btn-primary" href="mailto:contact@fra-valu.com">contact@fra-valu.com</a>
+        <a class="btn btn-outline" href="https://linkedin.com/in/alveeahmed" rel="noopener" target="_blank">LinkedIn</a>
       </div>
     </div>
 
@@ -260,7 +212,7 @@ permalink: /
       <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
       <noscript>
         <p style="margin:0;font-size:14px;color:var(--slate)">Booking needs JavaScript. Write to
-          <a href="mailto:contact@fra-valu.com">contact@fra-valu.com</a> and we will send you times.
+          <a href="mailto:contact@fra-valu.com">contact@fra-valu.com</a> and I will send you times.
         </p>
       </noscript>
     </div>
