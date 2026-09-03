@@ -24,7 +24,7 @@ permalink: /
     <a href="#about">About</a>
     <a href="#work">Work</a>
     <a href="#how">How I work</a>
-    <a href="#hire">Hiring me</a>
+    <a href="#hire">Working with me</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
@@ -41,7 +41,7 @@ permalink: /
 <section id="work">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Work</p>
+      <p class="eyebrow">Selected work</p>
       <h2>Four things I built, and what changed.</h2>
       <p>All of this was done in earlier roles, before I started working on my own.</p>
     </div>
@@ -115,7 +115,7 @@ permalink: /
     <div class="flow">
       <div class="flow-step">
         <div class="flow-num">1</div>
-        <h3>Map</h3>
+        <h3>Map the work</h3>
         <p>I sit with the people doing the work and find out where the hours actually go.</p>
       </div>
       <div class="flow-step">
@@ -130,14 +130,14 @@ permalink: /
       </div>
       <div class="flow-step">
         <div class="flow-num">4</div>
-        <h3>Measure</h3>
+        <h3>Measure what changed</h3>
         <p>I check what it saved. If it came in under what I expected, you hear that from me first.</p>
       </div>
     </div>
 
     <dl class="spec" style="margin-top:44px">
       <div class="spec-row">
-        <dt>Language</dt>
+        <dt>Languages</dt>
         <dd>I work in Python, and have shipped production C++ and Qt.</dd>
       </div>
       <div class="spec-row">
@@ -145,7 +145,7 @@ permalink: /
         <dd>LangChain, LangGraph, Amazon Bedrock, Claude, Gemini, Pydantic, ChromaDB and n8n.</dd>
       </div>
       <div class="spec-row">
-        <dt>Cloud</dt>
+        <dt>Cloud and infrastructure</dt>
         <dd>AWS Lambda, SQS, SNS, Step Functions and Terraform. I am an AWS Certified Solutions Architect.</dd>
       </div>
     </dl>
@@ -155,8 +155,8 @@ permalink: /
 <section id="hire">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Hiring me</p>
-      <h2>Contract now. Permanent without sponsorship after I graduate.</h2>
+      <p class="eyebrow">Working with me</p>
+      <h2>You can bring me in on contract today, or permanently once I graduate.</h2>
     </div>
 
     <ul class="timeline">
@@ -176,7 +176,7 @@ permalink: /
 
     <dl class="spec">
       <div class="spec-row">
-        <dt>Based in</dt>
+        <dt>Where I am based</dt>
         <dd>Rotterdam, and I work on site when a project calls for it.</dd>
       </div>
       <div class="spec-row">
@@ -184,7 +184,7 @@ permalink: /
         <dd>I log how your team spends its week, price each repeated task, and hand you a ranked list of what is worth automating. The list is yours to keep.</dd>
       </div>
       <div class="spec-row">
-        <dt>Before this</dt>
+        <dt>Earlier career</dt>
         <dd>I spent four years at Mesh Bio in Singapore and left as a Solutions Architect leading a team of engineers. Before that I built software for robotic surgical systems in C++ and Qt, and started out doing wearable sensor research at SUTD in Singapore.</dd>
       </div>
     </dl>
