@@ -10,7 +10,7 @@ permalink: /
 <section class="hero" id="top">
   <div class="wrap hero-inner">
     <h1>I turn manual processes<br><span class="accent">into production systems.</span></h1>
-    <p class="hero-lead">Four years building data pipelines across five markets. Now on my own, from Rotterdam.</p>
+    <p class="hero-lead">I spent four years building data pipelines across five markets, and now do that work on my own from Rotterdam.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#contact">Get in touch</a>
       <a class="btn btn-outline-inverse" href="#work">See the work</a>
@@ -43,7 +43,7 @@ permalink: /
     <div class="section-head">
       <p class="eyebrow">Work</p>
       <h2>Four things I built, and what changed.</h2>
-      <p>All of it in earlier roles, before I started working on my own.</p>
+      <p>All of this was done in earlier roles, before I started working on my own.</p>
     </div>
 
     <div class="service-grid">
@@ -80,8 +80,8 @@ permalink: /
       <div>
         <p class="eyebrow">Built on my own</p>
         <h3>Electives navigator</h3>
-        <p>Every year my school hands students a stack of PDFs: a course overview, a schedule, an outline per class. None of it is a calendar. So everyone copies dates across by hand and hopes nothing clashes.</p>
-        <p>I built a tool that does all of it at once. Pick courses, see them on a real calendar, clashes flagged automatically, instructor backgrounds a click away.</p>
+        <p>Every year my school hands students a stack of PDFs: a course overview, a schedule, an outline per class. None of it is a calendar, so everyone copies the dates across by hand and hopes nothing clashes.</p>
+        <p>I built a tool that handles all of it at once. You pick your courses and see them on a real calendar, clashes are flagged automatically, and instructor backgrounds are a click away.</p>
         <p><b>My classmates use it now</b>, and I am working with RSM to keep it running for the years after mine. Built with the Pi coding agent.</p>
         <p><a class="btn btn-outline" href="https://alvee1994.github.io/mba27-electives/" rel="noopener" target="_blank">Open the navigator</a></p>
       </div>
@@ -126,7 +126,7 @@ permalink: /
       <div class="flow-step">
         <div class="flow-num">3</div>
         <h3>Build</h3>
-        <p>Plain tools, inside the systems you already run. The code is yours to keep.</p>
+        <p>I build with plain tools, inside the systems you already run, and the code is yours to keep.</p>
       </div>
       <div class="flow-step">
         <div class="flow-num">4</div>
@@ -138,15 +138,15 @@ permalink: /
     <dl class="spec" style="margin-top:44px">
       <div class="spec-row">
         <dt>Language</dt>
-        <dd>Python, with C++ and Qt behind me</dd>
+        <dd>I work in Python, and have shipped production C++ and Qt.</dd>
       </div>
       <div class="spec-row">
         <dt>AI and agents</dt>
-        <dd>LangChain, LangGraph, Amazon Bedrock, Claude, Gemini, Pydantic, ChromaDB, n8n</dd>
+        <dd>LangChain, LangGraph, Amazon Bedrock, Claude, Gemini, Pydantic, ChromaDB and n8n.</dd>
       </div>
       <div class="spec-row">
         <dt>Cloud</dt>
-        <dd>AWS Lambda, SQS, SNS, Step Functions, Terraform. AWS Certified Solutions Architect.</dd>
+        <dd>AWS Lambda, SQS, SNS, Step Functions and Terraform. I am an AWS Certified Solutions Architect.</dd>
       </div>
     </dl>
   </div>
@@ -162,7 +162,7 @@ permalink: /
     <ul class="timeline">
       <li class="tl-item is-now">
         <span class="tl-when">Now</span>
-        <p class="tl-what"><b>Contract work, available immediately.</b> Invoiced through Fravalu, my KVK-registered practice in Rotterdam.</p>
+        <p class="tl-what"><b>I am available for contract work and can start immediately.</b> Engagements are invoiced through Fravalu, my KVK-registered practice in Rotterdam.</p>
       </li>
       <li class="tl-item">
         <span class="tl-when">March 2027</span>
@@ -170,14 +170,14 @@ permalink: /
       </li>
       <li class="tl-item">
         <span class="tl-when">After graduation</span>
-        <p class="tl-what"><b>Permanent roles open up.</b> No work permit to sponsor, no salary threshold to clear.</p>
+        <p class="tl-what"><b>Permanent roles open up.</b> There is no work permit for an employer to sponsor and no salary threshold to clear.</p>
       </li>
     </ul>
 
     <dl class="spec">
       <div class="spec-row">
         <dt>Based in</dt>
-        <dd>Rotterdam. On site where a project needs it.</dd>
+        <dd>Rotterdam, and I work on site when a project calls for it.</dd>
       </div>
       <div class="spec-row">
         <dt>Fixed-fee audit</dt>
@@ -185,7 +185,7 @@ permalink: /
       </div>
       <div class="spec-row">
         <dt>Before this</dt>
-        <dd>Four years at Mesh Bio in Singapore, leaving as a Solutions Architect who led a team of engineers. Before that, surgical robots in C++ and Qt. Sensor research at SUTD in Singapore.</dd>
+        <dd>I spent four years at Mesh Bio in Singapore and left as a Solutions Architect leading a team of engineers. Before that I built software for robotic surgical systems in C++ and Qt, and started out doing wearable sensor research at SUTD in Singapore.</dd>
       </div>
     </dl>
   </div>
