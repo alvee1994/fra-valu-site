@@ -3,8 +3,7 @@ layout: default
 title: Ahmed Alvee, AI and workflow automation
 description: >-
   I turn manual processes into production systems. Available for contract
-  work now at €100 per hour, through my KVK-registered practice in
-  Rotterdam.
+  work now, through my KVK-registered practice in Rotterdam.
 permalink: /
 ---
 
@@ -16,7 +15,7 @@ permalink: /
       <a class="btn btn-primary" href="#contact">Get in touch</a>
       <a class="btn btn-outline-inverse" href="#work">See the work</a>
     </div>
-    <p class="hero-meta">Available for contract work now &middot; &euro;100 per hour &middot; Permanent roles without sponsorship after I graduate</p>
+    <p class="hero-meta">Available for contract work now &middot; Permanent roles without sponsorship after I graduate</p>
   </div>
 </section>
 
@@ -163,7 +162,7 @@ permalink: /
     <ul class="timeline">
       <li class="tl-item is-now">
         <span class="tl-when">Now</span>
-        <p class="tl-what"><b>Contract work, and I can start immediately.</b> &euro;100 per hour, invoiced through Fravalu, my KVK-registered practice in Rotterdam. Nothing for you to arrange.</p>
+        <p class="tl-what"><b>Contract work, and I can start immediately.</b> Invoiced through Fravalu, my KVK-registered practice in Rotterdam. Nothing for you to arrange.</p>
       </li>
       <li class="tl-item">
         <span class="tl-when">March 2027</span>
@@ -182,7 +181,7 @@ permalink: /
       </div>
       <div class="spec-row">
         <dt>Fixed-fee audit</dt>
-        <dd>From &euro;1,200. I log how your team spends its week, price each repeated task, and hand you a ranked list of what is worth automating. The list is yours to keep either way. Some audits are free because the provider earns it back on the contract they sell you next. Mine is paid for by you, so the answer stays honest, including when the honest answer is that nothing needs automating.</dd>
+        <dd>I log how your team spends its week, price each repeated task, and hand you a ranked list of what is worth automating. The list is yours to keep either way. Some audits are free because the provider earns it back on the contract they sell you next. Mine is paid for by you, so the answer stays honest, including when the honest answer is that nothing needs automating.</dd>
       </div>
       <div class="spec-row">
         <dt>Before this</dt>
