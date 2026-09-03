@@ -88,7 +88,7 @@ permalink: /
       <figure class="shots">
         <a href="{{ '/assets/hire-electives-calendar.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/hire-electives-calendar.jpg' | relative_url }}" alt="Electives navigator calendar view, showing a term's course sessions colour-coded by subject"></a>
         <a href="{{ '/assets/hire-electives-conflicts.jpg' | relative_url }}" target="_blank" rel="noopener"><img src="{{ '/assets/hire-electives-conflicts.jpg' | relative_url }}" alt="Electives navigator conflict panel, flagging overlapping course sessions"></a>
-        <figcaption>A term on a real calendar instead of a spreadsheet. Clashing sessions get flagged before they become a problem. Tap a screenshot to see it full size.</figcaption>
+        <figcaption>Tap a screenshot to see it full size.</figcaption>
       </figure>
     </div>
 
@@ -96,7 +96,7 @@ permalink: /
       <div>
         <p class="eyebrow">Before the data work</p>
         <h3>Robots, and the software around them</h3>
-        <p>At SUTD in Singapore I helped build the navigation system for a robot that drives itself. My part sensed what was around it and chose where to go, the same job an animal's brain does.</p>
+        <p>At SUTD in Singapore I helped build the navigation system for a robot that drives itself: the part that senses what is around it and decides where to go.</p>
         <p>Before that I wrote a Python library for wearable data and trained models to tell seven hand gestures apart. Then I built the interface and core logic for a surgical robot in C++ and Qt.</p>
       </div>
       <div class="video-frame">
@@ -162,30 +162,30 @@ permalink: /
     <ul class="timeline">
       <li class="tl-item is-now">
         <span class="tl-when">Now</span>
-        <p class="tl-what"><b>Contract work, and I can start immediately.</b> Invoiced through Fravalu, my KVK-registered practice in Rotterdam. Nothing for you to arrange.</p>
+        <p class="tl-what"><b>Contract work, available immediately.</b> Invoiced through Fravalu, my KVK-registered practice in Rotterdam.</p>
       </li>
       <li class="tl-item">
         <span class="tl-when">March 2027</span>
-        <p class="tl-what">I graduate. I can file for my orientation year permit before then, as soon as my graduation date is fixed, so the clock starts early.</p>
+        <p class="tl-what">I graduate from Rotterdam School of Management.</p>
       </li>
       <li class="tl-item">
         <span class="tl-when">After graduation</span>
-        <p class="tl-what"><b>Permanent roles open up.</b> The orientation year gives me free access to the Dutch labour market for twelve months: no work permit for you to sponsor, and no salary threshold to clear. If you are hiring ahead, I am glad to talk early.</p>
+        <p class="tl-what"><b>Permanent roles open up.</b> No work permit to sponsor, no salary threshold to clear.</p>
       </li>
     </ul>
 
     <dl class="spec">
       <div class="spec-row">
         <dt>Based in</dt>
-        <dd>Rotterdam. Happy to travel for the parts of a project that need me in the room.</dd>
+        <dd>Rotterdam. On site where a project needs it.</dd>
       </div>
       <div class="spec-row">
         <dt>Fixed-fee audit</dt>
-        <dd>I log how your team spends its week, price each repeated task, and hand you a ranked list of what is worth automating. The list is yours to keep either way. Some audits are free because the provider earns it back on the contract they sell you next. Mine is paid for by you, so the answer stays honest, including when the honest answer is that nothing needs automating.</dd>
+        <dd>I log how your team spends its week, price each repeated task, and hand you a ranked list of what is worth automating. The list is yours to keep.</dd>
       </div>
       <div class="spec-row">
         <dt>Before this</dt>
-        <dd>Four years at Mesh Bio in Singapore, leaving as a Solutions Architect who led a team of engineers. Before that, surgical robots in C++ and Qt. My sensor research was at SUTD, the Singapore University of Technology and Design.</dd>
+        <dd>Four years at Mesh Bio in Singapore, leaving as a Solutions Architect who led a team of engineers. Before that, surgical robots in C++ and Qt. Sensor research at SUTD in Singapore.</dd>
       </div>
     </dl>
   </div>
